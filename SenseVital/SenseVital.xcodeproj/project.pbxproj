@@ -14,14 +14,32 @@
 		3E04F5F018FFF099006485D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F5EF18FFF099006485D9 /* main.m */; };
 		3E04F5F418FFF099006485D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F5F318FFF099006485D9 /* AppDelegate.m */; };
 		3E04F5F718FFF099006485D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E04F5F518FFF099006485D9 /* Main.storyboard */; };
-		3E04F5FA18FFF099006485D9 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F5F918FFF099006485D9 /* MasterViewController.m */; };
-		3E04F5FD18FFF099006485D9 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F5FC18FFF099006485D9 /* DetailViewController.m */; };
 		3E04F5FF18FFF099006485D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E04F5FE18FFF099006485D9 /* Images.xcassets */; };
 		3E04F60618FFF099006485D9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F60518FFF099006485D9 /* XCTest.framework */; };
 		3E04F60718FFF099006485D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F5E318FFF098006485D9 /* Foundation.framework */; };
 		3E04F60818FFF099006485D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F5E718FFF098006485D9 /* UIKit.framework */; };
 		3E04F61018FFF099006485D9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E04F60E18FFF099006485D9 /* InfoPlist.strings */; };
 		3E04F61218FFF099006485D9 /* SenseVitalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F61118FFF099006485D9 /* SenseVitalTests.m */; };
+		3E04F61E18FFFE51006485D9 /* Cortex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F61D18FFFE51006485D9 /* Cortex.framework */; };
+		3E04F62018FFFF7F006485D9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F61F18FFFF7F006485D9 /* libsqlite3.dylib */; };
+		3E04F62218FFFF8E006485D9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F62118FFFF8E006485D9 /* AVFoundation.framework */; };
+		3E04F62418FFFF97006485D9 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F62318FFFF97006485D9 /* CoreMotion.framework */; };
+		3E04F62618FFFF9D006485D9 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F62518FFFF9D006485D9 /* CoreAudio.framework */; };
+		3E04F62818FFFFA5006485D9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F62718FFFFA5006485D9 /* CoreLocation.framework */; };
+		3E04F62A18FFFFB6006485D9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F62918FFFFB6006485D9 /* SystemConfiguration.framework */; };
+		3E04F62C18FFFFCB006485D9 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F62B18FFFFCB006485D9 /* CoreTelephony.framework */; };
+		3E04F62E18FFFFEA006485D9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F62D18FFFFEA006485D9 /* AudioToolbox.framework */; };
+		3E04F630190000FB006485D9 /* CSVitalConnectSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F62F190000FB006485D9 /* CSVitalConnectSensor.m */; };
+		3E04F63219000129006485D9 /* VitalConnectTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F63119000129006485D9 /* VitalConnectTabViewController.m */; };
+		3E04F63C19000179006485D9 /* libfw_bundle_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F63619000179006485D9 /* libfw_bundle_ios.a */; };
+		3E04F63D19000179006485D9 /* libjansson_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F63719000179006485D9 /* libjansson_ios.a */; };
+		3E04F63E19000179006485D9 /* librslib_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F63819000179006485D9 /* librslib_ios.a */; };
+		3E04F63F19000179006485D9 /* libsensor_stream_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F63919000179006485D9 /* libsensor_stream_ios.a */; };
+		3E04F64019000179006485D9 /* libVitalConnectLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F63A19000179006485D9 /* libVitalConnectLibrary.a */; };
+		3E04F64319000318006485D9 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F64219000318006485D9 /* CoreBluetooth.framework */; };
+		3E04F64519000331006485D9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F64419000331006485D9 /* libz.dylib */; };
+		3E04F64919002481006485D9 /* DeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F64819002481006485D9 /* DeviceTableViewController.m */; };
+		3E04F64D19003747006485D9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F64C19003747006485D9 /* LoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,16 +64,38 @@
 		3E04F5F218FFF099006485D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3E04F5F318FFF099006485D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3E04F5F618FFF099006485D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3E04F5F818FFF099006485D9 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		3E04F5F918FFF099006485D9 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		3E04F5FB18FFF099006485D9 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		3E04F5FC18FFF099006485D9 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		3E04F5FE18FFF099006485D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3E04F60418FFF099006485D9 /* SenseVitalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SenseVitalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E04F60518FFF099006485D9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3E04F60D18FFF099006485D9 /* SenseVitalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SenseVitalTests-Info.plist"; sourceTree = "<group>"; };
 		3E04F60F18FFF099006485D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E04F61118FFF099006485D9 /* SenseVitalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SenseVitalTests.m; sourceTree = "<group>"; };
+		3E04F61D18FFFE51006485D9 /* Cortex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cortex.framework; path = "../../aim/ios-sdk/build/Cortex.framework"; sourceTree = "<group>"; };
+		3E04F61F18FFFF7F006485D9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		3E04F62118FFFF8E006485D9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		3E04F62318FFFF97006485D9 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		3E04F62518FFFF9D006485D9 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		3E04F62718FFFFA5006485D9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		3E04F62918FFFFB6006485D9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		3E04F62B18FFFFCB006485D9 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		3E04F62D18FFFFEA006485D9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3E04F62F190000FB006485D9 /* CSVitalConnectSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVitalConnectSensor.m; sourceTree = "<group>"; };
+		3E04F63119000129006485D9 /* VitalConnectTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VitalConnectTabViewController.m; sourceTree = "<group>"; };
+		3E04F63319000134006485D9 /* VitalConnectTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VitalConnectTabViewController.h; sourceTree = "<group>"; };
+		3E04F6341900014E006485D9 /* CSVitalConnectSensor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVitalConnectSensor.h; sourceTree = "<group>"; };
+		3E04F63619000179006485D9 /* libfw_bundle_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfw_bundle_ios.a; sourceTree = "<group>"; };
+		3E04F63719000179006485D9 /* libjansson_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjansson_ios.a; sourceTree = "<group>"; };
+		3E04F63819000179006485D9 /* librslib_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librslib_ios.a; sourceTree = "<group>"; };
+		3E04F63919000179006485D9 /* libsensor_stream_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsensor_stream_ios.a; sourceTree = "<group>"; };
+		3E04F63A19000179006485D9 /* libVitalConnectLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libVitalConnectLibrary.a; sourceTree = "<group>"; };
+		3E04F63B19000179006485D9 /* VitalConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VitalConnect.h; sourceTree = "<group>"; };
+		3E04F64119000183006485D9 /* SDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDK.h; sourceTree = "<group>"; };
+		3E04F64219000318006485D9 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		3E04F64419000331006485D9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		3E04F64819002481006485D9 /* DeviceTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTableViewController.m; sourceTree = "<group>"; };
+		3E04F64A1900248D006485D9 /* DeviceTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeviceTableViewController.h; sourceTree = "<group>"; };
+		3E04F64B19003747006485D9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		3E04F64C19003747006485D9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +103,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E04F64519000331006485D9 /* libz.dylib in Frameworks */,
+				3E04F64319000318006485D9 /* CoreBluetooth.framework in Frameworks */,
+				3E04F63E19000179006485D9 /* librslib_ios.a in Frameworks */,
+				3E04F63D19000179006485D9 /* libjansson_ios.a in Frameworks */,
+				3E04F62E18FFFFEA006485D9 /* AudioToolbox.framework in Frameworks */,
+				3E04F62C18FFFFCB006485D9 /* CoreTelephony.framework in Frameworks */,
+				3E04F62A18FFFFB6006485D9 /* SystemConfiguration.framework in Frameworks */,
+				3E04F62818FFFFA5006485D9 /* CoreLocation.framework in Frameworks */,
+				3E04F62618FFFF9D006485D9 /* CoreAudio.framework in Frameworks */,
+				3E04F62418FFFF97006485D9 /* CoreMotion.framework in Frameworks */,
+				3E04F62218FFFF8E006485D9 /* AVFoundation.framework in Frameworks */,
+				3E04F63C19000179006485D9 /* libfw_bundle_ios.a in Frameworks */,
+				3E04F62018FFFF7F006485D9 /* libsqlite3.dylib in Frameworks */,
+				3E04F63F19000179006485D9 /* libsensor_stream_ios.a in Frameworks */,
 				3E04F5E618FFF098006485D9 /* CoreGraphics.framework in Frameworks */,
+				3E04F61E18FFFE51006485D9 /* Cortex.framework in Frameworks */,
+				3E04F64019000179006485D9 /* libVitalConnectLibrary.a in Frameworks */,
 				3E04F5E818FFF098006485D9 /* UIKit.framework in Frameworks */,
 				3E04F5E418FFF098006485D9 /* Foundation.framework in Frameworks */,
 			);
@@ -85,6 +141,9 @@
 		3E04F5D718FFF098006485D9 = {
 			isa = PBXGroup;
 			children = (
+				3E04F64119000183006485D9 /* SDK.h */,
+				3E04F63519000179006485D9 /* VitalConnectLib */,
+				3E04F61D18FFFE51006485D9 /* Cortex.framework */,
 				3E04F5E918FFF099006485D9 /* SenseVital */,
 				3E04F60B18FFF099006485D9 /* SenseVitalTests */,
 				3E04F5E218FFF098006485D9 /* Frameworks */,
@@ -104,6 +163,16 @@
 		3E04F5E218FFF098006485D9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3E04F64419000331006485D9 /* libz.dylib */,
+				3E04F64219000318006485D9 /* CoreBluetooth.framework */,
+				3E04F62D18FFFFEA006485D9 /* AudioToolbox.framework */,
+				3E04F62B18FFFFCB006485D9 /* CoreTelephony.framework */,
+				3E04F62918FFFFB6006485D9 /* SystemConfiguration.framework */,
+				3E04F62718FFFFA5006485D9 /* CoreLocation.framework */,
+				3E04F62518FFFF9D006485D9 /* CoreAudio.framework */,
+				3E04F62318FFFF97006485D9 /* CoreMotion.framework */,
+				3E04F62118FFFF8E006485D9 /* AVFoundation.framework */,
+				3E04F61F18FFFF7F006485D9 /* libsqlite3.dylib */,
 				3E04F5E318FFF098006485D9 /* Foundation.framework */,
 				3E04F5E518FFF098006485D9 /* CoreGraphics.framework */,
 				3E04F5E718FFF098006485D9 /* UIKit.framework */,
@@ -115,15 +184,17 @@
 		3E04F5E918FFF099006485D9 /* SenseVital */ = {
 			isa = PBXGroup;
 			children = (
+				3E04F64619001849006485D9 /* Connect */,
+				3E04F6471900185E006485D9 /* Measuring */,
+				3E04F6341900014E006485D9 /* CSVitalConnectSensor.h */,
+				3E04F62F190000FB006485D9 /* CSVitalConnectSensor.m */,
 				3E04F5F218FFF099006485D9 /* AppDelegate.h */,
 				3E04F5F318FFF099006485D9 /* AppDelegate.m */,
 				3E04F5F518FFF099006485D9 /* Main.storyboard */,
-				3E04F5F818FFF099006485D9 /* MasterViewController.h */,
-				3E04F5F918FFF099006485D9 /* MasterViewController.m */,
-				3E04F5FB18FFF099006485D9 /* DetailViewController.h */,
-				3E04F5FC18FFF099006485D9 /* DetailViewController.m */,
 				3E04F5FE18FFF099006485D9 /* Images.xcassets */,
 				3E04F5EA18FFF099006485D9 /* Supporting Files */,
+				3E04F64B19003747006485D9 /* LoginViewController.h */,
+				3E04F64C19003747006485D9 /* LoginViewController.m */,
 			);
 			path = SenseVital;
 			sourceTree = "<group>";
@@ -155,6 +226,38 @@
 				3E04F60E18FFF099006485D9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3E04F63519000179006485D9 /* VitalConnectLib */ = {
+			isa = PBXGroup;
+			children = (
+				3E04F63619000179006485D9 /* libfw_bundle_ios.a */,
+				3E04F63719000179006485D9 /* libjansson_ios.a */,
+				3E04F63819000179006485D9 /* librslib_ios.a */,
+				3E04F63919000179006485D9 /* libsensor_stream_ios.a */,
+				3E04F63A19000179006485D9 /* libVitalConnectLibrary.a */,
+				3E04F63B19000179006485D9 /* VitalConnect.h */,
+			);
+			name = VitalConnectLib;
+			path = ../VitalConnectLib;
+			sourceTree = "<group>";
+		};
+		3E04F64619001849006485D9 /* Connect */ = {
+			isa = PBXGroup;
+			children = (
+				3E04F64A1900248D006485D9 /* DeviceTableViewController.h */,
+				3E04F64819002481006485D9 /* DeviceTableViewController.m */,
+			);
+			name = Connect;
+			sourceTree = "<group>";
+		};
+		3E04F6471900185E006485D9 /* Measuring */ = {
+			isa = PBXGroup;
+			children = (
+				3E04F63319000134006485D9 /* VitalConnectTabViewController.h */,
+				3E04F63119000129006485D9 /* VitalConnectTabViewController.m */,
+			);
+			name = Measuring;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,10 +357,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E04F64D19003747006485D9 /* LoginViewController.m in Sources */,
 				3E04F5F418FFF099006485D9 /* AppDelegate.m in Sources */,
-				3E04F5FA18FFF099006485D9 /* MasterViewController.m in Sources */,
+				3E04F630190000FB006485D9 /* CSVitalConnectSensor.m in Sources */,
+				3E04F64919002481006485D9 /* DeviceTableViewController.m in Sources */,
 				3E04F5F018FFF099006485D9 /* main.m in Sources */,
-				3E04F5FD18FFF099006485D9 /* DetailViewController.m in Sources */,
+				3E04F63219000129006485D9 /* VitalConnectTabViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,10 +487,24 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/pim/projects/aim/ios-sdk/build",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SenseVital/SenseVital-Prefix.pch";
 				INFOPLIST_FILE = "SenseVital/SenseVital-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/pim/projects/vitalconnect-ios/VitalConnectLib",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-lc++",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -395,10 +514,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/pim/projects/aim/ios-sdk/build",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SenseVital/SenseVital-Prefix.pch";
 				INFOPLIST_FILE = "SenseVital/SenseVital-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/pim/projects/vitalconnect-ios/VitalConnectLib",
+				);
+				OTHER_LDFLAGS = (
+					"-lc++",
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
