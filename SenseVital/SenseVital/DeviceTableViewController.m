@@ -12,6 +12,8 @@
 
 @implementation DeviceTableViewController {
     BOOL isScanning;
+    NSArray* lastResults;
+    UIActivityIndicatorView* activityIndicatorView;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -31,8 +33,11 @@
     if ([self isViewLoaded]) {
         [self.tableView reloadData];
     }
-    
-    self.navigationController.title = @"Select device";
+    activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [activityIndicatorView setColor:[UIColor blackColor]];
+    activityIndicatorView.hidesWhenStopped = YES;
+    [self.view addSubview:activityIndicatorView];
+    activityIndicatorView.center = self.view.center;
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,8 +48,10 @@
 
 - (void) viewDidAppear:(BOOL)animated {
     isScanning = YES;
-    [self.tableView reloadData];
     [[VitalConnectManager getSharedInstance] startScan];
+    //Whoa, why do this twice? Well, it seems sometimes bluetooth is only turned on the first time we start the scan. So te be sure we just invoke it twice with a small delay.
+    [[VitalConnectManager getSharedInstance] performSelector:@selector(startScan) withObject:nil afterDelay:0.5];
+    [self.tableView reloadData];
 }
 
 - (void) viewDidDisappear:(BOOL)animated {
@@ -64,13 +71,12 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    NSUInteger n = [[[VitalConnectManager getSharedInstance] lastScanResult] count];
+    NSUInteger n = [lastResults count];
     return n;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    VitalConnectManager* vcManager = [VitalConnectManager getSharedInstance];
     VitalConnectSensor *sensor = nil;
     static NSString *CellIdentifier = @"SensorTableCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
@@ -79,17 +85,17 @@
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:CellIdentifier];
     }
-    if ([vcManager lastScanResult].count > indexPath.row)
+    if (lastResults.count > indexPath.row)
     {
-        sensor = [[vcManager lastScanResult] objectAtIndex:indexPath.row];
-        cell.textLabel.text = sensor.name;
+        sensor = [lastResults objectAtIndex:indexPath.row];
+        cell.textLabel.text = [NSString stringWithFormat:@"Vital Connect %@", sensor.name];
     }
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    VitalConnectSensor *sensor = [[[VitalConnectManager getSharedInstance] lastScanResult] objectAtIndex:indexPath.row];
+    VitalConnectSensor *sensor = [lastResults objectAtIndex:indexPath.row];
     [self connectToSensor:sensor];
 
 }
@@ -98,6 +104,8 @@
     NSLog(@"Connecting to sensor %@.", sensor.name);
     isScanning = NO;
     [[VitalConnectManager getSharedInstance] connectSensor:sensor forSensorSource:SDK_SENSOR_DATA_SOURCE_GUID];
+    [activityIndicatorView startAnimating];
+    [self.view bringSubviewToFront:activityIndicatorView];
 }
 
 /*
@@ -155,6 +163,7 @@
 -(void) didSeeNewSensor:(VitalConnectSensor *)sensor
 {
     NSLog(@"New sensor seen.");
+    lastResults = [[VitalConnectManager getSharedInstance] lastScanResult];
     if ([self isViewLoaded]) {
         [self.tableView reloadData];
     }
@@ -162,19 +171,24 @@
 
 -(void) didConnectToSensor:(VitalConnectSensor *)sensor
 {
-     NSLog(@"Connected to %@.", sensor.name);
-    [self.navigationController popViewControllerAnimated:YES];
+    [activityIndicatorView stopAnimating];
+    NSLog(@"Connected to %@.", sensor.name);
+   [self performSegueWithIdentifier:@"Connected" sender:self];
 }
 
 -(void) didNotConnectToSensorWithUuid:(NSString *)Uuid
 {
     NSLog(@"Not connected to %@.", Uuid);
+    [activityIndicatorView stopAnimating];
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Connection failed" message:@"Sorry, couldn't establish a connection to the Vital Connect patch." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+    [alert show];
     
 }
 
 -(void) disconnectReceivedFromSensor:(VitalConnectSensor *)sensor
 {
     NSLog(@"Disconnected from %@.", sensor.name);
+    lastResults = [[VitalConnectManager getSharedInstance] lastScanResult];
     [self.tableView reloadData];
     
 }

@@ -13,7 +13,12 @@
 
 @end
 
-@implementation LoginViewController
+static NSString* loginSucceedKey = @"LoginSucceed";
+
+@implementation LoginViewController {
+    BOOL keyboardVisible;
+    CGPoint offset;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +32,18 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    if ([prefs boolForKey:loginSucceedKey]) {
+        if ([prefs stringForKey:@"CSVTSensorName"]) {
+            [self performSegueWithIdentifier:@"Connected" sender:self];
+        } else {
+            [self performSegueWithIdentifier:@"NextScreen" sender:self];
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,11 +76,11 @@
     
     BOOL loginSucceed = [CSSensePlatform loginWithUser:username andPassword:password];
     if (loginSucceed) {
+        NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+        [prefs setBool:YES forKey:loginSucceedKey];
+        [prefs synchronize];
         //go to next screen
-        [self showError:@"Login succesfully"];
-        UIStoryboard *storyboard = self.storyboard;
-        UIViewController *destVC = [storyboard instantiateViewControllerWithIdentifier:@"Home"];
-        [self.navigationController pushViewController:destVC animated:YES];
+        [self performSegueWithIdentifier:@"NextScreen" sender:self];
     } else {
         [self showError:@"Couldn't login. Check username and password."];
     }

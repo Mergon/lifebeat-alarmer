@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : UIViewController <UIScrollViewDelegate>
 - (IBAction) login:(id)sender;
 
+@property (nonatomic, retain) IBOutlet UIScrollView* scrollView;
 @property (nonatomic, retain) IBOutlet UITextField* usernameTextField;
 @property (nonatomic, retain) IBOutlet UITextField* passwordTextField;
-@property (nonatomic, retain) IBOutlet UILabel* errorLabel;
+@property (nonatomic, retain) IBOutlet UITextView* errorLabel;
 @end
