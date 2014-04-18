@@ -10,6 +10,7 @@
 
 #import "CSVitalConnectSensor.h"
 #import <Cortex/CSSensePlatform.h>
+#import "Factory.h"
 
 @implementation VitalConnectTabViewController {
     CSVitalConnectSensor* vitalConnectSensor;
@@ -28,34 +29,47 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    vitalConnectSensor = [[CSVitalConnectSensor alloc] init];
+    vitalConnectSensor = [Factory sharedFactory].csVitalConnectSensor;
     
     //subscribe to sensor data
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onNewData:) name:kCSNewSensorDataNotification object:nil];
+}
+
+- (void) viewDidAppear:(BOOL)animated {
+    [self updateStatus];
+}
+
+- (void) updateStatus {
+    NSString* status = @"Unknown";
+    //Is a sensor connected
+    
+    //Is the patch active?
+    VitalConnectSensor* sensor = [VitalConnectManager getSharedInstance].getActiveSensor;
+    if (sensor == nil) {
+        status = @"Not connected.";
+    } else {
+        switch (sensor.patchStatus) {
+            case kPatchStatusApplied:
+                status = @"Connected and Wearing";
+                break;
+            case kPatchStatusPoorConnection:
+                status = @"Poor connection";
+                break;
+            case kPatchStatusRemoved:
+                status = @"Connected, but not wearing";
+                break;
+            case kPatchStatusUnknown:
+                status = @"Unknown";
+                break;
+        }
+    }
+    [self.status setText:status];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction) scan:(id)sender {
-    [vitalConnectSensor scan];
-}
-
-- (IBAction) disconnect:(id)sender {
-    [[VitalConnectManager getSharedInstance] disconnectSensor];    
-}
-
-- (IBAction) refresh:(id)sender {
-    NSLog(@"Scan result: %@", [vitalConnectSensor.vitalConnectManager lastScanResult]);
-}
-
-- (IBAction) toggleHFData: (id) sender {
-    if (sender == self.hfSwitch) {
-        [vitalConnectSensor setHFData:self.hfSwitch.on];
-    }
 }
 
 - (void) onNewData:(NSNotification*)notification {
@@ -72,7 +86,7 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             @autoreleasepool {
-                [self.hrLabel setText:[NSString stringWithFormat:@"Heart rate: %@ bpm", hr]];
+                [self.hrLabel setText:[NSString stringWithFormat:@"%@", hr]];
             }
         });
     } else if ([sensor isEqualToString:@"temperature"]) {

@@ -15,6 +15,7 @@ static const NSString* accXKey = @"x";
 static const NSString* accYKey = @"y";
 static const NSString* accZKey = @"z";
 static const NSString* heartValueKey = @"heart value";
+static NSString* VCSensorNameKey = @"CSVTSensorName";
 
 @implementation CSVitalConnectSensor {
     VitalConnectSensor* connectedSensor;
@@ -51,10 +52,10 @@ static const NSString* heartValueKey = @"heart value";
 }
 
 - (void) enable {
+    [_vitalConnectManager storedDataStream:connectedSensor open:YES];
     int status = [_vitalConnectManager readData:kVCIObserverSensorData withCallback:processData withContext:self];
     switch (status) {
         case kVitalConnectmanagerNoError:
-            NSLog(@"Error reading stream: %d", status);
             break;
         default:
             NSLog(@"Error reading stream: %d", status);
@@ -63,11 +64,13 @@ static const NSString* heartValueKey = @"heart value";
 }
 
 - (void) processSensorData:(NSDictionary*) data {
+    NSString* sensorDescription = @"vital_connect";
    NSDictionary* keySensorMapping = [NSDictionary dictionaryWithObjectsAndKeys:
                                       @"activity", kVCIObserverKeyActivity,
                                       @"battery", kVCIObserverKeyBatteryLevel,
                                       @"temperature", kVCIObserverKeyBodyTemp,
                                       @"heart_rate", kVCIObserverKeyBpm,
+                                      @"energy_expended", kVCIObserverKeyEnergyExpended,
                                       @"energy_expenditure_rate", kVCIObserverKeyEnergyExpendedRate,
                                       @"impedance", kVCIObserverKeyImpedance,
                                       @"respiration", kVCIObserverKeyRespiration,
@@ -90,7 +93,7 @@ static const NSString* heartValueKey = @"heart value";
             NSString* sensorName = [keySensorMapping valueForKey:key];
             NSString* displayName = [self displayNameForSensor:sensorName];
             
-            [CSSensePlatform addDataPointForSensor:sensorName displayName:displayName description:sensorName deviceType:sensorDeviceType deviceUUID:sensorUUID dataType:kCSDATA_TYPE_FLOAT stringValue:value timestamp:timestamp];
+            [CSSensePlatform addDataPointForSensor:sensorName displayName:displayName description:sensorDescription deviceType:sensorDeviceType deviceUUID:sensorUUID dataType:kCSDATA_TYPE_FLOAT stringValue:value timestamp:timestamp];
         }
     }
     
@@ -100,8 +103,10 @@ static const NSString* heartValueKey = @"heart value";
         NSString* stepCounterSensor = @"step_count";
         NSDictionary* value = [NSDictionary dictionaryWithObjectsAndKeys:steps, @"total", nil];
         
-        [CSSensePlatform addDataPointForSensor:stepCounterSensor displayName:[self displayNameForSensor:stepCounterSensor] description:nil deviceType:sensorDeviceType deviceUUID:sensorUUID dataType:kCSDATA_TYPE_JSON jsonValue:value timestamp:timestamp];
+        [CSSensePlatform addDataPointForSensor:stepCounterSensor displayName:[self displayNameForSensor:stepCounterSensor] description:sensorDescription deviceType:sensorDeviceType deviceUUID:sensorUUID dataType:kCSDATA_TYPE_JSON jsonValue:value timestamp:timestamp];
     }
+    
+    //TODO:Produce warnings about available keys that are not being processed
 }
 
 - (NSString*) displayNameForSensor:(NSString*) name {
@@ -123,12 +128,30 @@ static const NSString* heartValueKey = @"heart value";
     sensorUUID = sensor.serialNumber;
     connectedSensor.highFrequencyData = HFDataIsEnabled;
     
+    [self saveSensor];
     [self enable];
 }
 
-- (void) scan {
-    [_vitalConnectManager stopScan];
-    [_vitalConnectManager startScan];
+
+- (void) saveSensor {
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setValue:connectedSensor.name forKey:VCSensorNameKey];
+    [prefs synchronize];
+}
+
+- (void) forgetSensor {
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setValue:nil forKey:VCSensorNameKey];
+    [prefs synchronize];
+}
+
+- (void) reconnect {
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    NSString* sensorName = [prefs stringForKey:VCSensorNameKey];
+    
+    if (sensorName != nil && _vitalConnectManager.getActiveSensor == nil) {
+        [_vitalConnectManager scanAndConnectSensorForName:sensorName forSensorSource:SDK_SENSOR_DATA_SOURCE_GUID];
+    }
 }
 
 #pragma mark - Process data
@@ -160,8 +183,8 @@ static const NSString* heartValueKey = @"heart value";
                            header, @"header",
                            sampleInterval, @"interval",
                            nil];
-    
-    [CSSensePlatform addDataPointForSensor:kCSSENSOR_ACCELEROMETER_BURST displayName:nil description:nil deviceType:sensorDeviceType deviceUUID:sensorUUID dataType:kCSDATA_TYPE_JSON jsonValue:value timestamp:[NSDate dateWithTimeIntervalSince1970:start]];
+    NSString* sensorDescription = @"vital_connect";
+    [CSSensePlatform addDataPointForSensor:kCSSENSOR_ACCELEROMETER_BURST displayName:nil description:sensorDescription deviceType:sensorDeviceType deviceUUID:sensorUUID dataType:kCSDATA_TYPE_JSON jsonValue:value timestamp:[NSDate dateWithTimeIntervalSince1970:start]];
 }
 
 typedef void (^dataCallback)(NSArray* data);
@@ -207,8 +230,8 @@ typedef void (^dataCallback)(NSArray* data);
                            header, @"header",
                            sampleInterval, @"interval",
                            nil];
-    
-    [CSSensePlatform addDataPointForSensor:@"ecg (burst-mode)" displayName:nil description:nil deviceType:sensorDeviceType deviceUUID:sensorUUID dataType:kCSDATA_TYPE_JSON jsonValue:value timestamp:[NSDate dateWithTimeIntervalSince1970:start]];
+    NSString* sensorDescription = @"vital_connect";
+    [CSSensePlatform addDataPointForSensor:@"ecg (burst-mode)" displayName:nil description:sensorDescription deviceType:sensorDeviceType deviceUUID:sensorUUID dataType:kCSDATA_TYPE_JSON jsonValue:value timestamp:[NSDate dateWithTimeIntervalSince1970:start]];
 }
 
 static BOOL processData(id contextObject, NSArray* samples, Boolean done, int error)

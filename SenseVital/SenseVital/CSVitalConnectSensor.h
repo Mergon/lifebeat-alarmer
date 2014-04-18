@@ -10,8 +10,9 @@
 #import "VitalConnect.h"
 
 @interface CSVitalConnectSensor : NSObject <VitalConnectConnectionListener>
-- (void) scan;
 - (void) setHFData:(BOOL) enable;
+- (void) reconnect;
+- (void) forgetSensor;
 
 @property (strong, nonatomic, readonly) VitalConnectManager* vitalConnectManager;
 @end

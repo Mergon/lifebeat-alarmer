@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 #import <Cortex/CSSensePlatform.h>
+#import <Cortex/CSSettings.h>
 #import "SDK.h"
+#import "Factory.h"
 
 @implementation AppDelegate
 
@@ -20,9 +22,14 @@
     NSDictionary *bundleInfo = [[NSBundle mainBundle] infoDictionary];
     rootFileDir = [rootFileDir stringByAppendingPathComponent:[bundleInfo objectForKey:@"CFBundleDisplayName"]];
     [CSSensePlatform initialize];
+    [[CSSettings sharedSettings] setSettingType:kCSSettingTypeGeneral setting:kCSGeneralSettingUploadInterval value:@"10"];
     self.vitalConnectManager = [VitalConnectManager createVitalConnect:SDK_API_KEY environment:kVitalConnectServerNone rootFileDir:rootFileDir encrypted:NO];
     [self.vitalConnectManager start];
     [_vitalConnectManager enableAutoReconnect:YES];
+    
+    //initialize the factory
+    [Factory sharedFactory];
+    [[Factory sharedFactory].csVitalConnectSensor reconnect];
 
     return YES;
 }
