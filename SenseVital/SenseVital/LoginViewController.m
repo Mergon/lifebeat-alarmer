@@ -90,6 +90,11 @@ static NSString* loginSucceedKey = @"LoginSucceed";
     [self.errorLabel setText:error];
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)orientation
+{
+    return orientation == UIInterfaceOrientationPortrait;
+}
+
 /*
 #pragma mark - Navigation
 

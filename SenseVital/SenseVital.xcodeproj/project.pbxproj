@@ -44,6 +44,8 @@
 		3E04F65619018B9F006485D9 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F65519018B9F006485D9 /* TPKeyboardAvoidingScrollView.m */; };
 		3E04F65C19018C1D006485D9 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F65B19018C1D006485D9 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
 		3E04F65F1901A520006485D9 /* DeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F65E1901A520006485D9 /* DeviceViewController.m */; };
+		3E04F66219066EAD006485D9 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F66119066EAD006485D9 /* ConnectViewController.m */; };
+		3E04F66619069213006485D9 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F66519069213006485D9 /* SettingsTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +110,10 @@
 		3E04F65B19018C1D006485D9 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
 		3E04F65D1901A520006485D9 /* DeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceViewController.h; sourceTree = "<group>"; };
 		3E04F65E1901A520006485D9 /* DeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceViewController.m; sourceTree = "<group>"; };
+		3E04F66019066EAD006485D9 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
+		3E04F66119066EAD006485D9 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
+		3E04F66419069213006485D9 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		3E04F66519069213006485D9 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +203,7 @@
 		3E04F5E918FFF099006485D9 /* SenseVital */ = {
 			isa = PBXGroup;
 			children = (
+				3E04F663190691F1006485D9 /* Settings */,
 				3E04F64619001849006485D9 /* Connect */,
 				3E04F6471900185E006485D9 /* Measuring */,
 				3E04F6341900014E006485D9 /* CSVitalConnectSensor.h */,
@@ -264,6 +271,8 @@
 				3E04F64819002481006485D9 /* DeviceTableViewController.m */,
 				3E04F65D1901A520006485D9 /* DeviceViewController.h */,
 				3E04F65E1901A520006485D9 /* DeviceViewController.m */,
+				3E04F66019066EAD006485D9 /* ConnectViewController.h */,
+				3E04F66119066EAD006485D9 /* ConnectViewController.m */,
 			);
 			name = Connect;
 			sourceTree = "<group>";
@@ -286,6 +295,15 @@
 				3E04F65B19018C1D006485D9 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
 			);
 			name = UIUtils;
+			sourceTree = "<group>";
+		};
+		3E04F663190691F1006485D9 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				3E04F66419069213006485D9 /* SettingsTableViewController.h */,
+				3E04F66519069213006485D9 /* SettingsTableViewController.m */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -335,6 +353,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Sense Observation Systems BV";
 				TargetAttributes = {
+					3E04F5DF18FFF098006485D9 = {
+						DevelopmentTeam = MT2K5TW3U7;
+					};
 					3E04F60318FFF099006485D9 = {
 						TestTargetID = 3E04F5DF18FFF098006485D9;
 					};
@@ -385,6 +406,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E04F66619069213006485D9 /* SettingsTableViewController.m in Sources */,
 				3E04F64D19003747006485D9 /* LoginViewController.m in Sources */,
 				3E04F65619018B9F006485D9 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				3E04F5F418FFF099006485D9 /* AppDelegate.m in Sources */,
@@ -393,6 +415,7 @@
 				3E04F64919002481006485D9 /* DeviceTableViewController.m in Sources */,
 				3E04F5F018FFF099006485D9 /* main.m in Sources */,
 				3E04F63219000129006485D9 /* VitalConnectTabViewController.m in Sources */,
+				3E04F66219066EAD006485D9 /* ConnectViewController.m in Sources */,
 				3E04F65219017D37006485D9 /* Factory.m in Sources */,
 				3E04F65C19018C1D006485D9 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 			);
@@ -519,6 +542,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/pim/projects/aim/ios-sdk/build",
@@ -526,6 +550,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SenseVital/SenseVital-Prefix.pch";
 				INFOPLIST_FILE = "SenseVital/SenseVital-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/pim/projects/vitalconnect-ios/VitalConnectLib",
@@ -546,6 +571,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/pim/projects/aim/ios-sdk/build",
@@ -553,6 +579,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SenseVital/SenseVital-Prefix.pch";
 				INFOPLIST_FILE = "SenseVital/SenseVital-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/pim/projects/vitalconnect-ios/VitalConnectLib",

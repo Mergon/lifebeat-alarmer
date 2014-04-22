@@ -123,6 +123,11 @@
     }
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)orientation
+{
+    return orientation == UIInterfaceOrientationPortrait;
+}
+
 static NSNumber* CSroundedNumber(double number, int decimals) {
     return [NSNumber numberWithDouble:round(number * pow(10,decimals)) / pow(10,decimals)];
 }
