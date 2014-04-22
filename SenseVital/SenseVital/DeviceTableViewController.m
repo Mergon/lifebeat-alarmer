@@ -88,7 +88,7 @@
     if (lastResults.count > indexPath.row)
     {
         sensor = [lastResults objectAtIndex:indexPath.row];
-        cell.textLabel.text = [NSString stringWithFormat:@"Vital Connect %@", sensor.name];
+        cell.textLabel.text = [NSString stringWithFormat:@"HealthPatch %@", sensor.name];
     }
     return cell;
 }
@@ -147,6 +147,11 @@
 }
 */
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)orientation
+{
+    return orientation == UIInterfaceOrientationPortrait;
+}
+
 /*
 #pragma mark - Navigation
 
@@ -180,7 +185,7 @@
 {
     NSLog(@"Not connected to %@.", Uuid);
     [activityIndicatorView stopAnimating];
-    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Connection failed" message:@"Sorry, couldn't establish a connection to the Vital Connect patch." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+    UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Connection failed" message:@"Sorry, couldn't establish a connection to the HealthPatch." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
     [alert show];
     
 }
