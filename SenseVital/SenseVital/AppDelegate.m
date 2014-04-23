@@ -22,7 +22,7 @@
     NSDictionary *bundleInfo = [[NSBundle mainBundle] infoDictionary];
     rootFileDir = [rootFileDir stringByAppendingPathComponent:[bundleInfo objectForKey:@"CFBundleDisplayName"]];
     [CSSensePlatform initialize];
-    [[CSSettings sharedSettings] setSettingType:kCSSettingTypeGeneral setting:kCSGeneralSettingUploadInterval value:@"10"];
+    [[CSSettings sharedSettings] setSettingType:kCSSettingTypeGeneral setting:kCSGeneralSettingUploadInterval value:@"3600"];
     self.vitalConnectManager = [VitalConnectManager createVitalConnect:SDK_API_KEY environment:kVitalConnectServerNone rootFileDir:rootFileDir encrypted:NO];
     [self.vitalConnectManager start];
     [_vitalConnectManager enableAutoReconnect:YES];

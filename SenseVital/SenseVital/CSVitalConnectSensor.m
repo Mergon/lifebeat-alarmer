@@ -66,7 +66,7 @@ static NSString* VCSensorNameKey = @"CSVTSensorName";
 - (void) processSensorData:(NSDictionary*) data {
     NSString* sensorDescription = @"vital_connect";
    NSDictionary* keySensorMapping = [NSDictionary dictionaryWithObjectsAndKeys:
-                                      @"activity", kVCIObserverKeyActivity,
+                                      @"activity_raw", kVCIObserverKeyActivity,
                                       @"battery", kVCIObserverKeyBatteryLevel,
                                       @"temperature", kVCIObserverKeyBodyTemp,
                                       @"heart_rate", kVCIObserverKeyBpm,
@@ -104,6 +104,17 @@ static NSString* VCSensorNameKey = @"CSVTSensorName";
         NSDictionary* value = [NSDictionary dictionaryWithObjectsAndKeys:steps, @"total", nil];
         
         [CSSensePlatform addDataPointForSensor:stepCounterSensor displayName:[self displayNameForSensor:stepCounterSensor] description:sensorDescription deviceType:sensorDeviceType deviceUUID:sensorUUID dataType:kCSDATA_TYPE_JSON jsonValue:value timestamp:timestamp];
+    }
+    
+    //convert activity to a human readable string
+    NSNumber* activity = [data valueForKey:kVCIObserverKeyActivity];
+    if (activity != nil) {
+        
+        NSString* activityString = activityToString([activity intValue]);
+        
+        [CSSensePlatform addDataPointForSensor:@"activity" displayName:[self displayNameForSensor:@"activity"] description:sensorDescription deviceType:sensorDeviceType deviceUUID:sensorUUID dataType:kCSDATA_TYPE_STRING stringValue:activityString timestamp:timestamp];
+        
+
     }
     
     //TODO:Produce warnings about available keys that are not being processed
@@ -277,4 +288,34 @@ static NSNumber* CSroundedNumber(double number, int decimals) {
     }
 }
 
+#pragma mark - Helper functions
+static NSString* activityToString(VitalConnectPosture activity) {
+    switch (activity) {
+        case kPostureDriving:
+            return @"driving";
+        case kPostureLayingDown:
+            return @"lying_down";
+        case kPostureLayingDownOnLeftSide:
+            return @"lying_down_on_left_side";
+        case kPostureLayingDownOnRightSide:
+            return @"lying_down_on_right_side";
+        case kPostureLayingDownProne:
+            return @"lying_down_on_stomach";
+        case kPostureLayingDownSupine:
+            return @"lying_down_on_back";
+        case kPostureLeaningBack:
+            return @"leaning_back";
+        case kPostureRunning:
+            return @"running";
+        case kPostureSitting:
+            return @"sitting";
+        case kPostureStanding:
+            return @"standing";
+        case kPostureWalking:
+            return @"walking";
+        case kPostureUnknown:
+            return @"unknown";
+    }
+    return @"unknown";
+}
 @end
