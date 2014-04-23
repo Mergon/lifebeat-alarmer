@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kYg-Db-HCE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="kYg-Db-HCE">
     <dependencies>
         <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -138,7 +138,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PA-Oo-8cN">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="--" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9PA-Oo-8cN">
                                 <rect key="frame" x="78" y="96" width="131" height="116"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="76"/>
@@ -269,7 +269,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="Tracking" footerTitle="With high frequency tracking enabled the device captures ECG and detailed motion." id="r2p-g6-0ng">
+                            <tableViewSection headerTitle="Tracking" id="r2p-g6-0ng">
+                                <string key="footerTitle">With high frequency tracking enabled the device captures ECG and detailed motion. It also increases bandwith usage from approximately 5mb per day to 50 mb per day.</string>
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="lXV-u0-RaG">
                                         <rect key="frame" x="0.0" y="119" width="320" height="44"/>
@@ -322,7 +323,7 @@
                             <tableViewSection headerTitle="Uploading" footerTitle="By default your measurements will be uploaded to Common Sense every hour." id="505-ay-GZ4">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="3XV-0d-Ncd">
-                                        <rect key="frame" x="0.0" y="299" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="349" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3XV-0d-Ncd" id="lvL-wn-WPa">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -345,7 +346,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="w6X-sl-GUC">
-                                        <rect key="frame" x="0.0" y="343" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="393" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="w6X-sl-GUC" id="MNN-bf-f8l">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -370,7 +371,7 @@
                             <tableViewSection headerTitle="Device" id="0f5-du-wPA">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Ok9-Q0-oNZ" style="IBUITableViewCellStyleDefault" id="cZn-9t-zb7">
-                                        <rect key="frame" x="0.0" y="479" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="529" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cZn-9t-zb7" id="zas-Py-tFy">
                                             <rect key="frame" x="0.0" y="0.0" width="273" height="43"/>
@@ -394,7 +395,7 @@
                             <tableViewSection headerTitle="Account" footerTitle="You are currently logged in with: test@sense-os.nl" id="DEd-RJ-1bJ">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="o9I-Za-A28">
-                                        <rect key="frame" x="0.0" y="571" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="621" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o9I-Za-A28" id="d5X-ld-GHq">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>

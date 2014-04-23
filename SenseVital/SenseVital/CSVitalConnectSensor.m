@@ -16,6 +16,7 @@ static const NSString* accYKey = @"y";
 static const NSString* accZKey = @"z";
 static const NSString* heartValueKey = @"heart value";
 static NSString* VCSensorNameKey = @"CSVTSensorName";
+static NSString* VCHFDataKey = @"CSVTHFData";
 
 @implementation CSVitalConnectSensor {
     VitalConnectSensor* connectedSensor;
@@ -36,6 +37,9 @@ static NSString* VCSensorNameKey = @"CSVTSensorName";
         burstInterval = 3;
         
         [self initVitalConnect];
+
+        NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+        [self setHFData:[prefs boolForKey:VCHFDataKey]];
     }
     return self;
 }
@@ -185,7 +189,7 @@ static NSString* VCSensorNameKey = @"CSVTSensorName";
     NSTimeInterval start = [[[burstData objectAtIndex:0] valueForKey:kVCIObserverKeyTime] doubleValue];
     NSTimeInterval end = [[[burstData lastObject] valueForKey:kVCIObserverKeyTime] doubleValue];
     NSTimeInterval dt = end - start;
-    NSNumber* sampleInterval = CSroundedNumber(dt * 1000.0 / [burstData count], 1);
+    NSNumber* sampleInterval = CSroundedNumber(dt * 1000.0 / [burstData count] -1 , 1);
     NSString* header = [NSString stringWithFormat:@"%@,%@,%@", accXKey, accYKey, accZKey];
     
     //add data point
@@ -286,6 +290,14 @@ static NSNumber* CSroundedNumber(double number, int decimals) {
     if (connectedSensor != nil) {
         connectedSensor.highFrequencyData = enable;
     }
+    
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setBool:HFDataIsEnabled forKey:VCHFDataKey];
+    [prefs synchronize];
+}
+
+- (BOOL) HFData {
+    return HFDataIsEnabled;
 }
 
 #pragma mark - Helper functions
