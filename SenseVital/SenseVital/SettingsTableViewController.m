@@ -28,12 +28,10 @@ static NSString* loginSucceedKey = @"LoginSucceed";
 {
     [super viewDidLoad];
     signOutAlertView = [[UIAlertView alloc] initWithTitle:@"Sign out" message:@"Are you sure you want to sign out of CommonSense?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Sign out", nil];
+    
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
-}
-
-- (void) viewDidAppear:(BOOL)animated {
-    
 }
 
 - (void)didReceiveMemoryWarning
