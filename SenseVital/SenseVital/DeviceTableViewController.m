@@ -14,6 +14,8 @@
     BOOL isScanning;
     NSArray* lastResults;
     UIActivityIndicatorView* activityIndicatorView;
+    CBCentralManager* btManager;
+    UIAlertView* alertBluetoothNotSupported;
 }
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -38,6 +40,9 @@
     activityIndicatorView.hidesWhenStopped = YES;
     [self.view addSubview:activityIndicatorView];
     activityIndicatorView.center = self.view.center;
+    
+    //initialize UIAlerts
+    alertBluetoothNotSupported = [[UIAlertView alloc] initWithTitle:@"No bluetooth" message:@"Sorry, this device doesn't support bluetooth low energy and can't connect to a HealthPatch." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,17 +52,20 @@
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-    isScanning = YES;
-    [[VitalConnectManager getSharedInstance] startScan];
-    //Whoa, why do this twice? Well, it seems sometimes bluetooth is only turned on the first time we start the scan. So te be sure we just invoke it twice with a small delay.
-    [[VitalConnectManager getSharedInstance] performSelector:@selector(startScan) withObject:nil afterDelay:0.5];
+    [self checkBluetoothEnabledAndAvailable];
     [self.tableView reloadData];
+    
 }
 
 - (void) viewDidDisappear:(BOOL)animated {
     if (isScanning) {
         [[VitalConnectManager getSharedInstance] stopScan];
     }
+}
+
+- (void) checkBluetoothEnabledAndAvailable {
+    btManager = [[CBCentralManager alloc] initWithDelegate:self queue:dispatch_get_main_queue()];
+    
 }
 
 #pragma mark - Table view data source
@@ -97,7 +105,6 @@
 {
     VitalConnectSensor *sensor = [lastResults objectAtIndex:indexPath.row];
     [self connectToSensor:sensor];
-
 }
 
 - (void) connectToSensor:(VitalConnectSensor*) sensor {
@@ -163,6 +170,30 @@
 }
 
  */
+
+#pragma mark - CBCentralManagerDelegate protocol implementations
+- (void) centralManagerDidUpdateState:(CBCentralManager*)manager {
+    if (self.navigationController.visibleViewController != self) {
+        return;
+    }
+    NSLog(@"%i", btManager.state);
+    switch (btManager.state) {
+        case CBCentralManagerStateUnsupported:
+            [alertBluetoothNotSupported show];
+            break;
+        case CBCentralManagerStatePoweredOff:
+            //by instantiating the CBCentralManager we automatically get a popup to enable bluetooth
+            break;
+        case CBCentralManagerStatePoweredOn:
+            isScanning = YES;
+            [[VitalConnectManager getSharedInstance] startScan];
+            //Whoa, why do this twice? Well, it seems sometimes bluetooth is only turned on the first time we start the scan. So te be sure we just invoke it twice with a small delay.
+            [[VitalConnectManager getSharedInstance] performSelector:@selector(startScan) withObject:nil afterDelay:0.5];
+            break;
+        default:
+            break;
+    }
+}
 
 #pragma mark - VitalConnectSensorListener
 -(void) didSeeNewSensor:(VitalConnectSensor *)sensor

@@ -392,7 +392,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Account" footerTitle="You are currently logged in with: test@sense-os.nl" id="DEd-RJ-1bJ">
+                            <tableViewSection headerTitle="Account" footerTitle="Your data is uploaded to your Common Sense account." id="DEd-RJ-1bJ">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="o9I-Za-A28">
                                         <rect key="frame" x="0.0" y="621" width="320" height="44"/>
