@@ -32,6 +32,17 @@ static NSString* loginSucceedKey = @"LoginSucceed";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSString* pathToImageFile = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"png"];
+    UIImage* bgImage = [UIImage imageWithContentsOfFile:pathToImageFile];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
+    
+    for (UIView* element in @[self.usernameTextField, self.passwordTextField, self.signInButton]) {
+        element.layer.borderColor = [UIColor whiteColor].CGColor;
+        element.layer.masksToBounds = YES;
+        element.layer.cornerRadius = 4.0;
+        element.layer.borderWidth = 1.0;
+    }
 }
 
 - (void) viewDidAppear:(BOOL)animated {
@@ -62,11 +73,9 @@ static NSString* loginSucceedKey = @"LoginSucceed";
     BOOL error = NO;
     if (username.length == 0) {
         [self showError:@"Provide a username"];
-        [self.usernameTextField.layer setBorderColor:(__bridge CGColorRef)([UIColor redColor])];
         error = YES;
     }
     if (password.length == 0) {
-        [self.passwordTextField.layer setBorderColor:(__bridge CGColorRef)([UIColor redColor])];
         if (error == NO)
         [self showError:@"Provide a password"];
     }
@@ -88,6 +97,7 @@ static NSString* loginSucceedKey = @"LoginSucceed";
 
 - (void) showError:(NSString*) error {
     [self.errorLabel setText:error];
+    [self.errorLabel setTextColor:[UIColor redColor]];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)orientation

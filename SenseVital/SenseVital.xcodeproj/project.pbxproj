@@ -46,6 +46,30 @@
 		3E04F65F1901A520006485D9 /* DeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F65E1901A520006485D9 /* DeviceViewController.m */; };
 		3E04F66219066EAD006485D9 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F66119066EAD006485D9 /* ConnectViewController.m */; };
 		3E04F66619069213006485D9 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F66519069213006485D9 /* SettingsTableViewController.m */; };
+		3EF47FD619095F2500104D69 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC519095F2500104D69 /* AppIcon29x29.png */; };
+		3EF47FD719095F2500104D69 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC619095F2500104D69 /* AppIcon29x29@2x.png */; };
+		3EF47FD819095F2500104D69 /* AppIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC719095F2500104D69 /* AppIcon40x40.png */; };
+		3EF47FD919095F2500104D69 /* AppIcon40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC819095F2500104D69 /* AppIcon40x40@2x.png */; };
+		3EF47FDA19095F2500104D69 /* AppIcon50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC919095F2500104D69 /* AppIcon50x50.png */; };
+		3EF47FDB19095F2500104D69 /* AppIcon50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FCA19095F2500104D69 /* AppIcon50x50@2x.png */; };
+		3EF47FDC19095F2500104D69 /* AppIcon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FCB19095F2500104D69 /* AppIcon57x57.png */; };
+		3EF47FDD19095F2500104D69 /* AppIcon57x57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FCC19095F2500104D69 /* AppIcon57x57@2x.png */; };
+		3EF47FDE19095F2500104D69 /* AppIcon60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FCD19095F2500104D69 /* AppIcon60x60.png */; };
+		3EF47FDF19095F2500104D69 /* AppIcon60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FCE19095F2500104D69 /* AppIcon60x60@2x.png */; };
+		3EF47FE019095F2500104D69 /* AppIcon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FCF19095F2500104D69 /* AppIcon72x72.png */; };
+		3EF47FE119095F2500104D69 /* AppIcon72x72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FD019095F2500104D69 /* AppIcon72x72@2x.png */; };
+		3EF47FE219095F2500104D69 /* AppIcon76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FD119095F2500104D69 /* AppIcon76x76.png */; };
+		3EF47FE319095F2500104D69 /* AppIcon76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FD219095F2500104D69 /* AppIcon76x76@2x.png */; };
+		3EF47FE519095F2500104D69 /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FD419095F2500104D69 /* iTunesArtwork.png */; };
+		3EF47FE619095F2500104D69 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FD519095F2500104D69 /* iTunesArtwork@2x.png */; };
+		3EF47FEF19095F3000104D69 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FE819095F3000104D69 /* Background.png */; };
+		3EF47FF019095F3000104D69 /* Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FE919095F3000104D69 /* Background@2x.png */; };
+		3EF47FF219095F3000104D69 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FEB19095F3000104D69 /* Icon.png */; };
+		3EF47FF319095F3000104D69 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FEC19095F3000104D69 /* Icon@2x.png */; };
+		3EF47FF419095F3000104D69 /* LandingHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FED19095F3000104D69 /* LandingHeader.png */; };
+		3EF47FF519095F3000104D69 /* LandingHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FEE19095F3000104D69 /* LandingHeader@2x.png */; };
+		3EF47FF819096EC900104D69 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FF619096EC900104D69 /* Settings.png */; };
+		3EF47FF919096EC900104D69 /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FF719096EC900104D69 /* Settings@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +138,30 @@
 		3E04F66119066EAD006485D9 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
 		3E04F66419069213006485D9 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		3E04F66519069213006485D9 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		3EF47FC519095F2500104D69 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
+		3EF47FC619095F2500104D69 /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
+		3EF47FC719095F2500104D69 /* AppIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon40x40.png; sourceTree = "<group>"; };
+		3EF47FC819095F2500104D69 /* AppIcon40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon40x40@2x.png"; sourceTree = "<group>"; };
+		3EF47FC919095F2500104D69 /* AppIcon50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon50x50.png; sourceTree = "<group>"; };
+		3EF47FCA19095F2500104D69 /* AppIcon50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon50x50@2x.png"; sourceTree = "<group>"; };
+		3EF47FCB19095F2500104D69 /* AppIcon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon57x57.png; sourceTree = "<group>"; };
+		3EF47FCC19095F2500104D69 /* AppIcon57x57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon57x57@2x.png"; sourceTree = "<group>"; };
+		3EF47FCD19095F2500104D69 /* AppIcon60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon60x60.png; sourceTree = "<group>"; };
+		3EF47FCE19095F2500104D69 /* AppIcon60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@2x.png"; sourceTree = "<group>"; };
+		3EF47FCF19095F2500104D69 /* AppIcon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon72x72.png; sourceTree = "<group>"; };
+		3EF47FD019095F2500104D69 /* AppIcon72x72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon72x72@2x.png"; sourceTree = "<group>"; };
+		3EF47FD119095F2500104D69 /* AppIcon76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon76x76.png; sourceTree = "<group>"; };
+		3EF47FD219095F2500104D69 /* AppIcon76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon76x76@2x.png"; sourceTree = "<group>"; };
+		3EF47FD419095F2500104D69 /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iTunesArtwork.png; sourceTree = "<group>"; };
+		3EF47FD519095F2500104D69 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		3EF47FE819095F3000104D69 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
+		3EF47FE919095F3000104D69 /* Background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Background@2x.png"; sourceTree = "<group>"; };
+		3EF47FEB19095F3000104D69 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		3EF47FEC19095F3000104D69 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		3EF47FED19095F3000104D69 /* LandingHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LandingHeader.png; sourceTree = "<group>"; };
+		3EF47FEE19095F3000104D69 /* LandingHeader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LandingHeader@2x.png"; sourceTree = "<group>"; };
+		3EF47FF619096EC900104D69 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
+		3EF47FF719096EC900104D69 /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +207,7 @@
 		3E04F5D718FFF098006485D9 = {
 			isa = PBXGroup;
 			children = (
+				3EF47FC319095EA300104D69 /* Assets */,
 				3E04F65319018B88006485D9 /* UIUtils */,
 				3E04F64119000183006485D9 /* SDK.h */,
 				3E04F63519000179006485D9 /* VitalConnectLib */,
@@ -203,6 +252,7 @@
 		3E04F5E918FFF099006485D9 /* SenseVital */ = {
 			isa = PBXGroup;
 			children = (
+				3E04F5EA18FFF099006485D9 /* Supporting Files */,
 				3E04F663190691F1006485D9 /* Settings */,
 				3E04F64619001849006485D9 /* Connect */,
 				3E04F6471900185E006485D9 /* Measuring */,
@@ -212,7 +262,6 @@
 				3E04F5F318FFF099006485D9 /* AppDelegate.m */,
 				3E04F5F518FFF099006485D9 /* Main.storyboard */,
 				3E04F5FE18FFF099006485D9 /* Images.xcassets */,
-				3E04F5EA18FFF099006485D9 /* Supporting Files */,
 				3E04F64B19003747006485D9 /* LoginViewController.h */,
 				3E04F64C19003747006485D9 /* LoginViewController.m */,
 				3E04F65019017D37006485D9 /* Factory.h */,
@@ -306,6 +355,53 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		3EF47FC319095EA300104D69 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				3EF47FE719095F3000104D69 /* VitalConnectIOS_iPhone_assets */,
+				3EF47FC419095F2500104D69 /* App Icon [Squared] */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		3EF47FC419095F2500104D69 /* App Icon [Squared] */ = {
+			isa = PBXGroup;
+			children = (
+				3EF47FC519095F2500104D69 /* AppIcon29x29.png */,
+				3EF47FC619095F2500104D69 /* AppIcon29x29@2x.png */,
+				3EF47FC719095F2500104D69 /* AppIcon40x40.png */,
+				3EF47FC819095F2500104D69 /* AppIcon40x40@2x.png */,
+				3EF47FC919095F2500104D69 /* AppIcon50x50.png */,
+				3EF47FCA19095F2500104D69 /* AppIcon50x50@2x.png */,
+				3EF47FCB19095F2500104D69 /* AppIcon57x57.png */,
+				3EF47FCC19095F2500104D69 /* AppIcon57x57@2x.png */,
+				3EF47FCD19095F2500104D69 /* AppIcon60x60.png */,
+				3EF47FCE19095F2500104D69 /* AppIcon60x60@2x.png */,
+				3EF47FCF19095F2500104D69 /* AppIcon72x72.png */,
+				3EF47FD019095F2500104D69 /* AppIcon72x72@2x.png */,
+				3EF47FD119095F2500104D69 /* AppIcon76x76.png */,
+				3EF47FD219095F2500104D69 /* AppIcon76x76@2x.png */,
+				3EF47FD419095F2500104D69 /* iTunesArtwork.png */,
+				3EF47FD519095F2500104D69 /* iTunesArtwork@2x.png */,
+			);
+			path = "App Icon [Squared]";
+			sourceTree = "<group>";
+		};
+		3EF47FE719095F3000104D69 /* VitalConnectIOS_iPhone_assets */ = {
+			isa = PBXGroup;
+			children = (
+				3EF47FF619096EC900104D69 /* Settings.png */,
+				3EF47FF719096EC900104D69 /* Settings@2x.png */,
+				3EF47FE819095F3000104D69 /* Background.png */,
+				3EF47FE919095F3000104D69 /* Background@2x.png */,
+				3EF47FEB19095F3000104D69 /* Icon.png */,
+				3EF47FEC19095F3000104D69 /* Icon@2x.png */,
+				3EF47FED19095F3000104D69 /* LandingHeader.png */,
+				3EF47FEE19095F3000104D69 /* LandingHeader@2x.png */,
+			);
+			path = VitalConnectIOS_iPhone_assets;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -386,8 +482,32 @@
 			buildActionMask = 2147483647;
 			files = (
 				3E04F5FF18FFF099006485D9 /* Images.xcassets in Resources */,
+				3EF47FDE19095F2500104D69 /* AppIcon60x60.png in Resources */,
+				3EF47FF019095F3000104D69 /* Background@2x.png in Resources */,
+				3EF47FD819095F2500104D69 /* AppIcon40x40.png in Resources */,
+				3EF47FEF19095F3000104D69 /* Background.png in Resources */,
+				3EF47FD919095F2500104D69 /* AppIcon40x40@2x.png in Resources */,
+				3EF47FF419095F3000104D69 /* LandingHeader.png in Resources */,
+				3EF47FF919096EC900104D69 /* Settings@2x.png in Resources */,
+				3EF47FD719095F2500104D69 /* AppIcon29x29@2x.png in Resources */,
 				3E04F5EE18FFF099006485D9 /* InfoPlist.strings in Resources */,
+				3EF47FDB19095F2500104D69 /* AppIcon50x50@2x.png in Resources */,
+				3EF47FF819096EC900104D69 /* Settings.png in Resources */,
 				3E04F5F718FFF099006485D9 /* Main.storyboard in Resources */,
+				3EF47FDC19095F2500104D69 /* AppIcon57x57.png in Resources */,
+				3EF47FE519095F2500104D69 /* iTunesArtwork.png in Resources */,
+				3EF47FF219095F3000104D69 /* Icon.png in Resources */,
+				3EF47FE619095F2500104D69 /* iTunesArtwork@2x.png in Resources */,
+				3EF47FD619095F2500104D69 /* AppIcon29x29.png in Resources */,
+				3EF47FDF19095F2500104D69 /* AppIcon60x60@2x.png in Resources */,
+				3EF47FDD19095F2500104D69 /* AppIcon57x57@2x.png in Resources */,
+				3EF47FDA19095F2500104D69 /* AppIcon50x50.png in Resources */,
+				3EF47FF319095F3000104D69 /* Icon@2x.png in Resources */,
+				3EF47FE019095F2500104D69 /* AppIcon72x72.png in Resources */,
+				3EF47FE119095F2500104D69 /* AppIcon72x72@2x.png in Resources */,
+				3EF47FE319095F2500104D69 /* AppIcon76x76@2x.png in Resources */,
+				3EF47FF519095F3000104D69 /* LandingHeader@2x.png in Resources */,
+				3EF47FE219095F2500104D69 /* AppIcon76x76.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -653,6 +773,7 @@
 				3E04F61718FFF099006485D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3E04F61818FFF099006485D9 /* Build configuration list for PBXNativeTarget "SenseVitalTests" */ = {
 			isa = XCConfigurationList;
@@ -661,6 +782,7 @@
 				3E04F61A18FFF099006485D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
