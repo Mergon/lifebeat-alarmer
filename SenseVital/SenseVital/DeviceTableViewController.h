@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "VitalConnect.h"
-
-@interface DeviceTableViewController : UITableViewController <VitalConnectConnectionListener>
+#import <CoreBluetooth/CoreBluetooth.h>
+@interface DeviceTableViewController : UITableViewController <VitalConnectConnectionListener, CBCentralManagerDelegate>
 
 @end

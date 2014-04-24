@@ -16,6 +16,7 @@ static const NSString* accYKey = @"y";
 static const NSString* accZKey = @"z";
 static const NSString* heartValueKey = @"heart value";
 static NSString* VCSensorNameKey = @"CSVTSensorName";
+static NSString* VCSensorDeviceKey = @"CSVTSensorDevice";
 static NSString* VCHFDataKey = @"CSVTHFData";
 
 @implementation CSVitalConnectSensor {
