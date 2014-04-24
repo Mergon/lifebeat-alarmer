@@ -15,4 +15,5 @@
 @property (nonatomic, retain) IBOutlet UITextField* usernameTextField;
 @property (nonatomic, retain) IBOutlet UITextField* passwordTextField;
 @property (nonatomic, retain) IBOutlet UITextView* errorLabel;
+@property (nonatomic, retain) IBOutlet UIButton* signInButton;
 @end

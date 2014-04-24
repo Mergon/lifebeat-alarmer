@@ -14,6 +14,8 @@
 @property (nonatomic, retain) IBOutlet UILabel* hrLabel;
 @property (nonatomic, retain) IBOutlet UILabel* respirationLabel;
 @property (nonatomic, retain) IBOutlet UILabel* skinTemperatureLabel;
+@property (nonatomic, retain) IBOutlet UILabel* stepsLabel;
+@property (nonatomic, retain) IBOutlet UILabel* stressLevelLabel;
 
 @property (nonatomic, retain) IBOutlet UILabel* status;
 

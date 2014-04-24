@@ -33,10 +33,27 @@
     
     //subscribe to sensor data
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onNewData:) name:kCSNewSensorDataNotification object:nil];
+    
+    
+    NSString* pathToImageFile = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"png"];
+    UIImage* bgImage = [UIImage imageWithContentsOfFile:pathToImageFile];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
+
+    //make navigation bar transparant
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+                                                  forBarMetrics:UIBarMetricsDefault];
+    self.navigationController.navigationBar.shadowImage = [UIImage new];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.view.backgroundColor = [UIColor clearColor];
 }
 
-- (void) viewDidAppear:(BOOL)animated {
+- (void) viewWillAppear:(BOOL)animated {
+    //[self.navigationController setNavigationBarHidden:YES animated:NO];
     [self updateStatus];
+}
+
+- (void) viewDidDisappear:(BOOL)animated {
+  //[self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 - (void) updateStatus {
@@ -89,20 +106,16 @@
                 [self.hrLabel setText:[NSString stringWithFormat:@"%@", hr]];
             }
         });
-    } else if ([sensor isEqualToString:@"temperature"]) {
-        id temp = [notification.userInfo valueForKey:@"value"];
-        if ([temp isEqualToString:@"<null>"]) {
-            temp = @"--";
-        } else {
-            temp = CSroundedNumber([temp doubleValue], 2);
-        }
+    } else if ([sensor isEqualToString:@"step_count"]) {
+        id steps = [[notification.userInfo valueForKey:@"value"] valueForKey:@"total"];
+        steps = CSroundedNumber([steps doubleValue], 2);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             @autoreleasepool {
-                [self.skinTemperatureLabel setText:[NSString stringWithFormat:@"Skin temperature: %@ °C", temp]];
+                [self.stepsLabel setText:[NSString stringWithFormat:@"%@", steps]];
             }
         });
-    } else if ([sensor isEqualToString:@"stress"]) {
+    } else if ([sensor isEqualToString:@"respiration"]) {
         id respiration = [notification.userInfo valueForKey:@"value"];
         if ([respiration isEqualToString:@"<null>"]) {
             respiration = @"--";
@@ -112,7 +125,20 @@
         
         dispatch_async(dispatch_get_main_queue(), ^{
             @autoreleasepool {
-                [self.respirationLabel setText:[NSString stringWithFormat:@"Stress: %@ %%", respiration]];
+                [self.respirationLabel setText:[NSString stringWithFormat:@"%@ breaths / min", respiration]];
+            }
+        });
+    } else if ([sensor isEqualToString:@"stress"]) {
+        id stress = [notification.userInfo valueForKey:@"value"];
+        if ([stress isEqualToString:@"<null>"]) {
+            stress = @"--";
+        } else {
+            stress = CSroundedNumber([stress doubleValue], 0);
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            @autoreleasepool {
+                [self.stressLevelLabel setText:[NSString stringWithFormat:@"%@%%", stress]];
             }
         });
     }

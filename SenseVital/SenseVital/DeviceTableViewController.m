@@ -41,6 +41,10 @@
     [self.view addSubview:activityIndicatorView];
     activityIndicatorView.center = self.view.center;
     
+    NSString* pathToImageFile = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"png"];
+    UIImage* bgImage = [UIImage imageWithContentsOfFile:pathToImageFile];
+    [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
+    
     //initialize UIAlerts
     alertBluetoothNotSupported = [[UIAlertView alloc] initWithTitle:@"No bluetooth" message:@"Sorry, this device doesn't support bluetooth low energy and can't connect to a HealthPatch." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];
 }
@@ -92,6 +96,7 @@
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleDefault
                 reuseIdentifier:CellIdentifier];
+        cell.backgroundColor = [UIColor clearColor];
     }
     if (lastResults.count > indexPath.row)
     {
@@ -109,6 +114,8 @@
 
 - (void) connectToSensor:(VitalConnectSensor*) sensor {
     NSLog(@"Connecting to sensor %@.", sensor.name);
+    //ignore the user while connecting
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
     isScanning = NO;
     [[VitalConnectManager getSharedInstance] connectSensor:sensor forSensorSource:SDK_SENSOR_DATA_SOURCE_GUID];
     [activityIndicatorView startAnimating];
@@ -208,6 +215,7 @@
 -(void) didConnectToSensor:(VitalConnectSensor *)sensor
 {
     [activityIndicatorView stopAnimating];
+    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
     NSLog(@"Connected to %@.", sensor.name);
    [self performSegueWithIdentifier:@"Connected" sender:self];
 }
@@ -216,6 +224,7 @@
 {
     NSLog(@"Not connected to %@.", Uuid);
     [activityIndicatorView stopAnimating];
+    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Connection failed" message:@"Sorry, couldn't establish a connection to the HealthPatch." delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
     [alert show];
     
