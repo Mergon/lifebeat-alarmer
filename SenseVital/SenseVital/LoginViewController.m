@@ -46,7 +46,7 @@ static NSString* loginSucceedKey = @"LoginSucceed";
 }
 
 - (void) viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     if ([prefs boolForKey:loginSucceedKey]) {
         if ([prefs stringForKey:@"CSVTSensorName"]) {

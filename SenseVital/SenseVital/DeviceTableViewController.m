@@ -31,7 +31,6 @@
 {
     [super viewDidLoad];
     
-    [[VitalConnectManager getSharedInstance] addListener:self withNotificationsOnMainThread:YES];
     if ([self isViewLoaded]) {
         [self.tableView reloadData];
     }
@@ -55,6 +54,10 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [[VitalConnectManager getSharedInstance] addListener:self withNotificationsOnMainThread:YES];
+}
+
 - (void) viewDidAppear:(BOOL)animated {
     [self checkBluetoothEnabledAndAvailable];
     [self.tableView reloadData];
@@ -65,6 +68,8 @@
     if (isScanning) {
         [[VitalConnectManager getSharedInstance] stopScan];
     }
+    
+    [[VitalConnectManager getSharedInstance] removeListener:self];
 }
 
 - (void) checkBluetoothEnabledAndAvailable {

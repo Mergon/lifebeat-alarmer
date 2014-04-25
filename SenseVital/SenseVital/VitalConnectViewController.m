@@ -6,13 +6,21 @@
 //  Copyright (c) 2013 Sense Observation Systems BV. All rights reserved.
 //
 
-#import "VitalConnectTabViewController.h"
+#import "VitalConnectViewController.h"
 
 #import "CSVitalConnectSensor.h"
 #import <Cortex/CSSensePlatform.h>
 #import "Factory.h"
 
-@implementation VitalConnectTabViewController {
+static NSString* kVCStatusTrackingDisabled = @"Tracking disabled";
+static NSString* kVCStatusScanning = @"Scanning...";
+static NSString* kVCStatusConnecting = @"Connecting...";
+static NSString* kVCStatusNotOnBody = @"Not on body";
+static NSString* kVCStatusConnected = @"Connected";
+static NSString* kVCStatusDisconnected = @"Disconnected";
+
+
+@implementation VitalConnectViewController {
     CSVitalConnectSensor* vitalConnectSensor;
 }
 
@@ -31,10 +39,6 @@
 	// Do any additional setup after loading the view.
     vitalConnectSensor = [Factory sharedFactory].csVitalConnectSensor;
     
-    //subscribe to sensor data
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onNewData:) name:kCSNewSensorDataNotification object:nil];
-    
-    
     NSString* pathToImageFile = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"png"];
     UIImage* bgImage = [UIImage imageWithContentsOfFile:pathToImageFile];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
@@ -48,38 +52,41 @@
 }
 
 - (void) viewWillAppear:(BOOL)animated {
-    //[self.navigationController setNavigationBarHidden:YES animated:NO];
-    [self updateStatus];
-}
-
-- (void) viewDidDisappear:(BOOL)animated {
-  //[self.navigationController setNavigationBarHidden:NO animated:NO];
-}
-
-- (void) updateStatus {
-    NSString* status = @"Unknown";
-    //Is a sensor connected
-    
-    //Is the patch active?
-    VitalConnectSensor* sensor = [VitalConnectManager getSharedInstance].getActiveSensor;
-    if (sensor == nil) {
-        status = @"Not connected.";
+    //subscribe to sensor data
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onNewData:) name:kCSNewSensorDataNotification object:nil];
+    //subscribe to notifications to update the device state
+    if ([VitalConnectManager getSharedInstance].getActiveSensor != nil) {
+        [self updateStatusWith:kVCStatusConnected connected:YES];
     } else {
-        switch (sensor.patchStatus) {
-            case kPatchStatusApplied:
-                status = @"Connected and Wearing";
-                break;
-            case kPatchStatusPoorConnection:
-                status = @"Poor connection";
-                break;
-            case kPatchStatusRemoved:
-                status = @"Connected, but not wearing";
-                break;
-            case kPatchStatusUnknown:
-                status = @"Unknown";
-                break;
-        }
+        [self updateStatusWith:kVCStatusScanning connected:NO];
     }
+    [[VitalConnectManager getSharedInstance] addListener:self];
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [[VitalConnectManager getSharedInstance] removeListener:self];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void) setNoValues {
+    NSString* noValue = @"--";
+    [self.stepsLabel setText:noValue];
+    [self.respirationLabel setText:noValue];
+    [self.stressLevelLabel setText:noValue];
+}
+
+
+- (void) updateStatusWith:(NSString*) newStatus connected:(BOOL) connected{
+    NSString* status = @"Unknown";
+    if (NO == [Factory sharedFactory].csVitalConnectSensor.trackingEnabled) {
+        status = kVCStatusTrackingDisabled;
+    } else {
+        status = newStatus;
+    }
+    
+    if (NO == connected)
+        [self setNoValues];
+
     [self.status setText:status];
 }
 
@@ -156,6 +163,53 @@
 
 static NSNumber* CSroundedNumber(double number, int decimals) {
     return [NSNumber numberWithDouble:round(number * pow(10,decimals)) / pow(10,decimals)];
+}
+
+#pragma mark - VitalConnectConnectionListener implementation
+-(void) deviceAntennaStatusChange:(VCDeviceAntennaState)state {
+    NSLog(@"deviceAntennaStatusChange:%i", state);
+}
+
+-(void) sensorPairing:(VitalConnectSensor *)sensor {
+    NSLog(@"sensorPairing:");
+    [self updateStatusWith:kVCStatusScanning connected:NO];
+}
+
+-(void) sensorPaging:(VitalConnectSensor *)sensor {
+    NSLog(@"sensorPaging");
+    [self updateStatusWith:kVCStatusScanning connected:NO];
+}
+
+-(void) sensorAuthenticating:(VitalConnectSensor *)sensor {
+    NSLog(@"sensorAuthenticating");
+    [self updateStatusWith:kVCStatusConnecting connected:NO];
+}
+
+-(void) sensorSecuring:(VitalConnectSensor *)sensor {
+    NSLog(@"sensorSecuring");
+    [self updateStatusWith:kVCStatusConnecting connected:NO];
+    
+}
+
+-(void) didConnectToSensor:(VitalConnectSensor *)sensor {
+    NSLog(@"didConnectToSensor");
+    [self updateStatusWith:kVCStatusConnected connected:YES];
+}
+
+-(void) didNotConnectToSensorWithUuid:(NSString *)Uuid {
+    NSLog(@"didNotConnectToSensorWithUuid");
+    [self updateStatusWith:kVCStatusDisconnected connected:NO];
+}
+
+-(void) disconnectReceivedFromSensor:(VitalConnectSensor *)sensor {
+    NSLog(@"disconnectReceivedFromSensor");
+    [self updateStatusWith:kVCStatusDisconnected connected:NO];
+}
+
+
+-(void) didStartScanning {
+    NSLog(@"didStartScanningdidStartScanning");
+    [self updateStatusWith:kVCStatusScanning connected:NO];
 }
 
 @end

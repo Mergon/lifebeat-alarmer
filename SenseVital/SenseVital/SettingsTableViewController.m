@@ -32,6 +32,11 @@ static NSString* loginSucceedKey = @"LoginSucceed";
     NSString* pathToImageFile = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"png"];
     UIImage* bgImage = [UIImage imageWithContentsOfFile:pathToImageFile];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
+    
+    //set state of settings
+    self.trackingEnabledSwitch.on = [Factory sharedFactory].csVitalConnectSensor.trackingEnabled;
+    self.hfSwitch.on = [Factory sharedFactory].csVitalConnectSensor.HFData;
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
 }
@@ -96,12 +101,10 @@ static NSString* loginSucceedKey = @"LoginSucceed";
 
 #pragma mark - Actions
 - (IBAction) toggleTracking:(id)sender {
-    
+    [[Factory sharedFactory].csVitalConnectSensor setTrackingEnabled:self.trackingEnabledSwitch.on];
 }
 - (IBAction) toggleHFTracking:(id)sender {
-    if (sender == self.hfSwitch) {
-        [[Factory sharedFactory].csVitalConnectSensor setHFData:self.hfSwitch.on];
-    }
+    [[Factory sharedFactory].csVitalConnectSensor setHFData:self.hfSwitch.on];
     
 }
 - (IBAction) toggleWifiUploading:(id)sender {
@@ -113,7 +116,14 @@ static NSString* loginSucceedKey = @"LoginSucceed";
     
 }
 - (IBAction) uploadNow:(id)sender {
-    [CSSensePlatform flushData];
+    [self.uploadingActivityIndicator startAnimating];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^() {
+        [CSSensePlatform flushDataAndBlock];
+        sleep(1);
+        dispatch_async(dispatch_get_main_queue(), ^() {
+            [self.uploadingActivityIndicator stopAnimating];
+        });
+    });
 }
 
 - (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {

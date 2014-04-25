@@ -20,4 +20,5 @@
 @property (nonatomic, retain) IBOutlet UISwitch* hfSwitch;
 @property (nonatomic, retain) IBOutlet UISwitch* wifiUploadSwitch;
 @property (nonatomic, retain) IBOutlet UISwitch* trackingEnabledSwitch;
+@property (nonatomic, retain) IBOutlet UIActivityIndicatorView* uploadingActivityIndicator;
 @end

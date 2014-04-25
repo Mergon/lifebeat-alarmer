@@ -18,6 +18,9 @@ static const NSString* heartValueKey = @"heart value";
 static NSString* VCSensorNameKey = @"CSVTSensorName";
 static NSString* VCSensorDeviceKey = @"CSVTSensorDevice";
 static NSString* VCHFDataKey = @"CSVTHFData";
+static NSString* VCTrackingEnabledKey = @"CSVCTrackingEnabled";
+
+static NSString* sensorDescription = @"vital_connect";
 
 @implementation CSVitalConnectSensor {
     VitalConnectSensor* connectedSensor;
@@ -27,6 +30,8 @@ static NSString* VCHFDataKey = @"CSVTHFData";
     NSMutableArray* ecgData;
     double burstInterval;
     BOOL HFDataIsEnabled;
+    NSDate* keppAliveNotificationDate;
+    BOOL shouldKeepAlive;
 }
 
 - (id) init {
@@ -40,7 +45,12 @@ static NSString* VCHFDataKey = @"CSVTHFData";
         [self initVitalConnect];
 
         NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
-        [self setHFData:[prefs boolForKey:VCHFDataKey]];
+        if ([prefs objectForKey:VCHFDataKey] == nil) {
+            //default to YES
+            [self setHFData:YES];
+        } else {
+            [self setHFData:[prefs boolForKey:VCHFDataKey]];
+        }
     }
     return self;
 }
@@ -69,7 +79,6 @@ static NSString* VCHFDataKey = @"CSVTHFData";
 }
 
 - (void) processSensorData:(NSDictionary*) data {
-    NSString* sensorDescription = @"vital_connect";
    NSDictionary* keySensorMapping = [NSDictionary dictionaryWithObjectsAndKeys:
                                       @"activity_raw", kVCIObserverKeyActivity,
                                       @"battery", kVCIObserverKeyBatteryLevel,
@@ -132,8 +141,6 @@ static NSString* VCHFDataKey = @"CSVTHFData";
 #pragma mark -
 #pragma mark VitalConnectConnectionListener implementation
 
--(void) didSeeNewSensor:(VitalConnectSensor *)sensor {
-}
 
 -(void) didConnectToSensor:(VitalConnectSensor *)sensor {
     //wahoo!  we are connected!
@@ -143,30 +150,77 @@ static NSString* VCHFDataKey = @"CSVTHFData";
     sensorDeviceType = sensor.moduleType;
     sensorUUID = sensor.serialNumber;
     connectedSensor.highFrequencyData = HFDataIsEnabled;
-    
+    [self saveDeviceStatus:@"connected"];
     [self saveSensor];
     [self enable];
 }
+
+
+
+- (void) disconnectReceivedFromSensor:(VitalConnectSensor *)sensor {
+    [self saveDeviceStatus:@"disconnected"];
+}
+
+-(void) sensorPaging:(VitalConnectSensor *)sensor {
+    [self saveDeviceStatus:@"paging"];
+}
+
+-(void) didStartScanning {
+    [self saveDeviceStatus:@"start_scanning"];
+}
+
+- (void) didStopScanning {
+    [self saveDeviceStatus:@"stop_scanning"];
+}
+
+#pragma mark - Properties
 
 
 - (void) saveSensor {
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     [prefs setValue:connectedSensor.name forKey:VCSensorNameKey];
     [prefs synchronize];
+    self->shouldKeepAlive = YES;
 }
 
 - (void) forgetSensor {
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     [prefs setValue:nil forKey:VCSensorNameKey];
     [prefs synchronize];
+    self->shouldKeepAlive = NO;
 }
 
 - (void) reconnect {
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     NSString* sensorName = [prefs stringForKey:VCSensorNameKey];
+    self->shouldKeepAlive = YES;
     
-    if (sensorName != nil && _vitalConnectManager.getActiveSensor == nil) {
+    if (self.trackingEnabled && sensorName != nil && _vitalConnectManager.getActiveSensor == nil) {
         [_vitalConnectManager scanAndConnectSensorForName:sensorName forSensorSource:SDK_SENSOR_DATA_SOURCE_GUID];
+    }
+}
+
+- (void) setTrackingEnabled:(BOOL)trackingEnabled {
+    //save preference
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setBool:trackingEnabled forKey:VCTrackingEnabledKey];
+    [prefs synchronize];
+    
+    //disconnect the device
+    if (trackingEnabled) {
+        [self reconnect];
+    } else if (connectedSensor != nil) {
+        [self cancelKeepAliveNotification];
+        [_vitalConnectManager disconnectSensor:connectedSensor];
+    }
+}
+
+- (BOOL) trackingEnabled {
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:VCTrackingEnabledKey])
+        return [[NSUserDefaults standardUserDefaults] boolForKey:VCTrackingEnabledKey];
+    else {
+        //default is enabled
+        return YES;
     }
 }
 
@@ -199,7 +253,7 @@ static NSString* VCHFDataKey = @"CSVTHFData";
                            header, @"header",
                            sampleInterval, @"interval",
                            nil];
-    NSString* sensorDescription = @"vital_connect";
+
     [CSSensePlatform addDataPointForSensor:kCSSENSOR_ACCELEROMETER_BURST displayName:nil description:sensorDescription deviceType:sensorDeviceType deviceUUID:sensorUUID dataType:kCSDATA_TYPE_JSON jsonValue:value timestamp:[NSDate dateWithTimeIntervalSince1970:start]];
 }
 
@@ -218,6 +272,8 @@ typedef void (^dataCallback)(NSArray* data);
     }
 
     [array addObject:sample];
+    
+    [self keepAliveNotification];
 }
 
 - (void) processECGBurst:(NSArray*) burstData {
@@ -246,7 +302,7 @@ typedef void (^dataCallback)(NSArray* data);
                            header, @"header",
                            sampleInterval, @"interval",
                            nil];
-    NSString* sensorDescription = @"vital_connect";
+
     [CSSensePlatform addDataPointForSensor:@"ecg (burst-mode)" displayName:nil description:sensorDescription deviceType:sensorDeviceType deviceUUID:sensorUUID dataType:kCSDATA_TYPE_JSON jsonValue:value timestamp:[NSDate dateWithTimeIntervalSince1970:start]];
 }
 
@@ -301,7 +357,33 @@ static NSNumber* CSroundedNumber(double number, int decimals) {
     return HFDataIsEnabled;
 }
 
+#pragma mark - Notification
+- (void) cancelKeepAliveNotification {
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
+}
+- (void) keepAliveNotification {
+    if (self.trackingEnabled == NO || self->shouldKeepAlive == NO)
+        return;
+
+    if (self->keppAliveNotificationDate == nil || [self->keppAliveNotificationDate timeIntervalSinceNow] < -60) {
+        self->keppAliveNotificationDate = [NSDate date];
+        [self cancelKeepAliveNotification];
+        UILocalNotification* notification = [[UILocalNotification alloc] init];
+        notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:6 * 3600];
+        notification.timeZone = [NSTimeZone defaultTimeZone];
+        notification.alertBody = @"No connection to the HealthPatch for 6 hours. Try to regularly keep your HealthPatch within range of your phone.";
+        [[UIApplication sharedApplication] scheduleLocalNotification:notification];
+    }
+}
+
 #pragma mark - Helper functions
+
+- (void) saveDeviceStatus:(NSString*) status {
+    NSDate* timestamp = [NSDate date];
+    NSString* sensorName = @"connection";
+                [CSSensePlatform addDataPointForSensor:sensorName displayName:[self displayNameForSensor:sensorName] description:@"HealthPatch" dataType:kCSDATA_TYPE_STRING stringValue:status timestamp:timestamp];
+}
+
 static NSString* activityToString(VitalConnectPosture activity) {
     switch (activity) {
         case kPostureDriving:
@@ -331,4 +413,6 @@ static NSString* activityToString(VitalConnectPosture activity) {
     }
     return @"unknown";
 }
+
+
 @end

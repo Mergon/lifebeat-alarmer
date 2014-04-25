@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "VitalConnect.h"
 
-@interface VitalConnectTabViewController : UIViewController
+@interface VitalConnectViewController : UIViewController <VitalConnectConnectionListener>
 
 
 @property (nonatomic, retain) IBOutlet UILabel* hrLabel;

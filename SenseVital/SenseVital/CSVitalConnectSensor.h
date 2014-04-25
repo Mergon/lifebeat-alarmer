@@ -15,4 +15,5 @@
 
 @property (strong, nonatomic, readonly) VitalConnectManager* vitalConnectManager;
 @property BOOL HFData;
+@property BOOL trackingEnabled;
 @end
