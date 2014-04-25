@@ -30,7 +30,7 @@
 		3E04F62C18FFFFCB006485D9 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F62B18FFFFCB006485D9 /* CoreTelephony.framework */; };
 		3E04F62E18FFFFEA006485D9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F62D18FFFFEA006485D9 /* AudioToolbox.framework */; };
 		3E04F630190000FB006485D9 /* CSVitalConnectSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F62F190000FB006485D9 /* CSVitalConnectSensor.m */; };
-		3E04F63219000129006485D9 /* VitalConnectTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F63119000129006485D9 /* VitalConnectTabViewController.m */; };
+		3E04F63219000129006485D9 /* VitalConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F63119000129006485D9 /* VitalConnectViewController.m */; };
 		3E04F63C19000179006485D9 /* libfw_bundle_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F63619000179006485D9 /* libfw_bundle_ios.a */; };
 		3E04F63D19000179006485D9 /* libjansson_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F63719000179006485D9 /* libjansson_ios.a */; };
 		3E04F63E19000179006485D9 /* librslib_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F63819000179006485D9 /* librslib_ios.a */; };
@@ -110,8 +110,8 @@
 		3E04F62B18FFFFCB006485D9 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		3E04F62D18FFFFEA006485D9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		3E04F62F190000FB006485D9 /* CSVitalConnectSensor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSVitalConnectSensor.m; sourceTree = "<group>"; };
-		3E04F63119000129006485D9 /* VitalConnectTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VitalConnectTabViewController.m; sourceTree = "<group>"; };
-		3E04F63319000134006485D9 /* VitalConnectTabViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VitalConnectTabViewController.h; sourceTree = "<group>"; };
+		3E04F63119000129006485D9 /* VitalConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VitalConnectViewController.m; sourceTree = "<group>"; };
+		3E04F63319000134006485D9 /* VitalConnectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VitalConnectViewController.h; sourceTree = "<group>"; };
 		3E04F6341900014E006485D9 /* CSVitalConnectSensor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVitalConnectSensor.h; sourceTree = "<group>"; };
 		3E04F63619000179006485D9 /* libfw_bundle_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfw_bundle_ios.a; sourceTree = "<group>"; };
 		3E04F63719000179006485D9 /* libjansson_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjansson_ios.a; sourceTree = "<group>"; };
@@ -329,8 +329,8 @@
 		3E04F6471900185E006485D9 /* Measuring */ = {
 			isa = PBXGroup;
 			children = (
-				3E04F63319000134006485D9 /* VitalConnectTabViewController.h */,
-				3E04F63119000129006485D9 /* VitalConnectTabViewController.m */,
+				3E04F63319000134006485D9 /* VitalConnectViewController.h */,
+				3E04F63119000129006485D9 /* VitalConnectViewController.m */,
 			);
 			name = Measuring;
 			sourceTree = "<group>";
@@ -534,7 +534,7 @@
 				3E04F65F1901A520006485D9 /* DeviceViewController.m in Sources */,
 				3E04F64919002481006485D9 /* DeviceTableViewController.m in Sources */,
 				3E04F5F018FFF099006485D9 /* main.m in Sources */,
-				3E04F63219000129006485D9 /* VitalConnectTabViewController.m in Sources */,
+				3E04F63219000129006485D9 /* VitalConnectViewController.m in Sources */,
 				3E04F66219066EAD006485D9 /* ConnectViewController.m in Sources */,
 				3E04F65219017D37006485D9 /* Factory.m in Sources */,
 				3E04F65C19018C1D006485D9 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
