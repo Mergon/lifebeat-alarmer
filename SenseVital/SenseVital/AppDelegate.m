@@ -33,6 +33,10 @@
 
     return YES;
 }
+
+- (NSUInteger) supportedInterfaceOrientationsForWindow:(UIWindow*) window {
+    return UIInterfaceOrientationPortrait;
+}
 							
 - (void)applicationWillResignActive:(UIApplication *)application
 {

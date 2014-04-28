@@ -10,5 +10,5 @@
 
 @interface ConnectViewController : UIViewController
 
-- (IBAction) watchVideo:(id)sender;
+@property (nonatomic, retain) IBOutlet UIView* videoView;
 @end

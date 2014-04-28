@@ -46,6 +46,8 @@
 		3E04F65F1901A520006485D9 /* DeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F65E1901A520006485D9 /* DeviceViewController.m */; };
 		3E04F66219066EAD006485D9 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F66119066EAD006485D9 /* ConnectViewController.m */; };
 		3E04F66619069213006485D9 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F66519069213006485D9 /* SettingsTableViewController.m */; };
+		3E7AFDBE190EA99D003D2C98 /* instruction.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AFDBD190EA977003D2C98 /* instruction.mp4 */; };
+		3E7AFDC1190EB01F003D2C98 /* OrientationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AFDC0190EB01F003D2C98 /* OrientationNavigationController.m */; };
 		3EF47FD619095F2500104D69 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC519095F2500104D69 /* AppIcon29x29.png */; };
 		3EF47FD719095F2500104D69 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC619095F2500104D69 /* AppIcon29x29@2x.png */; };
 		3EF47FD819095F2500104D69 /* AppIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC719095F2500104D69 /* AppIcon40x40.png */; };
@@ -138,6 +140,9 @@
 		3E04F66119066EAD006485D9 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
 		3E04F66419069213006485D9 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
 		3E04F66519069213006485D9 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		3E7AFDBD190EA977003D2C98 /* instruction.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = instruction.mp4; sourceTree = "<group>"; };
+		3E7AFDBF190EB01F003D2C98 /* OrientationNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientationNavigationController.h; sourceTree = "<group>"; };
+		3E7AFDC0190EB01F003D2C98 /* OrientationNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientationNavigationController.m; sourceTree = "<group>"; };
 		3EF47FC519095F2500104D69 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
 		3EF47FC619095F2500104D69 /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
 		3EF47FC719095F2500104D69 /* AppIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon40x40.png; sourceTree = "<group>"; };
@@ -207,6 +212,7 @@
 		3E04F5D718FFF098006485D9 = {
 			isa = PBXGroup;
 			children = (
+				3E7AFDBC190EA964003D2C98 /* Videos */,
 				3EF47FC319095EA300104D69 /* Assets */,
 				3E04F65319018B88006485D9 /* UIUtils */,
 				3E04F64119000183006485D9 /* SDK.h */,
@@ -266,6 +272,8 @@
 				3E04F64C19003747006485D9 /* LoginViewController.m */,
 				3E04F65019017D37006485D9 /* Factory.h */,
 				3E04F65119017D37006485D9 /* Factory.m */,
+				3E7AFDBF190EB01F003D2C98 /* OrientationNavigationController.h */,
+				3E7AFDC0190EB01F003D2C98 /* OrientationNavigationController.m */,
 			);
 			path = SenseVital;
 			sourceTree = "<group>";
@@ -353,6 +361,14 @@
 				3E04F66519069213006485D9 /* SettingsTableViewController.m */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		3E7AFDBC190EA964003D2C98 /* Videos */ = {
+			isa = PBXGroup;
+			children = (
+				3E7AFDBD190EA977003D2C98 /* instruction.mp4 */,
+			);
+			name = Videos;
 			sourceTree = "<group>";
 		};
 		3EF47FC319095EA300104D69 /* Assets */ = {
@@ -481,6 +497,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E7AFDBE190EA99D003D2C98 /* instruction.mp4 in Resources */,
 				3E04F5FF18FFF099006485D9 /* Images.xcassets in Resources */,
 				3EF47FDE19095F2500104D69 /* AppIcon60x60.png in Resources */,
 				3EF47FF019095F3000104D69 /* Background@2x.png in Resources */,
@@ -534,6 +551,7 @@
 				3E04F65F1901A520006485D9 /* DeviceViewController.m in Sources */,
 				3E04F64919002481006485D9 /* DeviceTableViewController.m in Sources */,
 				3E04F5F018FFF099006485D9 /* main.m in Sources */,
+				3E7AFDC1190EB01F003D2C98 /* OrientationNavigationController.m in Sources */,
 				3E04F63219000129006485D9 /* VitalConnectViewController.m in Sources */,
 				3E04F66219066EAD006485D9 /* ConnectViewController.m in Sources */,
 				3E04F65219017D37006485D9 /* Factory.m in Sources */,
