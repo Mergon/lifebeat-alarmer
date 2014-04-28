@@ -40,9 +40,9 @@
     [self.view addSubview:activityIndicatorView];
     activityIndicatorView.center = self.view.center;
     
-    NSString* pathToImageFile = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"png"];
-    UIImage* bgImage = [UIImage imageWithContentsOfFile:pathToImageFile];
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
+    //NSString* pathToImageFile = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"png"];
+    //UIImage* bgImage = [UIImage imageWithContentsOfFile:pathToImageFile];
+    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
     
     //initialize UIAlerts
     alertBluetoothNotSupported = [[UIAlertView alloc] initWithTitle:@"No bluetooth" message:@"Sorry, this device doesn't support bluetooth low energy and can't connect to a HealthPatch." delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles: nil];

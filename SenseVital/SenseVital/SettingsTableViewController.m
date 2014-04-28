@@ -29,9 +29,9 @@ static NSString* loginSucceedKey = @"LoginSucceed";
     [super viewDidLoad];
     signOutAlertView = [[UIAlertView alloc] initWithTitle:@"Sign out" message:@"Are you sure you want to sign out of CommonSense?" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"Sign out", nil];
     
-    NSString* pathToImageFile = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"png"];
-    UIImage* bgImage = [UIImage imageWithContentsOfFile:pathToImageFile];
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
+    //NSString* pathToImageFile = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"png"];
+    //UIImage* bgImage = [UIImage imageWithContentsOfFile:pathToImageFile];
+    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
     
     //set state of settings
     self.trackingEnabledSwitch.on = [Factory sharedFactory].csVitalConnectSensor.trackingEnabled;

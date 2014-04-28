@@ -29,9 +29,9 @@
 {
     [super viewDidLoad];
     
-    NSString* pathToImageFile = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"png"];
-    UIImage* bgImage = [UIImage imageWithContentsOfFile:pathToImageFile];
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
+    //NSString* pathToImageFile = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"png"];
+    //UIImage* bgImage = [UIImage imageWithContentsOfFile:pathToImageFile];
+    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -44,7 +44,7 @@
     NSString* identifier = [NSString stringWithFormat:@"%@", sensor.name];
     NSString* serial = [NSString stringWithFormat:@"UUID: %@", sensor.serialNumber];
     NSString* battery = [NSString stringWithFormat:@"Battery: %@%%", sensor.batteryLevel];
-    NSString* freeMem = [NSString stringWithFormat:@"Memory free: %@%%", sensor.freeMemory];
+    NSString* freeMem = [NSString stringWithFormat:@"Memory used: %i%%", 100 - [sensor.freeMemory intValue]];
     NSString* firmware = [NSString stringWithFormat:@"Firmware: %@", sensor.firmwareVersion];
     [self.modelLabel setText:identifier];
     [self.serialLabel setText:serial];
