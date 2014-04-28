@@ -23,12 +23,20 @@
     return self;
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    //self.navigationController.navigationBarHidden = YES;
+}
+
+- (void) viewDidDisappear:(BOOL)animated {
+    //self.navigationController.navigationBarHidden = NO;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString* pathToImageFile = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"png"];
-    UIImage* bgImage = [UIImage imageWithContentsOfFile:pathToImageFile];
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
+    //NSString* pathToImageFile = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"png"];
+    //UIImage* bgImage = [UIImage imageWithContentsOfFile:pathToImageFile];
+    //[self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
 }
 
 - (void)didReceiveMemoryWarning

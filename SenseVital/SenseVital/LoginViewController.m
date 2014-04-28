@@ -18,6 +18,8 @@ static NSString* loginSucceedKey = @"LoginSucceed";
 @implementation LoginViewController {
     BOOL keyboardVisible;
     CGPoint offset;
+    NSString* originalText;
+    UIColor* originalColor;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -43,6 +45,15 @@ static NSString* loginSucceedKey = @"LoginSucceed";
         element.layer.cornerRadius = 4.0;
         element.layer.borderWidth = 1.0;
     }
+    
+    originalText = self.errorLabel.text;
+    originalColor = self.errorLabel.textColor;
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.errorLabel setText:originalText];
+    [self.errorLabel setTextColor: originalColor];
 }
 
 - (void) viewDidAppear:(BOOL)animated {

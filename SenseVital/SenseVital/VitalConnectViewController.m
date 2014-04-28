@@ -22,6 +22,7 @@ static NSString* kVCStatusDisconnected = @"Disconnected";
 
 @implementation VitalConnectViewController {
     CSVitalConnectSensor* vitalConnectSensor;
+    UIImage* shadowImageBackup;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -42,13 +43,9 @@ static NSString* kVCStatusDisconnected = @"Disconnected";
     NSString* pathToImageFile = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"png"];
     UIImage* bgImage = [UIImage imageWithContentsOfFile:pathToImageFile];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
+    
+    shadowImageBackup = self.navigationController.navigationBar.shadowImage;
 
-    //make navigation bar transparant
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage new]
-                                                  forBarMetrics:UIBarMetricsDefault];
-    self.navigationController.navigationBar.shadowImage = [UIImage new];
-    self.navigationController.navigationBar.translucent = YES;
-    self.navigationController.view.backgroundColor = [UIColor clearColor];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -61,6 +58,14 @@ static NSString* kVCStatusDisconnected = @"Disconnected";
         [self updateStatusWith:kVCStatusScanning connected:NO];
     }
     [[VitalConnectManager getSharedInstance] addListener:self];
+    
+    
+    //make navigation bar transparant
+    //[self.navigationController.navigationBar setBackgroundImage:[UIImage new]
+    //                                              forBarMetrics:UIBarMetricsDefault];
+    //self.navigationController.navigationBar.shadowImage = [UIImage new];
+    //self.navigationController.navigationBar.translucent = YES;
+    //self.navigationController.view.backgroundColor = [UIColor clearColor];
 }
 
 - (void) viewWillDisappear:(BOOL)animated {

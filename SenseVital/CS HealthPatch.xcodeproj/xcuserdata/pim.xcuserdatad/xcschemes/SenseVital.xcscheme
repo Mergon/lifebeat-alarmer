@@ -17,7 +17,7 @@
                BlueprintIdentifier = "3E04F5DF18FFF098006485D9"
                BuildableName = "SenseVital.app"
                BlueprintName = "SenseVital"
-               ReferencedContainer = "container:SenseVital.xcodeproj">
+               ReferencedContainer = "container:CS HealthPatch.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "3E04F60318FFF099006485D9"
                BuildableName = "SenseVitalTests.xctest"
                BlueprintName = "SenseVitalTests"
-               ReferencedContainer = "container:SenseVital.xcodeproj">
+               ReferencedContainer = "container:CS HealthPatch.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +45,7 @@
             BlueprintIdentifier = "3E04F5DF18FFF098006485D9"
             BuildableName = "SenseVital.app"
             BlueprintName = "SenseVital"
-            ReferencedContainer = "container:SenseVital.xcodeproj">
+            ReferencedContainer = "container:CS HealthPatch.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -64,7 +64,7 @@
             BlueprintIdentifier = "3E04F5DF18FFF098006485D9"
             BuildableName = "SenseVital.app"
             BlueprintName = "SenseVital"
-            ReferencedContainer = "container:SenseVital.xcodeproj">
+            ReferencedContainer = "container:CS HealthPatch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -82,7 +82,7 @@
             BlueprintIdentifier = "3E04F5DF18FFF098006485D9"
             BuildableName = "SenseVital.app"
             BlueprintName = "SenseVital"
-            ReferencedContainer = "container:SenseVital.xcodeproj">
+            ReferencedContainer = "container:CS HealthPatch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
