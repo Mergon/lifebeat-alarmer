@@ -22,7 +22,7 @@ static NSString* kVCStatusDisconnected = @"Disconnected";
 
 @implementation VitalConnectViewController {
     CSVitalConnectSensor* vitalConnectSensor;
-    UIImage* shadowImageBackup;
+    NSMutableDictionary* lastValues;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -44,7 +44,7 @@ static NSString* kVCStatusDisconnected = @"Disconnected";
     UIImage* bgImage = [UIImage imageWithContentsOfFile:pathToImageFile];
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
     
-    shadowImageBackup = self.navigationController.navigationBar.shadowImage;
+    lastValues = [[NSMutableDictionary alloc] init];
 
 }
 
@@ -103,7 +103,20 @@ static NSString* kVCStatusDisconnected = @"Disconnected";
 
 - (void) onNewData:(NSNotification*)notification {
     @try {
-    NSString* sensor = notification.object;
+        NSString* sensor = notification.object;
+        NSTimeInterval dateUnix = [[notification.userInfo valueForKey:@"date"] doubleValue];
+        NSDate* date = [NSDate dateWithTimeIntervalSince1970:dateUnix];
+        NSDate* previousDate = [lastValues valueForKey:sensor];
+        NSTimeInterval dt = [date timeIntervalSinceDate:previousDate];
+        
+        if ((previousDate != nil && dt < 0) || [date timeIntervalSinceNow] < -60) {
+            //ignore earlier data, so as only show the real-time values and not the buffered data that is being synchronized
+            //also ignore data more than a minute old, to filter if the first value we get is a buffered data point
+            return;
+        }
+        
+        [lastValues setValue:date forKey:sensor];
+        
     if ([sensor isEqualToString:@"heart_rate"]) {
         id hr = [notification.userInfo valueForKey:@"value"];
         if ([hr isEqualToString:@"<null>"]) {
