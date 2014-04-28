@@ -99,6 +99,22 @@ static NSString* loginSucceedKey = @"LoginSucceed";
 }
 */
 
+//Only support Portrait
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationPortrait;
+}
+
 #pragma mark - Actions
 - (IBAction) toggleTracking:(id)sender {
     [[Factory sharedFactory].csVitalConnectSensor setTrackingEnabled:self.trackingEnabledSwitch.on];

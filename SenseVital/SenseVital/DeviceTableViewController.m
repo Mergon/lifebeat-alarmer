@@ -166,11 +166,21 @@
 }
 */
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)orientation
+//Only support Portrait
+- (BOOL)shouldAutorotate
 {
-    return orientation == UIInterfaceOrientationPortrait;
+    return NO;
 }
 
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationPortrait;
+}
 /*
 #pragma mark - Navigation
 

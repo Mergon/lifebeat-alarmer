@@ -7,12 +7,16 @@
 //
 
 #import "ConnectViewController.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface ConnectViewController ()
 
 @end
 
-@implementation ConnectViewController
+@implementation ConnectViewController {
+    MPMoviePlayerController* moviePlayer;
+    UIImageView* thumbnailView;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,36 +27,71 @@
     return self;
 }
 
-- (void) viewWillAppear:(BOOL)animated {
-    //self.navigationController.navigationBarHidden = YES;
-}
-
-- (void) viewDidDisappear:(BOOL)animated {
-    //self.navigationController.navigationBarHidden = NO;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     //NSString* pathToImageFile = [[NSBundle mainBundle] pathForResource:@"Background" ofType:@"png"];
     //UIImage* bgImage = [UIImage imageWithContentsOfFile:pathToImageFile];
     //[self.view setBackgroundColor:[UIColor colorWithPatternImage:bgImage]];
+    
+    //movieplayer initialization
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"instruction" ofType:@"mp4"];
+    NSURL *videoURL = [NSURL fileURLWithPath:path];
+    moviePlayer = [[MPMoviePlayerController alloc] initWithContentURL:videoURL];
+    moviePlayer.controlStyle = MPMovieControlStyleEmbedded;
+    moviePlayer.shouldAutoplay = NO;
+    
+    [moviePlayer.view setFrame: self.videoView.bounds];
+    [self.videoView addSubview: moviePlayer.view];
+    
+    
+    //Add thumbnail image
+    UIImage *thumbnail = [moviePlayer thumbnailImageAtTime:10.0
+                                                timeOption:MPMovieTimeOptionNearestKeyFrame];
+    
+    thumbnailView = [[UIImageView alloc] initWithImage:thumbnail];
+    thumbnailView.userInteractionEnabled = YES;
+//    thumbnailView.frame = moviePlayer.view.frame;
+    [thumbnailView setFrame:self.videoView.bounds];
+    [self.videoView addSubview:thumbnailView];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    tap.numberOfTapsRequired = 1;
+    [thumbnailView addGestureRecognizer:tap];
 }
 
+
+- (void)handleTap:(UITapGestureRecognizer *)gesture{
+    thumbnailView.hidden = YES;
+    [moviePlayer play];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [moviePlayer prepareToPlay];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)orientation
+
+//Only support Portrait
+- (BOOL)shouldAutorotate
 {
-    return orientation == UIInterfaceOrientationPortrait;
+    return NO;
 }
 
-- (IBAction) watchVideo:(id)sender {
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://vimeo.com/88111321"]];
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
 }
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationPortrait;
+}
+
 /*
 #pragma mark - Navigation
 

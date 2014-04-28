@@ -73,6 +73,24 @@ static NSString* kVCStatusDisconnected = @"Disconnected";
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+//Only support Portrait
+- (BOOL)shouldAutorotate
+{
+    return NO;
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
+{
+    return UIInterfaceOrientationPortrait;
+}
+
+
+
 - (void) setNoValues {
     NSString* noValue = @"--";
     [self.stepsLabel setText:noValue];
