@@ -46,10 +46,11 @@
     
     
     //Add thumbnail image
-    UIImage *thumbnail = [moviePlayer thumbnailImageAtTime:10.0
-                                                timeOption:MPMovieTimeOptionNearestKeyFrame];
+    //UIImage *thumbnail = [moviePlayer thumbnailImageAtTime:10.0
+    //                                            timeOption:MPMovieTimeOptionNearestKeyFrame];
+    NSString *thumbnailPath = [[NSBundle mainBundle] pathForResource:@"videothumb" ofType:@"png"];
     
-    thumbnailView = [[UIImageView alloc] initWithImage:thumbnail];
+    thumbnailView = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:thumbnailPath]];
     thumbnailView.userInteractionEnabled = YES;
 //    thumbnailView.frame = moviePlayer.view.frame;
     [thumbnailView setFrame:self.videoView.bounds];
@@ -69,6 +70,11 @@
 - (void) viewWillAppear:(BOOL)animated {
     [moviePlayer prepareToPlay];
 }
+
+- (void) viewWillDisappear:(BOOL)animated {
+    [moviePlayer pause ];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
