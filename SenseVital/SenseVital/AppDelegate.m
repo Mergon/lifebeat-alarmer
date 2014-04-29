@@ -30,6 +30,9 @@
     //initialize the factory
     [Factory sharedFactory];
     [[Factory sharedFactory].csVitalConnectSensor reconnect];
+    
+    //Immediately upload data, in case the app won't run for an hour, we'll at least upload all data we've collected so far.
+    [CSSensePlatform flushData];
 
     return YES;
 }
@@ -68,5 +71,6 @@
     [CSSensePlatform willTerminate];
     [self.vitalConnectManager applicationWillTerminate];
 }
+
 
 @end
