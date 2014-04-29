@@ -23,6 +23,9 @@ static NSString* kVCStatusDisconnected = @"Disconnected";
 @implementation VitalConnectViewController {
     CSVitalConnectSensor* vitalConnectSensor;
     NSMutableDictionary* lastValues;
+    NSTimeInterval rrInterval;
+    BOOL isBeating;
+    NSDate* lastRRDate;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -119,8 +122,35 @@ static NSString* kVCStatusDisconnected = @"Disconnected";
     // Dispose of any resources that can be recreated.
 }
 
+- (void) beatAnimation {
+    isBeating = YES;
+    
+    if (lastRRDate == nil || [lastRRDate timeIntervalSinceNow] < -3) {
+        isBeating = NO;
+        return;
+    }
+    
+    //one third up, 2 thirds 
+    NSTimeInterval growDuration = 0.2/3;
+    NSTimeInterval shrinkDuration = 0.2/3 * 2;
+    // instantaneously make the image view small (scaled to 1% of its actual size)
+    [UIView animateWithDuration:growDuration delay:0 options:0 animations:^{
+        // scale up
+        self.hrLabel.transform = CGAffineTransformMakeScale(1.1, 1.1);
+    } completion:^(BOOL finished){
+        [UIView animateWithDuration:shrinkDuration delay:0 options:0 animations:^{
+            //scale down
+             self.hrLabel.transform = CGAffineTransformIdentity;
+        } completion:^(BOOL finished){
+        }];
+    }];
+
+    [self performSelector:@selector(beatAnimation) withObject:nil afterDelay:rrInterval];
+}
+
 - (void) onNewData:(NSNotification*)notification {
     @try {
+        
         NSString* sensor = notification.object;
         NSTimeInterval dateUnix = [[notification.userInfo valueForKey:@"date"] doubleValue];
         NSDate* date = [NSDate dateWithTimeIntervalSince1970:dateUnix];
@@ -184,6 +214,14 @@ static NSString* kVCStatusDisconnected = @"Disconnected";
                 [self.stressLevelLabel setText:[NSString stringWithFormat:@"%@%%", stress]];
             }
         });
+    } else if ([sensor isEqualToString:@"rr_interval"]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            @autoreleasepool {
+                rrInterval = [[notification.userInfo valueForKey:@"value"] doubleValue] / 1000;
+                lastRRDate = date;
+                if (NO == isBeating)
+                    [self beatAnimation];
+            }});
     }
         
     }

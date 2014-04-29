@@ -48,6 +48,8 @@
 		3E04F66619069213006485D9 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F66519069213006485D9 /* SettingsTableViewController.m */; };
 		3E7AFDBE190EA99D003D2C98 /* instruction.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AFDBD190EA977003D2C98 /* instruction.mp4 */; };
 		3E7AFDC1190EB01F003D2C98 /* OrientationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AFDC0190EB01F003D2C98 /* OrientationNavigationController.m */; };
+		3E7AFDCB190FB1BA003D2C98 /* videothumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AFDC9190FB1BA003D2C98 /* videothumb.png */; };
+		3E7AFDCC190FB1BA003D2C98 /* videothumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AFDCA190FB1BA003D2C98 /* videothumb@2x.png */; };
 		3EF47FD619095F2500104D69 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC519095F2500104D69 /* AppIcon29x29.png */; };
 		3EF47FD719095F2500104D69 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC619095F2500104D69 /* AppIcon29x29@2x.png */; };
 		3EF47FD819095F2500104D69 /* AppIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC719095F2500104D69 /* AppIcon40x40.png */; };
@@ -143,6 +145,8 @@
 		3E7AFDBD190EA977003D2C98 /* instruction.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = instruction.mp4; sourceTree = "<group>"; };
 		3E7AFDBF190EB01F003D2C98 /* OrientationNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrientationNavigationController.h; sourceTree = "<group>"; };
 		3E7AFDC0190EB01F003D2C98 /* OrientationNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientationNavigationController.m; sourceTree = "<group>"; };
+		3E7AFDC9190FB1BA003D2C98 /* videothumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videothumb.png; sourceTree = "<group>"; };
+		3E7AFDCA190FB1BA003D2C98 /* videothumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "videothumb@2x.png"; sourceTree = "<group>"; };
 		3EF47FC519095F2500104D69 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
 		3EF47FC619095F2500104D69 /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
 		3EF47FC719095F2500104D69 /* AppIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon40x40.png; sourceTree = "<group>"; };
@@ -371,9 +375,19 @@
 			name = Videos;
 			sourceTree = "<group>";
 		};
+		3E7AFDC2190FAA02003D2C98 /* videothumb_iPhone_assets */ = {
+			isa = PBXGroup;
+			children = (
+				3E7AFDC9190FB1BA003D2C98 /* videothumb.png */,
+				3E7AFDCA190FB1BA003D2C98 /* videothumb@2x.png */,
+			);
+			path = videothumb_iPhone_assets;
+			sourceTree = "<group>";
+		};
 		3EF47FC319095EA300104D69 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				3E7AFDC2190FAA02003D2C98 /* videothumb_iPhone_assets */,
 				3EF47FE719095F3000104D69 /* VitalConnectIOS_iPhone_assets */,
 				3EF47FC419095F2500104D69 /* App Icon [Squared] */,
 			);
@@ -506,6 +520,7 @@
 				3EF47FD919095F2500104D69 /* AppIcon40x40@2x.png in Resources */,
 				3EF47FF419095F3000104D69 /* LandingHeader.png in Resources */,
 				3EF47FF919096EC900104D69 /* Settings@2x.png in Resources */,
+				3E7AFDCC190FB1BA003D2C98 /* videothumb@2x.png in Resources */,
 				3EF47FD719095F2500104D69 /* AppIcon29x29@2x.png in Resources */,
 				3E04F5EE18FFF099006485D9 /* InfoPlist.strings in Resources */,
 				3EF47FDB19095F2500104D69 /* AppIcon50x50@2x.png in Resources */,
@@ -515,6 +530,7 @@
 				3EF47FE519095F2500104D69 /* iTunesArtwork.png in Resources */,
 				3EF47FF219095F3000104D69 /* Icon.png in Resources */,
 				3EF47FE619095F2500104D69 /* iTunesArtwork@2x.png in Resources */,
+				3E7AFDCB190FB1BA003D2C98 /* videothumb.png in Resources */,
 				3EF47FD619095F2500104D69 /* AppIcon29x29.png in Resources */,
 				3EF47FDF19095F2500104D69 /* AppIcon60x60@2x.png in Resources */,
 				3EF47FDD19095F2500104D69 /* AppIcon57x57@2x.png in Resources */,
