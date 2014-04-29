@@ -41,16 +41,24 @@
 
 - (void) updateValues {
     VitalConnectSensor* sensor = [[VitalConnectManager getSharedInstance] getActiveSensor];
-    NSString* identifier = [NSString stringWithFormat:@"%@", sensor.name];
-    NSString* serial = [NSString stringWithFormat:@"UUID: %@", sensor.serialNumber];
-    NSString* battery = [NSString stringWithFormat:@"Battery: %@%%", sensor.batteryLevel];
-    NSString* freeMem = [NSString stringWithFormat:@"Memory used: %i%%", 100 - [sensor.freeMemory intValue]];
-    NSString* firmware = [NSString stringWithFormat:@"Firmware: %@", sensor.firmwareVersion];
+    NSString* identifier = [[Factory sharedFactory].csVitalConnectSensor sensorName];
     [self.modelLabel setText:identifier];
-    [self.serialLabel setText:serial];
-    [self.batteryLabel setText:battery];
-    [self.memoryLabel setText:freeMem];
-    [self.firmwareLabel setText:firmware];
+    
+    if (sensor != nil) {
+        NSString* serial = [NSString stringWithFormat:@"UUID: %@", sensor.serialNumber];
+        NSString* battery = [NSString stringWithFormat:@"Battery: %@%%", sensor.batteryLevel];
+        NSString* freeMem = [NSString stringWithFormat:@"Memory used: %i%%", 100 - [sensor.freeMemory intValue]];
+        NSString* firmware = [NSString stringWithFormat:@"Firmware: %@", sensor.firmwareVersion];
+        [self.serialLabel setText:serial];
+        [self.batteryLabel setText:battery];
+        [self.memoryLabel setText:freeMem];
+        [self.firmwareLabel setText:firmware];
+    } else {
+        [self.serialLabel setText:@"Device not connected"];
+        [self.batteryLabel setText:@""];
+        [self.memoryLabel setText:@""];
+        [self.firmwareLabel setText:@""];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,7 +71,8 @@
     [[Factory sharedFactory].csVitalConnectSensor forgetSensor];
     
     VitalConnectSensor* sensor = [[VitalConnectManager getSharedInstance] getActiveSensor];
-    [[VitalConnectManager getSharedInstance] disconnectSensor:sensor];
+    if (sensor)
+        [[VitalConnectManager getSharedInstance] disconnectSensor:sensor];
     
     [self performSegueWithIdentifier:@"Disconnected" sender:self];
 }

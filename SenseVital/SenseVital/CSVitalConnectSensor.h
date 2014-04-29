@@ -13,6 +13,8 @@
 - (void) reconnect;
 - (void) forgetSensor;
 
+- (NSString*) sensorName;
+
 @property (strong, nonatomic, readonly) VitalConnectManager* vitalConnectManager;
 @property BOOL HFData;
 @property BOOL trackingEnabled;
