@@ -200,6 +200,11 @@ static NSString* sensorDescription = @"vital_connect";
     }
 }
 
+- (NSString*) sensorName {
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    return [prefs stringForKey:VCSensorNameKey];
+}
+
 - (void) setTrackingEnabled:(BOOL)trackingEnabled {
     //save preference
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
