@@ -50,6 +50,8 @@
 		3E7AFDC1190EB01F003D2C98 /* OrientationNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7AFDC0190EB01F003D2C98 /* OrientationNavigationController.m */; };
 		3E7AFDCB190FB1BA003D2C98 /* videothumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AFDC9190FB1BA003D2C98 /* videothumb.png */; };
 		3E7AFDCC190FB1BA003D2C98 /* videothumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E7AFDCA190FB1BA003D2C98 /* videothumb@2x.png */; };
+		3E813052191103890064DED2 /* AppIcon120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E813050191103890064DED2 /* AppIcon120x120.png */; };
+		3E813053191103890064DED2 /* AppIcon120x120@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E813051191103890064DED2 /* AppIcon120x120@2x.png */; };
 		3EF47FD619095F2500104D69 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC519095F2500104D69 /* AppIcon29x29.png */; };
 		3EF47FD719095F2500104D69 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC619095F2500104D69 /* AppIcon29x29@2x.png */; };
 		3EF47FD819095F2500104D69 /* AppIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC719095F2500104D69 /* AppIcon40x40.png */; };
@@ -87,7 +89,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3E04F5E018FFF098006485D9 /* SenseVital.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SenseVital.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E04F5E018FFF098006485D9 /* CS Heart.temp_caseinsensitive_rename.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CS Heart.temp_caseinsensitive_rename.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E04F5E318FFF098006485D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3E04F5E518FFF098006485D9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3E04F5E718FFF098006485D9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -98,7 +100,7 @@
 		3E04F5F218FFF099006485D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3E04F5F318FFF099006485D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3E04F5F618FFF099006485D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3E04F5FE18FFF099006485D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3E04F5FE18FFF099006485D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SenseVital/Images.xcassets; sourceTree = "<group>"; };
 		3E04F60418FFF099006485D9 /* SenseVitalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SenseVitalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E04F60518FFF099006485D9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3E04F60D18FFF099006485D9 /* SenseVitalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SenseVitalTests-Info.plist"; sourceTree = "<group>"; };
@@ -147,6 +149,8 @@
 		3E7AFDC0190EB01F003D2C98 /* OrientationNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrientationNavigationController.m; sourceTree = "<group>"; };
 		3E7AFDC9190FB1BA003D2C98 /* videothumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videothumb.png; sourceTree = "<group>"; };
 		3E7AFDCA190FB1BA003D2C98 /* videothumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "videothumb@2x.png"; sourceTree = "<group>"; };
+		3E813050191103890064DED2 /* AppIcon120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon120x120.png; sourceTree = "<group>"; };
+		3E813051191103890064DED2 /* AppIcon120x120@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon120x120@2x.png"; sourceTree = "<group>"; };
 		3EF47FC519095F2500104D69 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
 		3EF47FC619095F2500104D69 /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
 		3EF47FC719095F2500104D69 /* AppIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon40x40.png; sourceTree = "<group>"; };
@@ -232,7 +236,7 @@
 		3E04F5E118FFF098006485D9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3E04F5E018FFF098006485D9 /* SenseVital.app */,
+				3E04F5E018FFF098006485D9 /* CS Heart.temp_caseinsensitive_rename.app */,
 				3E04F60418FFF099006485D9 /* SenseVitalTests.xctest */,
 			);
 			name = Products;
@@ -271,7 +275,6 @@
 				3E04F5F218FFF099006485D9 /* AppDelegate.h */,
 				3E04F5F318FFF099006485D9 /* AppDelegate.m */,
 				3E04F5F518FFF099006485D9 /* Main.storyboard */,
-				3E04F5FE18FFF099006485D9 /* Images.xcassets */,
 				3E04F64B19003747006485D9 /* LoginViewController.h */,
 				3E04F64C19003747006485D9 /* LoginViewController.m */,
 				3E04F65019017D37006485D9 /* Factory.h */,
@@ -387,6 +390,7 @@
 		3EF47FC319095EA300104D69 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				3E04F5FE18FFF099006485D9 /* Images.xcassets */,
 				3E7AFDC2190FAA02003D2C98 /* videothumb_iPhone_assets */,
 				3EF47FE719095F3000104D69 /* VitalConnectIOS_iPhone_assets */,
 				3EF47FC419095F2500104D69 /* App Icon [Squared] */,
@@ -397,6 +401,8 @@
 		3EF47FC419095F2500104D69 /* App Icon [Squared] */ = {
 			isa = PBXGroup;
 			children = (
+				3E813050191103890064DED2 /* AppIcon120x120.png */,
+				3E813051191103890064DED2 /* AppIcon120x120@2x.png */,
 				3EF47FC519095F2500104D69 /* AppIcon29x29.png */,
 				3EF47FC619095F2500104D69 /* AppIcon29x29@2x.png */,
 				3EF47FC719095F2500104D69 /* AppIcon40x40.png */,
@@ -435,9 +441,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3E04F5DF18FFF098006485D9 /* SenseVital */ = {
+		3E04F5DF18FFF098006485D9 /* CS Heart.temp_caseinsensitive_rename */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3E04F61518FFF099006485D9 /* Build configuration list for PBXNativeTarget "SenseVital" */;
+			buildConfigurationList = 3E04F61518FFF099006485D9 /* Build configuration list for PBXNativeTarget "CS Heart.temp_caseinsensitive_rename" */;
 			buildPhases = (
 				3E04F5DC18FFF098006485D9 /* Sources */,
 				3E04F5DD18FFF098006485D9 /* Frameworks */,
@@ -447,9 +453,9 @@
 			);
 			dependencies = (
 			);
-			name = SenseVital;
+			name = "CS Heart.temp_caseinsensitive_rename";
 			productName = SenseVital;
-			productReference = 3E04F5E018FFF098006485D9 /* SenseVital.app */;
+			productReference = 3E04F5E018FFF098006485D9 /* CS Heart.temp_caseinsensitive_rename.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3E04F60318FFF099006485D9 /* SenseVitalTests */ = {
@@ -487,7 +493,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3E04F5DB18FFF098006485D9 /* Build configuration list for PBXProject "CS HealthPatch" */;
+			buildConfigurationList = 3E04F5DB18FFF098006485D9 /* Build configuration list for PBXProject "CS Heart" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -500,7 +506,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3E04F5DF18FFF098006485D9 /* SenseVital */,
+				3E04F5DF18FFF098006485D9 /* CS Heart.temp_caseinsensitive_rename */,
 				3E04F60318FFF099006485D9 /* SenseVitalTests */,
 			);
 		};
@@ -511,6 +517,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E813052191103890064DED2 /* AppIcon120x120.png in Resources */,
 				3E7AFDBE190EA99D003D2C98 /* instruction.mp4 in Resources */,
 				3E04F5FF18FFF099006485D9 /* Images.xcassets in Resources */,
 				3EF47FDE19095F2500104D69 /* AppIcon60x60.png in Resources */,
@@ -536,6 +543,7 @@
 				3EF47FDD19095F2500104D69 /* AppIcon57x57@2x.png in Resources */,
 				3EF47FDA19095F2500104D69 /* AppIcon50x50.png in Resources */,
 				3EF47FF319095F3000104D69 /* Icon@2x.png in Resources */,
+				3E813053191103890064DED2 /* AppIcon120x120@2x.png in Resources */,
 				3EF47FE019095F2500104D69 /* AppIcon72x72.png in Resources */,
 				3EF47FE119095F2500104D69 /* AppIcon72x72@2x.png in Resources */,
 				3EF47FE319095F2500104D69 /* AppIcon76x76@2x.png in Resources */,
@@ -588,7 +596,7 @@
 /* Begin PBXTargetDependency section */
 		3E04F60A18FFF099006485D9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3E04F5DF18FFF098006485D9 /* SenseVital */;
+			target = 3E04F5DF18FFF098006485D9 /* CS Heart.temp_caseinsensitive_rename */;
 			targetProxy = 3E04F60918FFF099006485D9 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -713,7 +721,7 @@
 					"-lc++",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "CS Heart.temp_caseinsensitive_rename";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -740,7 +748,7 @@
 					"-lc++",
 					"-ObjC",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "CS Heart.temp_caseinsensitive_rename";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -789,7 +797,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3E04F5DB18FFF098006485D9 /* Build configuration list for PBXProject "CS HealthPatch" */ = {
+		3E04F5DB18FFF098006485D9 /* Build configuration list for PBXProject "CS Heart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3E04F61318FFF099006485D9 /* Debug */,
@@ -798,7 +806,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3E04F61518FFF099006485D9 /* Build configuration list for PBXNativeTarget "SenseVital" */ = {
+		3E04F61518FFF099006485D9 /* Build configuration list for PBXNativeTarget "CS Heart.temp_caseinsensitive_rename" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3E04F61618FFF099006485D9 /* Debug */,
