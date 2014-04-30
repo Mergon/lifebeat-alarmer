@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3E04F5DF18FFF098006485D9"
-               BuildableName = "SenseVital.app"
-               BlueprintName = "CS Heart.temp_caseinsensitive_rename"
+               BuildableName = "CS Heart.app"
+               BlueprintName = "CS Heart"
                ReferencedContainer = "container:CS Heart.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -43,8 +43,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3E04F5DF18FFF098006485D9"
-            BuildableName = "SenseVital.app"
-            BlueprintName = "CS Heart.temp_caseinsensitive_rename"
+            BuildableName = "CS Heart.app"
+            BlueprintName = "CS Heart"
             ReferencedContainer = "container:CS Heart.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -62,8 +62,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3E04F5DF18FFF098006485D9"
-            BuildableName = "SenseVital.app"
-            BlueprintName = "CS Heart.temp_caseinsensitive_rename"
+            BuildableName = "CS Heart.app"
+            BlueprintName = "CS Heart"
             ReferencedContainer = "container:CS Heart.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -80,8 +80,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3E04F5DF18FFF098006485D9"
-            BuildableName = "SenseVital.app"
-            BlueprintName = "CS Heart.temp_caseinsensitive_rename"
+            BuildableName = "CS Heart.app"
+            BlueprintName = "CS Heart"
             ReferencedContainer = "container:CS Heart.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
