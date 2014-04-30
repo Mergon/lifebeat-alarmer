@@ -498,7 +498,7 @@
             </objects>
             <point key="canvasLocation" x="1" y="899"/>
         </scene>
-        <!--Device Table View Controller - Connect a device-->
+        <!--Device Table View Controller - Connect your HealthPatch-->
         <scene sceneID="qHd-P3-O3Q">
             <objects>
                 <tableViewController storyboardIdentifier="Devices" id="SNL-06-GdQ" customClass="DeviceTableViewController" sceneMemberID="viewController">
@@ -511,7 +511,7 @@
                             <outlet property="delegate" destination="SNL-06-GdQ" id="ycT-RA-B1q"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Connect a device" id="1zR-0M-zg3"/>
+                    <navigationItem key="navigationItem" title="Connect your HealthPatch" id="1zR-0M-zg3"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
                         <segue destination="VVd-eV-edh" kind="modal" identifier="Connected" id="viD-k6-hth"/>
@@ -533,7 +533,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="kr6-id-jmq"/>
         <segue reference="SaV-ze-XrS"/>
+        <segue reference="viD-k6-hth"/>
     </inferredMetricsTieBreakers>
 </document>
