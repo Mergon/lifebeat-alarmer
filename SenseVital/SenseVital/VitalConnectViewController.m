@@ -96,6 +96,7 @@ static NSString* kVCStatusDisconnected = @"Disconnected";
 
 - (void) setNoValues {
     NSString* noValue = @"--";
+    [self.hrLabel setText:noValue];
     [self.stepsLabel setText:noValue];
     [self.respirationLabel setText:noValue];
     [self.stressLevelLabel setText:noValue];

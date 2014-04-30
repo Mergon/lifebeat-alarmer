@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3E04F5DF18FFF098006485D9"
                BuildableName = "SenseVital.app"
-               BlueprintName = "SenseVital"
-               ReferencedContainer = "container:CS HealthPatch.xcodeproj">
+               BlueprintName = "CS Heart.temp_caseinsensitive_rename"
+               ReferencedContainer = "container:CS Heart.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "3E04F60318FFF099006485D9"
                BuildableName = "SenseVitalTests.xctest"
                BlueprintName = "SenseVitalTests"
-               ReferencedContainer = "container:CS HealthPatch.xcodeproj">
+               ReferencedContainer = "container:CS Heart.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -44,8 +44,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3E04F5DF18FFF098006485D9"
             BuildableName = "SenseVital.app"
-            BlueprintName = "SenseVital"
-            ReferencedContainer = "container:CS HealthPatch.xcodeproj">
+            BlueprintName = "CS Heart.temp_caseinsensitive_rename"
+            ReferencedContainer = "container:CS Heart.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -63,8 +63,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3E04F5DF18FFF098006485D9"
             BuildableName = "SenseVital.app"
-            BlueprintName = "SenseVital"
-            ReferencedContainer = "container:CS HealthPatch.xcodeproj">
+            BlueprintName = "CS Heart.temp_caseinsensitive_rename"
+            ReferencedContainer = "container:CS Heart.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -81,8 +81,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3E04F5DF18FFF098006485D9"
             BuildableName = "SenseVital.app"
-            BlueprintName = "SenseVital"
-            ReferencedContainer = "container:CS HealthPatch.xcodeproj">
+            BlueprintName = "CS Heart.temp_caseinsensitive_rename"
+            ReferencedContainer = "container:CS Heart.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
