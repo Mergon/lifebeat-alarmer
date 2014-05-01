@@ -19,8 +19,13 @@ static NSString* VCSensorNameKey = @"CSVTSensorName";
 static NSString* VCSensorDeviceKey = @"CSVTSensorDevice";
 static NSString* VCHFDataKey = @"CSVTHFData";
 static NSString* VCTrackingEnabledKey = @"CSVCTrackingEnabled";
+static NSString* BATTERY_LOW_KEY = @"CSVTBatteryLowKey";
 
 static NSString* sensorDescription = @"vital_connect";
+
+static const int BATTERY_WINDOW_NR = 20;
+static const int BATTERY_LOW = 25;
+static const int BATTERY_NOT_LOW = 70;
 
 @implementation CSVitalConnectSensor {
     VitalConnectSensor* connectedSensor;
@@ -32,6 +37,11 @@ static NSString* sensorDescription = @"vital_connect";
     BOOL HFDataIsEnabled;
     NSDate* keppAliveNotificationDate;
     BOOL shouldKeepAlive;
+    
+    //array of measurements (for averaging)
+    NSMutableArray* batteryMeasurements;
+    NSDate* lastbatteryMeasurementDate;
+    BOOL isBatteryLow;
 }
 
 - (id) init {
@@ -39,9 +49,9 @@ static NSString* sensorDescription = @"vital_connect";
     if (self) {
         accelerometerData = [[NSMutableArray alloc] init];
         ecgData = [[NSMutableArray alloc] init];
-        
+        batteryMeasurements = [[NSMutableArray alloc] init];
         burstInterval = 3;
-        
+
         [self initVitalConnect];
 
         NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
@@ -51,6 +61,9 @@ static NSString* sensorDescription = @"vital_connect";
         } else {
             [self setHFData:[prefs boolForKey:VCHFDataKey]];
         }
+        
+        self->isBatteryLow = [prefs boolForKey:BATTERY_LOW_KEY];
+        
     }
     return self;
 }
@@ -127,11 +140,14 @@ static NSString* sensorDescription = @"vital_connect";
         NSString* activityString = activityToString([activity intValue]);
         
         [CSSensePlatform addDataPointForSensor:@"activity" displayName:[self displayNameForSensor:@"activity"] description:sensorDescription deviceType:sensorDeviceType deviceUUID:sensorUUID dataType:kCSDATA_TYPE_STRING stringValue:activityString timestamp:timestamp];
-        
-
     }
     
     //TODO:Produce warnings about available keys that are not being processed
+    
+    //for the battery notification]
+    NSNumber* num = [data valueForKey:kVCIObserverKeyBatteryLevel];
+    if (num != nil && [num isKindOfClass:[NSNumber class]])
+        [self processBatteryForNotification:[num intValue] timestamp:timestamp];
 }
 
 - (NSString*) displayNameForSensor:(NSString*) name {
@@ -278,8 +294,6 @@ typedef void (^dataCallback)(NSArray* data);
     }
 
     [array addObject:sample];
-    
-    [self keepAliveNotification];
 }
 
 - (void) processECGBurst:(NSArray*) burstData {
@@ -340,6 +354,8 @@ static BOOL processData(id contextObject, NSArray* samples, Boolean done, int er
             [selfRef addSample:dict toArray:selfRef->accelerometerData withCallbackOnFull:callback];
         }
     }
+
+    [selfRef keepAliveNotification];
     return YES;
 }
 
@@ -376,11 +392,54 @@ static NSNumber* CSroundedNumber(double number, int decimals) {
         [self cancelKeepAliveNotification];
         UILocalNotification* notification = [[UILocalNotification alloc] init];
         notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:1 * 3600];
-        notification.timeZone = [NSTimeZone defaultTimeZone];
-        notification.alertBody = @"No connection to the HealthPatch for 1 hour. Try to regularly keep your HealthPatch within range of your phone.";
+        //don't set timezone, as the notificatin is after 1 hour, not a specific time
+        //notification.timeZone = [NSTimeZone defaultTimeZone];
+        notification.alertBody = @"No connection to the HealthPatch for one hour. Try to regularly keep your HealthPatch within range of your phone.";
         [[UIApplication sharedApplication] scheduleLocalNotification:notification];
     }
 }
+
+
+- (void) processBatteryForNotification:(int) batteryPercentage timestamp:(NSDate*) timestamp {
+    //ignore if old
+    if (lastbatteryMeasurementDate != nil && [timestamp timeIntervalSinceDate:lastbatteryMeasurementDate] > 0)
+        return;
+    
+    //add object to window
+    [batteryMeasurements addObject:[NSNumber numberWithInt:batteryPercentage]];
+    
+    if ([batteryMeasurements count] < BATTERY_WINDOW_NR)
+        return;
+    [batteryMeasurements removeObjectAtIndex:0];
+    
+    int sum = 0;
+    for (NSNumber* value in batteryMeasurements) {
+        sum += [value intValue];
+    }
+    double avg = (float)sum / [batteryMeasurements count];
+    
+    if (avg <= BATTERY_LOW && self->isBatteryLow == NO) {
+        NSString* msg = @"The battery of your HealthPatch is almost empty. Measurements will probably stop within half an hour.";
+        if ([[UIApplication sharedApplication] applicationState] == UIApplicationStateActive) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                UIAlertView* view = [[UIAlertView alloc] initWithTitle:@"Battery warning" message:msg delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+                [view show];
+            });
+        } else {
+            UILocalNotification* notification = [[UILocalNotification alloc] init];
+            notification.alertBody = msg;
+            notification.soundName = UILocalNotificationDefaultSoundName;
+            [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+            
+        }
+        self->isBatteryLow = YES;
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:BATTERY_LOW_KEY];
+    } else if (avg >= BATTERY_NOT_LOW && self->isBatteryLow == YES){
+        self->isBatteryLow = NO;
+        [[NSUserDefaults standardUserDefaults] setObject:[NSNumber numberWithBool:YES] forKey:BATTERY_LOW_KEY];
+    }
+}
+
 
 #pragma mark - Helper functions
 
