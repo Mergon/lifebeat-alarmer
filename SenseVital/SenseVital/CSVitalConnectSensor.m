@@ -188,6 +188,7 @@ static NSString* sensorDescription = @"vital_connect";
     [prefs setValue:nil forKey:VCSensorNameKey];
     [prefs synchronize];
     self->shouldKeepAlive = NO;
+    [self cancelKeepAliveNotification];
 }
 
 - (void) reconnect {
