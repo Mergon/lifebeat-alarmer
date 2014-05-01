@@ -374,9 +374,9 @@ static NSNumber* CSroundedNumber(double number, int decimals) {
         self->keppAliveNotificationDate = [NSDate date];
         [self cancelKeepAliveNotification];
         UILocalNotification* notification = [[UILocalNotification alloc] init];
-        notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:6 * 3600];
+        notification.fireDate = [NSDate dateWithTimeIntervalSinceNow:1 * 3600];
         notification.timeZone = [NSTimeZone defaultTimeZone];
-        notification.alertBody = @"No connection to the HealthPatch for 6 hours. Try to regularly keep your HealthPatch within range of your phone.";
+        notification.alertBody = @"No connection to the HealthPatch for 1 hour. Try to regularly keep your HealthPatch within range of your phone.";
         [[UIApplication sharedApplication] scheduleLocalNotification:notification];
     }
 }
