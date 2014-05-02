@@ -41,6 +41,7 @@
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-central</string>
+		<string>fetch</string>
 	</array>
 	<key>UILaunchImageFile</key>
 	<string>Default</string>

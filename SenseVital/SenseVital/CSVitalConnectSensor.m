@@ -231,9 +231,11 @@ static const int BATTERY_NOT_LOW = 70;
     //disconnect the device
     if (trackingEnabled) {
         [self reconnect];
-    } else if (connectedSensor != nil) {
+    } else {
+        if (connectedSensor != nil) {
+            [_vitalConnectManager disconnectSensor:connectedSensor];
+        }
         [self cancelKeepAliveNotification];
-        [_vitalConnectManager disconnectSensor:connectedSensor];
     }
 }
 

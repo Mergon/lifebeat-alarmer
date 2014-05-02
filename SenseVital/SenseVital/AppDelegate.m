@@ -33,6 +33,9 @@
     
     //Immediately upload data, in case the app won't run for an hour, we'll at least upload all data we've collected so far.
     [CSSensePlatform flushData];
+    
+    //register for background fetch (used to upload the data to CS, esp. when the app can't run in the background due to no connected device, but we still need to upload the data)
+    [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
 
     return YES;
 }
@@ -70,6 +73,11 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     [CSSensePlatform willTerminate];
     [self.vitalConnectManager applicationWillTerminate];
+}
+
+- (void) application:(UIApplication *)application performFetchWithCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
+    [CSSensePlatform flushDataAndBlock];
+    completionHandler(UIBackgroundFetchResultNewData);
 }
 
 
