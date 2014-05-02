@@ -20,7 +20,6 @@
 		3E04F60818FFF099006485D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F5E718FFF098006485D9 /* UIKit.framework */; };
 		3E04F61018FFF099006485D9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E04F60E18FFF099006485D9 /* InfoPlist.strings */; };
 		3E04F61218FFF099006485D9 /* SenseVitalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F61118FFF099006485D9 /* SenseVitalTests.m */; };
-		3E04F61E18FFFE51006485D9 /* Cortex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F61D18FFFE51006485D9 /* Cortex.framework */; };
 		3E04F62018FFFF7F006485D9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F61F18FFFF7F006485D9 /* libsqlite3.dylib */; };
 		3E04F62218FFFF8E006485D9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F62118FFFF8E006485D9 /* AVFoundation.framework */; };
 		3E04F62418FFFF97006485D9 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F62318FFFF97006485D9 /* CoreMotion.framework */; };
@@ -31,11 +30,6 @@
 		3E04F62E18FFFFEA006485D9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F62D18FFFFEA006485D9 /* AudioToolbox.framework */; };
 		3E04F630190000FB006485D9 /* CSVitalConnectSensor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F62F190000FB006485D9 /* CSVitalConnectSensor.m */; };
 		3E04F63219000129006485D9 /* VitalConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F63119000129006485D9 /* VitalConnectViewController.m */; };
-		3E04F63C19000179006485D9 /* libfw_bundle_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F63619000179006485D9 /* libfw_bundle_ios.a */; };
-		3E04F63D19000179006485D9 /* libjansson_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F63719000179006485D9 /* libjansson_ios.a */; };
-		3E04F63E19000179006485D9 /* librslib_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F63819000179006485D9 /* librslib_ios.a */; };
-		3E04F63F19000179006485D9 /* libsensor_stream_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F63919000179006485D9 /* libsensor_stream_ios.a */; };
-		3E04F64019000179006485D9 /* libVitalConnectLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F63A19000179006485D9 /* libVitalConnectLibrary.a */; };
 		3E04F64319000318006485D9 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F64219000318006485D9 /* CoreBluetooth.framework */; };
 		3E04F64519000331006485D9 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F64419000331006485D9 /* libz.dylib */; };
 		3E04F64919002481006485D9 /* DeviceTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F64819002481006485D9 /* DeviceTableViewController.m */; };
@@ -55,6 +49,12 @@
 		3E813056191122080064DED2 /* Background320x480.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E813054191122080064DED2 /* Background320x480.png */; };
 		3E813057191122080064DED2 /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E813055191122080064DED2 /* Default~iphone.png */; };
 		3E813059191122AF0064DED2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E813058191122AF0064DED2 /* Default-568h@2x.png */; };
+		3E81305C1913CAB80064DED2 /* Cortex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E81305B1913CAB80064DED2 /* Cortex.framework */; };
+		3E8130641913CAE00064DED2 /* libfw_bundle_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E81305E1913CAE00064DED2 /* libfw_bundle_ios.a */; };
+		3E8130651913CAE00064DED2 /* libjansson_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E81305F1913CAE00064DED2 /* libjansson_ios.a */; };
+		3E8130661913CAE00064DED2 /* librslib_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8130601913CAE00064DED2 /* librslib_ios.a */; };
+		3E8130671913CAE00064DED2 /* libsensor_stream_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8130611913CAE00064DED2 /* libsensor_stream_ios.a */; };
+		3E8130681913CAE00064DED2 /* libVitalConnectLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E8130621913CAE00064DED2 /* libVitalConnectLibrary.a */; };
 		3EF47FD619095F2500104D69 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC519095F2500104D69 /* AppIcon29x29.png */; };
 		3EF47FD719095F2500104D69 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC619095F2500104D69 /* AppIcon29x29@2x.png */; };
 		3EF47FD819095F2500104D69 /* AppIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC719095F2500104D69 /* AppIcon40x40.png */; };
@@ -107,7 +107,6 @@
 		3E04F60D18FFF099006485D9 /* SenseVitalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SenseVitalTests-Info.plist"; sourceTree = "<group>"; };
 		3E04F60F18FFF099006485D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E04F61118FFF099006485D9 /* SenseVitalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SenseVitalTests.m; sourceTree = "<group>"; };
-		3E04F61D18FFFE51006485D9 /* Cortex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cortex.framework; path = "../../aim/ios-sdk/build/Cortex.framework"; sourceTree = "<group>"; };
 		3E04F61F18FFFF7F006485D9 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		3E04F62118FFFF8E006485D9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		3E04F62318FFFF97006485D9 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
@@ -120,12 +119,6 @@
 		3E04F63119000129006485D9 /* VitalConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VitalConnectViewController.m; sourceTree = "<group>"; };
 		3E04F63319000134006485D9 /* VitalConnectViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VitalConnectViewController.h; sourceTree = "<group>"; };
 		3E04F6341900014E006485D9 /* CSVitalConnectSensor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CSVitalConnectSensor.h; sourceTree = "<group>"; };
-		3E04F63619000179006485D9 /* libfw_bundle_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfw_bundle_ios.a; sourceTree = "<group>"; };
-		3E04F63719000179006485D9 /* libjansson_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjansson_ios.a; sourceTree = "<group>"; };
-		3E04F63819000179006485D9 /* librslib_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librslib_ios.a; sourceTree = "<group>"; };
-		3E04F63919000179006485D9 /* libsensor_stream_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsensor_stream_ios.a; sourceTree = "<group>"; };
-		3E04F63A19000179006485D9 /* libVitalConnectLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libVitalConnectLibrary.a; sourceTree = "<group>"; };
-		3E04F63B19000179006485D9 /* VitalConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VitalConnect.h; sourceTree = "<group>"; };
 		3E04F64119000183006485D9 /* SDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDK.h; sourceTree = "<group>"; };
 		3E04F64219000318006485D9 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		3E04F64419000331006485D9 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -155,6 +148,13 @@
 		3E813054191122080064DED2 /* Background320x480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background320x480.png; sourceTree = "<group>"; };
 		3E813055191122080064DED2 /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
 		3E813058191122AF0064DED2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		3E81305B1913CAB80064DED2 /* Cortex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cortex.framework; path = lib/Cortex.framework; sourceTree = "<group>"; };
+		3E81305E1913CAE00064DED2 /* libfw_bundle_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfw_bundle_ios.a; sourceTree = "<group>"; };
+		3E81305F1913CAE00064DED2 /* libjansson_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjansson_ios.a; sourceTree = "<group>"; };
+		3E8130601913CAE00064DED2 /* librslib_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librslib_ios.a; sourceTree = "<group>"; };
+		3E8130611913CAE00064DED2 /* libsensor_stream_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsensor_stream_ios.a; sourceTree = "<group>"; };
+		3E8130621913CAE00064DED2 /* libVitalConnectLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libVitalConnectLibrary.a; sourceTree = "<group>"; };
+		3E8130631913CAE00064DED2 /* VitalConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VitalConnect.h; sourceTree = "<group>"; };
 		3EF47FC519095F2500104D69 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
 		3EF47FC619095F2500104D69 /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
 		3EF47FC719095F2500104D69 /* AppIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon40x40.png; sourceTree = "<group>"; };
@@ -186,8 +186,6 @@
 			files = (
 				3E04F64519000331006485D9 /* libz.dylib in Frameworks */,
 				3E04F64319000318006485D9 /* CoreBluetooth.framework in Frameworks */,
-				3E04F63E19000179006485D9 /* librslib_ios.a in Frameworks */,
-				3E04F63D19000179006485D9 /* libjansson_ios.a in Frameworks */,
 				3E04F62E18FFFFEA006485D9 /* AudioToolbox.framework in Frameworks */,
 				3E04F62C18FFFFCB006485D9 /* CoreTelephony.framework in Frameworks */,
 				3E04F62A18FFFFB6006485D9 /* SystemConfiguration.framework in Frameworks */,
@@ -195,13 +193,15 @@
 				3E04F62618FFFF9D006485D9 /* CoreAudio.framework in Frameworks */,
 				3E04F62418FFFF97006485D9 /* CoreMotion.framework in Frameworks */,
 				3E04F62218FFFF8E006485D9 /* AVFoundation.framework in Frameworks */,
-				3E04F63C19000179006485D9 /* libfw_bundle_ios.a in Frameworks */,
+				3E8130671913CAE00064DED2 /* libsensor_stream_ios.a in Frameworks */,
+				3E8130661913CAE00064DED2 /* librslib_ios.a in Frameworks */,
 				3E04F62018FFFF7F006485D9 /* libsqlite3.dylib in Frameworks */,
-				3E04F63F19000179006485D9 /* libsensor_stream_ios.a in Frameworks */,
 				3E04F5E618FFF098006485D9 /* CoreGraphics.framework in Frameworks */,
-				3E04F61E18FFFE51006485D9 /* Cortex.framework in Frameworks */,
-				3E04F64019000179006485D9 /* libVitalConnectLibrary.a in Frameworks */,
+				3E81305C1913CAB80064DED2 /* Cortex.framework in Frameworks */,
+				3E8130651913CAE00064DED2 /* libjansson_ios.a in Frameworks */,
+				3E8130681913CAE00064DED2 /* libVitalConnectLibrary.a in Frameworks */,
 				3E04F5E818FFF098006485D9 /* UIKit.framework in Frameworks */,
+				3E8130641913CAE00064DED2 /* libfw_bundle_ios.a in Frameworks */,
 				3E04F5E418FFF098006485D9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -222,13 +222,13 @@
 		3E04F5D718FFF098006485D9 = {
 			isa = PBXGroup;
 			children = (
+				3E81305D1913CAE00064DED2 /* VitalConnectLib */,
+				3E81305B1913CAB80064DED2 /* Cortex.framework */,
 				3E813058191122AF0064DED2 /* Default-568h@2x.png */,
 				3E7AFDBC190EA964003D2C98 /* Videos */,
 				3EF47FC319095EA300104D69 /* Assets */,
 				3E04F65319018B88006485D9 /* UIUtils */,
 				3E04F64119000183006485D9 /* SDK.h */,
-				3E04F63519000179006485D9 /* VitalConnectLib */,
-				3E04F61D18FFFE51006485D9 /* Cortex.framework */,
 				3E04F5E918FFF099006485D9 /* SenseVital */,
 				3E04F60B18FFF099006485D9 /* SenseVitalTests */,
 				3E04F5E218FFF098006485D9 /* Frameworks */,
@@ -317,20 +317,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		3E04F63519000179006485D9 /* VitalConnectLib */ = {
-			isa = PBXGroup;
-			children = (
-				3E04F63619000179006485D9 /* libfw_bundle_ios.a */,
-				3E04F63719000179006485D9 /* libjansson_ios.a */,
-				3E04F63819000179006485D9 /* librslib_ios.a */,
-				3E04F63919000179006485D9 /* libsensor_stream_ios.a */,
-				3E04F63A19000179006485D9 /* libVitalConnectLibrary.a */,
-				3E04F63B19000179006485D9 /* VitalConnect.h */,
-			);
-			name = VitalConnectLib;
-			path = ../VitalConnectLib;
-			sourceTree = "<group>";
-		};
 		3E04F64619001849006485D9 /* Connect */ = {
 			isa = PBXGroup;
 			children = (
@@ -388,6 +374,20 @@
 				3E7AFDCA190FB1BA003D2C98 /* videothumb@2x.png */,
 			);
 			path = videothumb_iPhone_assets;
+			sourceTree = "<group>";
+		};
+		3E81305D1913CAE00064DED2 /* VitalConnectLib */ = {
+			isa = PBXGroup;
+			children = (
+				3E81305E1913CAE00064DED2 /* libfw_bundle_ios.a */,
+				3E81305F1913CAE00064DED2 /* libjansson_ios.a */,
+				3E8130601913CAE00064DED2 /* librslib_ios.a */,
+				3E8130611913CAE00064DED2 /* libsensor_stream_ios.a */,
+				3E8130621913CAE00064DED2 /* libVitalConnectLibrary.a */,
+				3E8130631913CAE00064DED2 /* VitalConnect.h */,
+			);
+			name = VitalConnectLib;
+			path = lib/VitalConnectLib;
 			sourceTree = "<group>";
 		};
 		3EF47FC319095EA300104D69 /* Assets */ = {
@@ -711,6 +711,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/pim/projects/aim/ios-sdk/build",
+					"$(PROJECT_DIR)/lib",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SenseVital/SenseVital-Prefix.pch";
@@ -719,6 +720,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/pim/projects/vitalconnect-ios/VitalConnectLib",
+					"$(PROJECT_DIR)/lib/VitalConnectLib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
@@ -740,6 +742,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/pim/projects/aim/ios-sdk/build",
+					"$(PROJECT_DIR)/lib",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SenseVital/SenseVital-Prefix.pch";
@@ -748,6 +751,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/pim/projects/vitalconnect-ios/VitalConnectLib",
+					"$(PROJECT_DIR)/lib/VitalConnectLib",
 				);
 				OTHER_LDFLAGS = (
 					"-lc++",
