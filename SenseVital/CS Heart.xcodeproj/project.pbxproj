@@ -706,8 +706,8 @@
 		3E04F61618FFF099006485D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/pim/projects/aim/ios-sdk/build",
@@ -737,8 +737,8 @@
 		3E04F61718FFF099006485D9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/pim/projects/aim/ios-sdk/build",
@@ -758,7 +758,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "CS Heart";
-				PROVISIONING_PROFILE = "F64634F5-D120-483A-BA50-07229C0ACC26";
+				PROVISIONING_PROFILE = "BC9FCC6C-79BA-4200-A841-675391123CBC";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
