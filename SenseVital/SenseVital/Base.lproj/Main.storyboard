@@ -32,7 +32,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Get your VitalConnect HealthPatch data into CommonSense. Sign in with your Common Sense Account." id="58I-NS-v7A">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Get your VitalConnect HealthPatch data into CommonSense. Sign in with your CommonSense Account." id="58I-NS-v7A">
                                         <rect key="frame" x="14" y="265" width="280" height="84"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <accessibility key="accessibilityConfiguration">
@@ -533,7 +533,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="kr6-id-jmq"/>
         <segue reference="SaV-ze-XrS"/>
-        <segue reference="viD-k6-hth"/>
     </inferredMetricsTieBreakers>
 </document>
