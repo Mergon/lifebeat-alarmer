@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		095E483F1917CE510007D93E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 095E483B1917CE510007D93E /* Default.png */; };
+		095E48411917CE510007D93E /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 095E483D1917CE510007D93E /* Default~iphone.png */; };
+		095E48421917CE510007D93E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 095E483E1917CE510007D93E /* Default-568h@2x.png */; };
 		3E04F5E418FFF098006485D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F5E318FFF098006485D9 /* Foundation.framework */; };
 		3E04F5E618FFF098006485D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F5E518FFF098006485D9 /* CoreGraphics.framework */; };
 		3E04F5E818FFF098006485D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F5E718FFF098006485D9 /* UIKit.framework */; };
@@ -47,8 +50,6 @@
 		3E813052191103890064DED2 /* AppIcon120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E813050191103890064DED2 /* AppIcon120x120.png */; };
 		3E813053191103890064DED2 /* AppIcon120x120@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E813051191103890064DED2 /* AppIcon120x120@2x.png */; };
 		3E813056191122080064DED2 /* Background320x480.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E813054191122080064DED2 /* Background320x480.png */; };
-		3E813057191122080064DED2 /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E813055191122080064DED2 /* Default~iphone.png */; };
-		3E813059191122AF0064DED2 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E813058191122AF0064DED2 /* Default-568h@2x.png */; };
 		3E81305C1913CAB80064DED2 /* Cortex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E81305B1913CAB80064DED2 /* Cortex.framework */; };
 		3E8130641913CAE00064DED2 /* libfw_bundle_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E81305E1913CAE00064DED2 /* libfw_bundle_ios.a */; };
 		3E8130651913CAE00064DED2 /* libjansson_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E81305F1913CAE00064DED2 /* libjansson_ios.a */; };
@@ -69,8 +70,6 @@
 		3EF47FE119095F2500104D69 /* AppIcon72x72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FD019095F2500104D69 /* AppIcon72x72@2x.png */; };
 		3EF47FE219095F2500104D69 /* AppIcon76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FD119095F2500104D69 /* AppIcon76x76.png */; };
 		3EF47FE319095F2500104D69 /* AppIcon76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FD219095F2500104D69 /* AppIcon76x76@2x.png */; };
-		3EF47FEF19095F3000104D69 /* Background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FE819095F3000104D69 /* Background.png */; };
-		3EF47FF019095F3000104D69 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FE919095F3000104D69 /* Default.png */; };
 		3EF47FF219095F3000104D69 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FEB19095F3000104D69 /* Icon.png */; };
 		3EF47FF319095F3000104D69 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FEC19095F3000104D69 /* Icon@2x.png */; };
 		3EF47FF419095F3000104D69 /* LandingHeader.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FED19095F3000104D69 /* LandingHeader.png */; };
@@ -90,6 +89,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		095E483B1917CE510007D93E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		095E483D1917CE510007D93E /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
+		095E483E1917CE510007D93E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3E04F5E018FFF098006485D9 /* CS Heart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CS Heart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E04F5E318FFF098006485D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3E04F5E518FFF098006485D9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -146,8 +148,6 @@
 		3E813050191103890064DED2 /* AppIcon120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon120x120.png; sourceTree = "<group>"; };
 		3E813051191103890064DED2 /* AppIcon120x120@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon120x120@2x.png"; sourceTree = "<group>"; };
 		3E813054191122080064DED2 /* Background320x480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background320x480.png; sourceTree = "<group>"; };
-		3E813055191122080064DED2 /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
-		3E813058191122AF0064DED2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		3E81305B1913CAB80064DED2 /* Cortex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cortex.framework; path = lib/Cortex.framework; sourceTree = "<group>"; };
 		3E81305E1913CAE00064DED2 /* libfw_bundle_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfw_bundle_ios.a; sourceTree = "<group>"; };
 		3E81305F1913CAE00064DED2 /* libjansson_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjansson_ios.a; sourceTree = "<group>"; };
@@ -169,8 +169,6 @@
 		3EF47FD019095F2500104D69 /* AppIcon72x72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon72x72@2x.png"; sourceTree = "<group>"; };
 		3EF47FD119095F2500104D69 /* AppIcon76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon76x76.png; sourceTree = "<group>"; };
 		3EF47FD219095F2500104D69 /* AppIcon76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon76x76@2x.png"; sourceTree = "<group>"; };
-		3EF47FE819095F3000104D69 /* Background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background.png; sourceTree = "<group>"; };
-		3EF47FE919095F3000104D69 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3EF47FEB19095F3000104D69 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		3EF47FEC19095F3000104D69 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		3EF47FED19095F3000104D69 /* LandingHeader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LandingHeader.png; sourceTree = "<group>"; };
@@ -222,9 +220,11 @@
 		3E04F5D718FFF098006485D9 = {
 			isa = PBXGroup;
 			children = (
+				095E483B1917CE510007D93E /* Default.png */,
+				095E483D1917CE510007D93E /* Default~iphone.png */,
+				095E483E1917CE510007D93E /* Default-568h@2x.png */,
 				3E81305D1913CAE00064DED2 /* VitalConnectLib */,
 				3E81305B1913CAB80064DED2 /* Cortex.framework */,
-				3E813058191122AF0064DED2 /* Default-568h@2x.png */,
 				3E7AFDBC190EA964003D2C98 /* Videos */,
 				3EF47FC319095EA300104D69 /* Assets */,
 				3E04F65319018B88006485D9 /* UIUtils */,
@@ -428,11 +428,8 @@
 			isa = PBXGroup;
 			children = (
 				3E813054191122080064DED2 /* Background320x480.png */,
-				3E813055191122080064DED2 /* Default~iphone.png */,
 				3EF47FF619096EC900104D69 /* Settings.png */,
 				3EF47FF719096EC900104D69 /* Settings@2x.png */,
-				3EF47FE819095F3000104D69 /* Background.png */,
-				3EF47FE919095F3000104D69 /* Default.png */,
 				3EF47FEB19095F3000104D69 /* Icon.png */,
 				3EF47FEC19095F3000104D69 /* Icon@2x.png */,
 				3EF47FED19095F3000104D69 /* LandingHeader.png */,
@@ -524,18 +521,16 @@
 				3E7AFDBE190EA99D003D2C98 /* instruction.mp4 in Resources */,
 				3E04F5FF18FFF099006485D9 /* Images.xcassets in Resources */,
 				3EF47FDE19095F2500104D69 /* AppIcon60x60.png in Resources */,
-				3EF47FF019095F3000104D69 /* Default.png in Resources */,
 				3EF47FD819095F2500104D69 /* AppIcon40x40.png in Resources */,
-				3EF47FEF19095F3000104D69 /* Background.png in Resources */,
 				3E813056191122080064DED2 /* Background320x480.png in Resources */,
 				3EF47FD919095F2500104D69 /* AppIcon40x40@2x.png in Resources */,
 				3EF47FF419095F3000104D69 /* LandingHeader.png in Resources */,
 				3EF47FF919096EC900104D69 /* Settings@2x.png in Resources */,
 				3E7AFDCC190FB1BA003D2C98 /* videothumb@2x.png in Resources */,
-				3E813057191122080064DED2 /* Default~iphone.png in Resources */,
 				3EF47FD719095F2500104D69 /* AppIcon29x29@2x.png in Resources */,
 				3E04F5EE18FFF099006485D9 /* InfoPlist.strings in Resources */,
 				3EF47FDB19095F2500104D69 /* AppIcon50x50@2x.png in Resources */,
+				095E483F1917CE510007D93E /* Default.png in Resources */,
 				3EF47FF819096EC900104D69 /* Settings.png in Resources */,
 				3E04F5F718FFF099006485D9 /* Main.storyboard in Resources */,
 				3EF47FDC19095F2500104D69 /* AppIcon57x57.png in Resources */,
@@ -548,10 +543,11 @@
 				3EF47FF319095F3000104D69 /* Icon@2x.png in Resources */,
 				3E813053191103890064DED2 /* AppIcon120x120@2x.png in Resources */,
 				3EF47FE019095F2500104D69 /* AppIcon72x72.png in Resources */,
+				095E48411917CE510007D93E /* Default~iphone.png in Resources */,
+				095E48421917CE510007D93E /* Default-568h@2x.png in Resources */,
 				3EF47FE119095F2500104D69 /* AppIcon72x72@2x.png in Resources */,
 				3EF47FE319095F2500104D69 /* AppIcon76x76@2x.png in Resources */,
 				3EF47FF519095F3000104D69 /* LandingHeader@2x.png in Resources */,
-				3E813059191122AF0064DED2 /* Default-568h@2x.png in Resources */,
 				3EF47FE219095F2500104D69 /* AppIcon76x76.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -706,8 +702,8 @@
 		3E04F61618FFF099006485D9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/pim/projects/aim/ios-sdk/build",
@@ -728,7 +724,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "CS Heart";
-				PROVISIONING_PROFILE = "1EEDC1BB-5711-4A3D-8543-4D51911A6624";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
@@ -737,8 +733,8 @@
 		3E04F61718FFF099006485D9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/pim/projects/aim/ios-sdk/build",
@@ -758,7 +754,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "CS Heart";
-				PROVISIONING_PROFILE = "BC9FCC6C-79BA-4200-A841-675391123CBC";
+				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
 			};
