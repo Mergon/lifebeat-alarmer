@@ -107,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="-1599" y="1694"/>
         </scene>
-        <!--Vital Connect View Controller - CommonSense Heart-->
+        <!--Vital Connect View Controller - CommonSense LifeBeat-->
         <scene sceneID="U20-SQ-Ysl">
             <objects>
                 <viewController storyboardIdentifier="Home" id="iVh-wq-Ump" customClass="VitalConnectViewController" sceneMemberID="viewController">
@@ -189,7 +189,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="wcM-Hs-LDo"/>
-                    <navigationItem key="navigationItem" title="CommonSense Heart" id="1Sc-B0-XOF">
+                    <navigationItem key="navigationItem" title="CommonSense LifeBeat" id="1Sc-B0-XOF">
                         <barButtonItem key="leftBarButtonItem" image="Icon.png" id="zjX-js-P8O">
                             <color key="tintColor" red="0.43529415129999999" green="0.77647066119999997" blue="0.74509805439999999" alpha="1" colorSpace="deviceRGB"/>
                         </barButtonItem>
