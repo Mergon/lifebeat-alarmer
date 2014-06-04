@@ -33,6 +33,8 @@ static const int BATTERY_NOT_LOW = 70;
     NSString* sensorDeviceType;
     NSMutableArray* accelerometerData;
     NSMutableArray* ecgData;
+    NSMutableArray* histAccelerometerData;
+    NSMutableArray* histEcgData;
     double burstInterval;
     BOOL HFDataIsEnabled;
     NSDate* keppAliveNotificationDate;
@@ -345,7 +347,18 @@ static BOOL processData(id contextObject, NSArray* samples, Boolean done, int er
             dataCallback callback = ^(NSArray* data) {
                 [selfRef processECGBurst:data];
             };
-            [selfRef addSample:dict toArray:selfRef->ecgData withCallbackOnFull:callback];
+            //distinquish between historical and real-time data
+            NSTimeInterval timestamp = [[dict valueForKey:kVCIObserverKeyTime] doubleValue];
+            NSTimeInterval realTimeTimestamp = [[[selfRef->ecgData firstObject] valueForKey:kVCIObserverKeyTime] doubleValue];
+            if (realTimeTimestamp == 0) {
+                //if no date for real-time, use 5 seconds ago
+                realTimeTimestamp = [[NSDate date] timeIntervalSince1970] - 5;
+            }
+            if (timestamp < realTimeTimestamp) {
+                [selfRef addSample:dict toArray:selfRef->histEcgData withCallbackOnFull:callback];
+            } else {
+                [selfRef addSample:dict toArray:selfRef->ecgData withCallbackOnFull:callback];
+            }
         }
         
         //process accelerometer data
@@ -353,7 +366,18 @@ static BOOL processData(id contextObject, NSArray* samples, Boolean done, int er
             dataCallback callback = ^(NSArray* data) {
                 [selfRef processAccelerometerBurst:data];
             };
-            [selfRef addSample:dict toArray:selfRef->accelerometerData withCallbackOnFull:callback];
+            //distinquish between historical and real-time data
+            NSTimeInterval timestamp = [[dict valueForKey:kVCIObserverKeyTime] doubleValue];
+            NSTimeInterval realTimeTimestamp = [[[selfRef->accelerometerData firstObject] valueForKey:kVCIObserverKeyTime] doubleValue];
+            if (realTimeTimestamp == 0) {
+                //if no date for real-time, use 5 seconds ago
+                realTimeTimestamp = [[NSDate date] timeIntervalSince1970] - 5;
+            }
+            if (timestamp < realTimeTimestamp) {
+                [selfRef addSample:dict toArray:selfRef->histAccelerometerData withCallbackOnFull:callback];
+            } else {
+                [selfRef addSample:dict toArray:selfRef->accelerometerData withCallbackOnFull:callback];
+            }
         }
     }
 
