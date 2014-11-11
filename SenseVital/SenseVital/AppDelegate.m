@@ -23,17 +23,17 @@
     rootFileDir = [rootFileDir stringByAppendingPathComponent:[bundleInfo objectForKey:@"CFBundleDisplayName"]];
     [CSSensePlatform initialize];
     [[CSSettings sharedSettings] setSettingType:kCSSettingTypeGeneral setting:kCSGeneralSettingUploadInterval value:@"3600"];
-    self.vitalConnectManager = [VitalConnectManager createVitalConnect:SDK_API_KEY environment:kVitalConnectServerNone rootFileDir:rootFileDir encrypted:NO];
+    self.vitalConnectManager = [VitalConnectManager createVitalConnect:SDK_API_KEY environment:kVitalConnectServerDevelopment services:kVitalConnectServerServicesNone rootFileDir:rootFileDir encrypted:NO];
     [self.vitalConnectManager start];
     [_vitalConnectManager enableAutoReconnect:YES];
-    
+
     //initialize the factory
     [Factory sharedFactory];
     [[Factory sharedFactory].csVitalConnectSensor reconnect];
-    
+
     //Immediately upload data, in case the app won't run for an hour, we'll at least upload all data we've collected so far.
     [CSSensePlatform flushData];
-    
+
     //register for background fetch (used to upload the data to CS, esp. when the app can't run in the background due to no connected device, but we still need to upload the data)
     [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum];
 

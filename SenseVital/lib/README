@@ -1,2 +1,4 @@
+Not that you need to unzip the VitalConnect library as it's to big to push to github.
+
 - Cortex library version 1.3.2 from https://github.com/senseobservationsystems/aim/releases/tag/v1.3.2
-Vital connect library version 2.3.6-59 (downloaded april 17 from https://vitalconnect.atlassian.net/wiki/download/attachments/1409030/VitalConnectiPhoneSDK-V2.3.6-59.zip?api=v2).
+- VitalConnectiPhoneSDK-2.4.3-85 (downloaded 10-10-2014 from https://vitalconnect.atlassian.net/wiki/download/attachments/1409030/VitalConnectiPhoneSDK-2.4.3-85.zip?api=v2).

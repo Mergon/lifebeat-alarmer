@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="kYg-Db-HCE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="kYg-Db-HCE">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--Orientation Navigation Controller-->
@@ -107,7 +107,7 @@
             </objects>
             <point key="canvasLocation" x="-1599" y="1694"/>
         </scene>
-        <!--Vital Connect View Controller - CommonSense LifeBeat-->
+        <!--CommonSense LifeBeat-->
         <scene sceneID="U20-SQ-Ysl">
             <objects>
                 <viewController storyboardIdentifier="Home" id="iVh-wq-Ump" customClass="VitalConnectViewController" sceneMemberID="viewController">
@@ -214,7 +214,7 @@
             </objects>
             <point key="canvasLocation" x="-897" y="1694"/>
         </scene>
-        <!--Device View Controller - Device-->
+        <!--Device-->
         <scene sceneID="Xmz-6A-mCt">
             <objects>
                 <viewController id="k8v-Pr-3kF" customClass="DeviceViewController" sceneMemberID="viewController">
@@ -234,7 +234,6 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FQY-0L-VLO">
-                                <rect key="frame" x="139" y="101" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -287,7 +286,7 @@
             </objects>
             <point key="canvasLocation" x="39" y="1754"/>
         </scene>
-        <!--Settings Table View Controller - Settings-->
+        <!--Settings-->
         <scene sceneID="uYN-cn-cck">
             <objects>
                 <tableViewController id="an4-Rv-ZAb" customClass="SettingsTableViewController" sceneMemberID="viewController">
@@ -448,7 +447,7 @@
             </objects>
             <point key="canvasLocation" x="-435" y="1754"/>
         </scene>
-        <!--Connect View Controller - HealthPatch Setup-->
+        <!--HealthPatch Setup-->
         <scene sceneID="JKK-VI-wgP">
             <objects>
                 <viewController storyboardIdentifier="NoDeviceConnected" id="OHH-hq-Fb6" customClass="ConnectViewController" sceneMemberID="viewController">
@@ -498,7 +497,7 @@
             </objects>
             <point key="canvasLocation" x="1" y="899"/>
         </scene>
-        <!--Device Table View Controller - Connect your HealthPatch-->
+        <!--Connect your HealthPatch-->
         <scene sceneID="qHd-P3-O3Q">
             <objects>
                 <tableViewController storyboardIdentifier="Devices" id="SNL-06-GdQ" customClass="DeviceTableViewController" sceneMemberID="viewController">
