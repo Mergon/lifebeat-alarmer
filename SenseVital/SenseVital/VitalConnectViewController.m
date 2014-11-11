@@ -125,8 +125,8 @@ static NSString* kVCStatusDisconnected = @"Disconnected";
 
 - (void) beatAnimation {
     isBeating = YES;
-    
-    if (lastRRDate == nil || [lastRRDate timeIntervalSinceNow] < -3) {
+    NSLog(@"dt = %.3f", [lastRRDate timeIntervalSinceNow]);
+    if (lastRRDate == nil || [lastRRDate timeIntervalSinceNow] < -8) {
         isBeating = NO;
         return;
     }

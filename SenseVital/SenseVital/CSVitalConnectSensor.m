@@ -137,7 +137,7 @@ static const int BATTERY_NOT_LOW = 70;
     
     //convert activity to a human readable string
     NSNumber* activity = [data valueForKey:kVCIObserverKeyActivity];
-    if (activity != nil) {
+    if (activity != nil && (NSNull*)activity != [NSNull null]) {
         
         NSString* activityString = activityToString([activity intValue]);
         
@@ -165,14 +165,16 @@ static const int BATTERY_NOT_LOW = 70;
     NSLog(@"Connected to sensor %@", sensor.name);
 
     connectedSensor = sensor;
-    sensorDeviceType = sensor.moduleType;
+    sensorDeviceType = sensor.productTypeName;
     sensorUUID = sensor.serialNumber;
-    connectedSensor.highFrequencyData = HFDataIsEnabled;
+    if (connectedSensor.isAccelerometerAvailable)
+        connectedSensor.enableAccelerometerData = HFDataIsEnabled;
+    if (connectedSensor.isECGAvailable)
+        connectedSensor.enableECGData = HFDataIsEnabled;
     [self saveDeviceStatus:@"connected"];
     [self saveSensor];
     [self enable];
 }
-
 
 
 - (void) disconnectReceivedFromSensor:(VitalConnectSensor *)sensor {
@@ -391,11 +393,15 @@ static NSNumber* CSroundedNumber(double number, int decimals) {
 
 - (void) setHFData:(BOOL) enable {
     HFDataIsEnabled = enable;
-    [_vitalConnectManager enableHighFrequencyData:enable];
+    [_vitalConnectManager enableAccelerometerData:enable];
+    [_vitalConnectManager enableECGData:enable];
     if (connectedSensor != nil) {
-        connectedSensor.highFrequencyData = enable;
+        if (connectedSensor.isAccelerometerAvailable)
+            connectedSensor.enableAccelerometerData = enable;
+        if (connectedSensor.isECGAvailable)
+            connectedSensor.enableECGData = enable;
     }
-    
+
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     [prefs setBool:HFDataIsEnabled forKey:VCHFDataKey];
     [prefs synchronize];
