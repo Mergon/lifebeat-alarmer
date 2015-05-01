@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		095E483F1917CE510007D93E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 095E483B1917CE510007D93E /* Default.png */; };
-		095E48411917CE510007D93E /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 095E483D1917CE510007D93E /* Default~iphone.png */; };
 		095E48421917CE510007D93E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 095E483E1917CE510007D93E /* Default-568h@2x.png */; };
 		3E04F5E418FFF098006485D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F5E318FFF098006485D9 /* Foundation.framework */; };
 		3E04F5E618FFF098006485D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F5E518FFF098006485D9 /* CoreGraphics.framework */; };
@@ -16,13 +14,7 @@
 		3E04F5EE18FFF099006485D9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E04F5EC18FFF099006485D9 /* InfoPlist.strings */; };
 		3E04F5F018FFF099006485D9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F5EF18FFF099006485D9 /* main.m */; };
 		3E04F5F418FFF099006485D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F5F318FFF099006485D9 /* AppDelegate.m */; };
-		3E04F5F718FFF099006485D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E04F5F518FFF099006485D9 /* Main.storyboard */; };
 		3E04F5FF18FFF099006485D9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3E04F5FE18FFF099006485D9 /* Images.xcassets */; };
-		3E04F60618FFF099006485D9 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F60518FFF099006485D9 /* XCTest.framework */; };
-		3E04F60718FFF099006485D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F5E318FFF098006485D9 /* Foundation.framework */; };
-		3E04F60818FFF099006485D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F5E718FFF098006485D9 /* UIKit.framework */; };
-		3E04F61018FFF099006485D9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3E04F60E18FFF099006485D9 /* InfoPlist.strings */; };
-		3E04F61218FFF099006485D9 /* SenseVitalTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E04F61118FFF099006485D9 /* SenseVitalTests.m */; };
 		3E04F62018FFFF7F006485D9 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F61F18FFFF7F006485D9 /* libsqlite3.dylib */; };
 		3E04F62218FFFF8E006485D9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F62118FFFF8E006485D9 /* AVFoundation.framework */; };
 		3E04F62418FFFF97006485D9 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F62318FFFF97006485D9 /* CoreMotion.framework */; };
@@ -54,13 +46,7 @@
 		3E813053191103890064DED2 /* AppIcon120x120@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E813051191103890064DED2 /* AppIcon120x120@2x.png */; };
 		3E813056191122080064DED2 /* Background320x480.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E813054191122080064DED2 /* Background320x480.png */; };
 		3E81305C1913CAB80064DED2 /* Cortex.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E81305B1913CAB80064DED2 /* Cortex.framework */; };
-		3EE1981B19E80F6A00E86A9B /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE1981A19E80F6A00E86A9B /* libcrypto.a */; };
 		3EE1981D19E80F8F00E86A9B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE1981C19E80F8F00E86A9B /* Security.framework */; };
-		3EE1982F19E8225A00E86A9B /* libfw_bundle_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE1982919E8225A00E86A9B /* libfw_bundle_ios.a */; };
-		3EE1983019E8225A00E86A9B /* libjansson_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE1982A19E8225A00E86A9B /* libjansson_ios.a */; };
-		3EE1983119E8225A00E86A9B /* librslib_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE1982B19E8225A00E86A9B /* librslib_ios.a */; };
-		3EE1983219E8225A00E86A9B /* libsensor_stream_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE1982C19E8225A00E86A9B /* libsensor_stream_ios.a */; };
-		3EE1983319E8225A00E86A9B /* libVitalConnectLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3EE1982D19E8225A00E86A9B /* libVitalConnectLibrary.a */; };
 		3EF47FD619095F2500104D69 /* AppIcon29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC519095F2500104D69 /* AppIcon29x29.png */; };
 		3EF47FD719095F2500104D69 /* AppIcon29x29@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC619095F2500104D69 /* AppIcon29x29@2x.png */; };
 		3EF47FD819095F2500104D69 /* AppIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FC719095F2500104D69 /* AppIcon40x40.png */; };
@@ -81,17 +67,14 @@
 		3EF47FF519095F3000104D69 /* LandingHeader@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FEE19095F3000104D69 /* LandingHeader@2x.png */; };
 		3EF47FF819096EC900104D69 /* Settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FF619096EC900104D69 /* Settings.png */; };
 		3EF47FF919096EC900104D69 /* Settings@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EF47FF719096EC900104D69 /* Settings@2x.png */; };
+		A934D17F1AF3BBCF004FBEAA /* libVitalConnectLibrary.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A934D17E1AF3BBCF004FBEAA /* libVitalConnectLibrary.a */; };
+		A934D1811AF3BBE8004FBEAA /* libfw_bundle_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A934D1801AF3BBE8004FBEAA /* libfw_bundle_ios.a */; };
+		A934D1831AF3BC00004FBEAA /* libjansson_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A934D1821AF3BC00004FBEAA /* libjansson_ios.a */; };
+		A934D1851AF3BC1D004FBEAA /* librslib_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A934D1841AF3BC1D004FBEAA /* librslib_ios.a */; };
+		A934D1871AF3BC3B004FBEAA /* libsensor_stream_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A934D1861AF3BC3B004FBEAA /* libsensor_stream_ios.a */; };
+		A934D18A1AF3BF7C004FBEAA /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A934D1891AF3BF7C004FBEAA /* libcrypto.a */; };
+		A934D18B1AF3C119004FBEAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E04F5F518FFF099006485D9 /* Main.storyboard */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		3E04F60918FFF099006485D9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3E04F5D818FFF098006485D9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3E04F5DF18FFF098006485D9;
-			remoteInfo = SenseVital;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		095E483B1917CE510007D93E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -109,8 +92,6 @@
 		3E04F5F318FFF099006485D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3E04F5F618FFF099006485D9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3E04F5FE18FFF099006485D9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = SenseVital/Images.xcassets; sourceTree = "<group>"; };
-		3E04F60418FFF099006485D9 /* SenseVitalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SenseVitalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E04F60518FFF099006485D9 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		3E04F60D18FFF099006485D9 /* SenseVitalTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SenseVitalTests-Info.plist"; sourceTree = "<group>"; };
 		3E04F60F18FFF099006485D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3E04F61118FFF099006485D9 /* SenseVitalTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SenseVitalTests.m; sourceTree = "<group>"; };
@@ -157,14 +138,7 @@
 		3E813051191103890064DED2 /* AppIcon120x120@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon120x120@2x.png"; sourceTree = "<group>"; };
 		3E813054191122080064DED2 /* Background320x480.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Background320x480.png; sourceTree = "<group>"; };
 		3E81305B1913CAB80064DED2 /* Cortex.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cortex.framework; path = lib/Cortex.framework; sourceTree = "<group>"; };
-		3EE1981A19E80F6A00E86A9B /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../../Downloads/VitalConnectLibrary/SampleiOSApp/OpenSSL/libcrypto.a; sourceTree = "<group>"; };
 		3EE1981C19E80F8F00E86A9B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		3EE1982919E8225A00E86A9B /* libfw_bundle_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfw_bundle_ios.a; sourceTree = "<group>"; };
-		3EE1982A19E8225A00E86A9B /* libjansson_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjansson_ios.a; sourceTree = "<group>"; };
-		3EE1982B19E8225A00E86A9B /* librslib_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = librslib_ios.a; sourceTree = "<group>"; };
-		3EE1982C19E8225A00E86A9B /* libsensor_stream_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libsensor_stream_ios.a; sourceTree = "<group>"; };
-		3EE1982D19E8225A00E86A9B /* libVitalConnectLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libVitalConnectLibrary.a; sourceTree = "<group>"; };
-		3EE1982E19E8225A00E86A9B /* VitalConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VitalConnect.h; sourceTree = "<group>"; };
 		3EF47FC519095F2500104D69 /* AppIcon29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon29x29.png; sourceTree = "<group>"; };
 		3EF47FC619095F2500104D69 /* AppIcon29x29@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon29x29@2x.png"; sourceTree = "<group>"; };
 		3EF47FC719095F2500104D69 /* AppIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon40x40.png; sourceTree = "<group>"; };
@@ -185,6 +159,13 @@
 		3EF47FEE19095F3000104D69 /* LandingHeader@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LandingHeader@2x.png"; sourceTree = "<group>"; };
 		3EF47FF619096EC900104D69 /* Settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings.png; sourceTree = "<group>"; };
 		3EF47FF719096EC900104D69 /* Settings@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Settings@2x.png"; sourceTree = "<group>"; };
+		A934D17E1AF3BBCF004FBEAA /* libVitalConnectLibrary.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libVitalConnectLibrary.a; path = lib/VitalConnectLib/libVitalConnectLibrary.a; sourceTree = "<group>"; };
+		A934D1801AF3BBE8004FBEAA /* libfw_bundle_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libfw_bundle_ios.a; path = lib/VitalConnectLib/libfw_bundle_ios.a; sourceTree = "<group>"; };
+		A934D1821AF3BC00004FBEAA /* libjansson_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libjansson_ios.a; path = lib/VitalConnectLib/libjansson_ios.a; sourceTree = "<group>"; };
+		A934D1841AF3BC1D004FBEAA /* librslib_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = librslib_ios.a; path = lib/VitalConnectLib/librslib_ios.a; sourceTree = "<group>"; };
+		A934D1861AF3BC3B004FBEAA /* libsensor_stream_ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsensor_stream_ios.a; path = lib/VitalConnectLib/libsensor_stream_ios.a; sourceTree = "<group>"; };
+		A934D1881AF3BD4C004FBEAA /* VitalConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VitalConnect.h; path = lib/VitalConnectLib/VitalConnect.h; sourceTree = "<group>"; };
+		A934D1891AF3BF7C004FBEAA /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = lib/libcrypto.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,14 +173,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A934D18A1AF3BF7C004FBEAA /* libcrypto.a in Frameworks */,
+				A934D1871AF3BC3B004FBEAA /* libsensor_stream_ios.a in Frameworks */,
+				A934D1851AF3BC1D004FBEAA /* librslib_ios.a in Frameworks */,
+				A934D1831AF3BC00004FBEAA /* libjansson_ios.a in Frameworks */,
+				A934D1811AF3BBE8004FBEAA /* libfw_bundle_ios.a in Frameworks */,
+				A934D17F1AF3BBCF004FBEAA /* libVitalConnectLibrary.a in Frameworks */,
 				3EE1981D19E80F8F00E86A9B /* Security.framework in Frameworks */,
 				3E04F64519000331006485D9 /* libz.dylib in Frameworks */,
-				3EE1981B19E80F6A00E86A9B /* libcrypto.a in Frameworks */,
-				3EE1983219E8225A00E86A9B /* libsensor_stream_ios.a in Frameworks */,
-				3EE1982F19E8225A00E86A9B /* libfw_bundle_ios.a in Frameworks */,
 				3E04F64319000318006485D9 /* CoreBluetooth.framework in Frameworks */,
 				3E04F62E18FFFFEA006485D9 /* AudioToolbox.framework in Frameworks */,
-				3EE1983119E8225A00E86A9B /* librslib_ios.a in Frameworks */,
 				3E04F62C18FFFFCB006485D9 /* CoreTelephony.framework in Frameworks */,
 				3E04F62A18FFFFB6006485D9 /* SystemConfiguration.framework in Frameworks */,
 				3E04F62818FFFFA5006485D9 /* CoreLocation.framework in Frameworks */,
@@ -208,21 +191,9 @@
 				3E04F62218FFFF8E006485D9 /* AVFoundation.framework in Frameworks */,
 				3E04F62018FFFF7F006485D9 /* libsqlite3.dylib in Frameworks */,
 				3E04F5E618FFF098006485D9 /* CoreGraphics.framework in Frameworks */,
-				3EE1983319E8225A00E86A9B /* libVitalConnectLibrary.a in Frameworks */,
-				3EE1983019E8225A00E86A9B /* libjansson_ios.a in Frameworks */,
 				3E81305C1913CAB80064DED2 /* Cortex.framework in Frameworks */,
 				3E04F5E818FFF098006485D9 /* UIKit.framework in Frameworks */,
 				3E04F5E418FFF098006485D9 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3E04F60118FFF099006485D9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E04F60618FFF099006485D9 /* XCTest.framework in Frameworks */,
-				3E04F60818FFF099006485D9 /* UIKit.framework in Frameworks */,
-				3E04F60718FFF099006485D9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -232,10 +203,10 @@
 		3E04F5D718FFF098006485D9 = {
 			isa = PBXGroup;
 			children = (
+				A934D1881AF3BD4C004FBEAA /* VitalConnect.h */,
 				095E483B1917CE510007D93E /* Default.png */,
 				095E483D1917CE510007D93E /* Default~iphone.png */,
 				095E483E1917CE510007D93E /* Default-568h@2x.png */,
-				3E81305D1913CAE00064DED2 /* VitalConnectLib */,
 				3E81305B1913CAB80064DED2 /* Cortex.framework */,
 				3E7AFDBC190EA964003D2C98 /* Videos */,
 				3EF47FC319095EA300104D69 /* Assets */,
@@ -252,7 +223,6 @@
 			isa = PBXGroup;
 			children = (
 				3E04F5E018FFF098006485D9 /* CS Heart.app */,
-				3E04F60418FFF099006485D9 /* SenseVitalTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -260,8 +230,13 @@
 		3E04F5E218FFF098006485D9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A934D1891AF3BF7C004FBEAA /* libcrypto.a */,
+				A934D1861AF3BC3B004FBEAA /* libsensor_stream_ios.a */,
+				A934D1841AF3BC1D004FBEAA /* librslib_ios.a */,
+				A934D1821AF3BC00004FBEAA /* libjansson_ios.a */,
+				A934D1801AF3BBE8004FBEAA /* libfw_bundle_ios.a */,
+				A934D17E1AF3BBCF004FBEAA /* libVitalConnectLibrary.a */,
 				3EE1981C19E80F8F00E86A9B /* Security.framework */,
-				3EE1981A19E80F6A00E86A9B /* libcrypto.a */,
 				3E04F64419000331006485D9 /* libz.dylib */,
 				3E04F64219000318006485D9 /* CoreBluetooth.framework */,
 				3E04F62D18FFFFEA006485D9 /* AudioToolbox.framework */,
@@ -275,7 +250,6 @@
 				3E04F5E318FFF098006485D9 /* Foundation.framework */,
 				3E04F5E518FFF098006485D9 /* CoreGraphics.framework */,
 				3E04F5E718FFF098006485D9 /* UIKit.framework */,
-				3E04F60518FFF099006485D9 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -390,20 +364,6 @@
 			path = videothumb_iPhone_assets;
 			sourceTree = "<group>";
 		};
-		3E81305D1913CAE00064DED2 /* VitalConnectLib */ = {
-			isa = PBXGroup;
-			children = (
-				3EE1982919E8225A00E86A9B /* libfw_bundle_ios.a */,
-				3EE1982A19E8225A00E86A9B /* libjansson_ios.a */,
-				3EE1982B19E8225A00E86A9B /* librslib_ios.a */,
-				3EE1982C19E8225A00E86A9B /* libsensor_stream_ios.a */,
-				3EE1982D19E8225A00E86A9B /* libVitalConnectLibrary.a */,
-				3EE1982E19E8225A00E86A9B /* VitalConnect.h */,
-			);
-			name = VitalConnectLib;
-			path = lib/VitalConnectLib;
-			sourceTree = "<group>";
-		};
 		3EF47FC319095EA300104D69 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
@@ -475,24 +435,6 @@
 			productReference = 3E04F5E018FFF098006485D9 /* CS Heart.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3E04F60318FFF099006485D9 /* SenseVitalTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 3E04F61818FFF099006485D9 /* Build configuration list for PBXNativeTarget "SenseVitalTests" */;
-			buildPhases = (
-				3E04F60018FFF099006485D9 /* Sources */,
-				3E04F60118FFF099006485D9 /* Frameworks */,
-				3E04F60218FFF099006485D9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				3E04F60A18FFF099006485D9 /* PBXTargetDependency */,
-			);
-			name = SenseVitalTests;
-			productName = SenseVitalTests;
-			productReference = 3E04F60418FFF099006485D9 /* SenseVitalTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -504,9 +446,6 @@
 				TargetAttributes = {
 					3E04F5DF18FFF098006485D9 = {
 						DevelopmentTeam = MT2K5TW3U7;
-					};
-					3E04F60318FFF099006485D9 = {
-						TestTargetID = 3E04F5DF18FFF098006485D9;
 					};
 				};
 			};
@@ -524,7 +463,6 @@
 			projectRoot = "";
 			targets = (
 				3E04F5DF18FFF098006485D9 /* CS Heart */,
-				3E04F60318FFF099006485D9 /* SenseVitalTests */,
 			);
 		};
 /* End PBXProject section */
@@ -536,6 +474,7 @@
 			files = (
 				3E813052191103890064DED2 /* AppIcon120x120.png in Resources */,
 				3E5EF3F21A126512007C2D3E /* Default~iphone.png in Resources */,
+				A934D18B1AF3C119004FBEAA /* Main.storyboard in Resources */,
 				3E7AFDBE190EA99D003D2C98 /* instruction.mp4 in Resources */,
 				3E04F5FF18FFF099006485D9 /* Images.xcassets in Resources */,
 				3E5EF3F41A126518007C2D3E /* Default.png in Resources */,
@@ -550,9 +489,7 @@
 				3E04F5EE18FFF099006485D9 /* InfoPlist.strings in Resources */,
 				3E5EF3F01A1264FC007C2D3E /* Background.png in Resources */,
 				3EF47FDB19095F2500104D69 /* AppIcon50x50@2x.png in Resources */,
-				095E483F1917CE510007D93E /* Default.png in Resources */,
 				3EF47FF819096EC900104D69 /* Settings.png in Resources */,
-				3E04F5F718FFF099006485D9 /* Main.storyboard in Resources */,
 				3EF47FDC19095F2500104D69 /* AppIcon57x57.png in Resources */,
 				3EF47FF219095F3000104D69 /* Icon.png in Resources */,
 				3E7AFDCB190FB1BA003D2C98 /* videothumb.png in Resources */,
@@ -563,20 +500,11 @@
 				3EF47FF319095F3000104D69 /* Icon@2x.png in Resources */,
 				3E813053191103890064DED2 /* AppIcon120x120@2x.png in Resources */,
 				3EF47FE019095F2500104D69 /* AppIcon72x72.png in Resources */,
-				095E48411917CE510007D93E /* Default~iphone.png in Resources */,
 				095E48421917CE510007D93E /* Default-568h@2x.png in Resources */,
 				3EF47FE119095F2500104D69 /* AppIcon72x72@2x.png in Resources */,
 				3EF47FE319095F2500104D69 /* AppIcon76x76@2x.png in Resources */,
 				3EF47FF519095F3000104D69 /* LandingHeader@2x.png in Resources */,
 				3EF47FE219095F2500104D69 /* AppIcon76x76.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3E04F60218FFF099006485D9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E04F61018FFF099006485D9 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,23 +531,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3E04F60018FFF099006485D9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3E04F61218FFF099006485D9 /* SenseVitalTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		3E04F60A18FFF099006485D9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 3E04F5DF18FFF098006485D9 /* CS Heart */;
-			targetProxy = 3E04F60918FFF099006485D9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3E04F5EC18FFF099006485D9 /* InfoPlist.strings */ = {
@@ -726,8 +638,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/pim/projects/aim/ios-sdk/build",
-					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/lib/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SenseVital/SenseVital-Prefix.pch";
@@ -735,9 +646,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/pim/projects/vitalconnect-ios/VitalConnectLib",
 					"$(PROJECT_DIR)/lib/VitalConnectLib",
-					/Users/pim/Downloads/VitalConnectLibrary/SampleiOSApp/OpenSSL,
+					"$(PROJECT_DIR)/lib",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = (
@@ -758,8 +668,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/pim/projects/aim/ios-sdk/build",
-					"$(PROJECT_DIR)/lib",
+					"$(PROJECT_DIR)/lib/**",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SenseVital/SenseVital-Prefix.pch";
@@ -767,9 +676,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/pim/projects/vitalconnect-ios/VitalConnectLib",
 					"$(PROJECT_DIR)/lib/VitalConnectLib",
-					/Users/pim/Downloads/VitalConnectLibrary/SampleiOSApp/OpenSSL,
+					"$(PROJECT_DIR)/lib",
 				);
 				OTHER_LDFLAGS = (
 					"-lc++",
@@ -779,46 +687,6 @@
 				PROVISIONING_PROFILE = "";
 				VALID_ARCHS = armv7;
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		3E04F61918FFF099006485D9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SenseVital.app/SenseVital";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SenseVital/SenseVital-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "SenseVitalTests/SenseVitalTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		3E04F61A18FFF099006485D9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SenseVital.app/SenseVital";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "SenseVital/SenseVital-Prefix.pch";
-				INFOPLIST_FILE = "SenseVitalTests/SenseVitalTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -839,15 +707,6 @@
 			buildConfigurations = (
 				3E04F61618FFF099006485D9 /* Debug */,
 				3E04F61718FFF099006485D9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		3E04F61818FFF099006485D9 /* Build configuration list for PBXNativeTarget "SenseVitalTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				3E04F61918FFF099006485D9 /* Debug */,
-				3E04F61A18FFF099006485D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
