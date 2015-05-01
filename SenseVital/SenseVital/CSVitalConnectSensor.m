@@ -276,7 +276,7 @@ static const int BATTERY_NOT_LOW = 70;
 		if(previousTimestamp.doubleValue == 0.0) {
 			interval = [NSNumber numberWithDouble:0.0];
 		} else {
-			interval = [NSNumber numberWithDouble:(timestamp.doubleValue - previousTimestamp.doubleValue)];
+			interval = CSroundedNumber((timestamp.doubleValue - previousTimestamp.doubleValue) * 1000.0, 1);
 		}
 		
 		previousTimestamp = timestamp;
@@ -344,7 +344,7 @@ typedef void (^dataCallback)(NSArray* data);
 		if(previousTimestamp.doubleValue == 0.0) {
 			interval = [NSNumber numberWithDouble:0.0];
 		} else {
-			interval = [NSNumber numberWithDouble:(timestamp.doubleValue - previousTimestamp.doubleValue)];
+			interval = CSroundedNumber((timestamp.doubleValue - previousTimestamp.doubleValue) * 1000.0, 1);
 		}
 		previousTimestamp = timestamp;
 		
