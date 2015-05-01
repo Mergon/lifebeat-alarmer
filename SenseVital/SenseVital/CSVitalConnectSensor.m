@@ -322,14 +322,27 @@ typedef void (^dataCallback)(NSArray* data);
 - (void) processECGBurst:(NSArray*) burstData {
     //create array with all values
     NSMutableArray* values = [[NSMutableArray alloc] initWithCapacity:burstData.count];
+	NSMutableArray* intervals = [[NSMutableArray alloc] initWithCapacity:burstData.count];
+	
+	NSNumber* previousTimestamp = [[NSNumber alloc] initWithFloat:0.0];
+	
     for (NSDictionary* sample in burstData) {
-        //NSNumber* timestamp = [sample valueForKey:kVCIObserverKeyTime];
+        NSNumber* timestamp = [sample valueForKey:kVCIObserverKeyTime];
         NSNumber* hrValue = [sample valueForKey:kVCIObserverKeyRawHeartValue];
-        if (hrValue == nil) {
+		
+		NSNumber *interval;
+		if(previousTimestamp.floatValue == 0.0) {
+			interval = [NSNumber numberWithFloat:0.0];
+		} else {
+			interval = [NSNumber numberWithFloat:(timestamp.floatValue - previousTimestamp.floatValue)];
+		}
+		previousTimestamp = timestamp;
+		
+		if (hrValue == nil) {
             NSLog(@"Error, no hr value");
         } else {
             [values addObject:hrValue];
-			//TODO also create intervals array
+			[intervals addObject:interval];
         }
     }
     
@@ -344,6 +357,7 @@ typedef void (^dataCallback)(NSArray* data);
 	//TODO store array of sampleIntervals instead of calculating the interval
     NSDictionary* value = [NSDictionary dictionaryWithObjectsAndKeys:
                            values, @"values",
+						   intervals, @"allIntervals",
                            header, @"header",
                            sampleInterval, @"interval",
                            nil];
