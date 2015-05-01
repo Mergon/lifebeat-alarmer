@@ -257,15 +257,30 @@ static const int BATTERY_NOT_LOW = 70;
 - (void) processAccelerometerBurst:(NSArray*) burstData {
     //Scale values to convert to approx m/s^2 units.
     const double scalingDiv = 12.8;
-    //create array with all values
+	
+	//create array for all values and intervals
     NSMutableArray* values = [[NSMutableArray alloc] initWithCapacity:burstData.count];
+	NSMutableArray* intervals = [[NSMutableArray alloc] initWithCapacity:burstData.count];
+	
+	NSNumber* previousTimestamp = [[NSNumber alloc] initWithFloat:0.0];
+	
     for (NSDictionary* sample in burstData) {
-        //NSNumber* timestamp = [sample valueForKey:kVCIObserverKeyTime];
+        NSNumber* timestamp = [sample valueForKey:kVCIObserverKeyTime];
         NSNumber* x = CSroundedNumber([[sample valueForKey:kVCIObserverKeyRawXValue] doubleValue] / scalingDiv, 3);
         NSNumber* y = CSroundedNumber([[sample valueForKey:kVCIObserverKeyRawYValue] doubleValue] / scalingDiv, 3);
         NSNumber* z = CSroundedNumber([[sample valueForKey:kVCIObserverKeyRawZValue] doubleValue] / scalingDiv, 3);
 
+		NSNumber *interval;
+		if(previousTimestamp.floatValue == 0.0) {
+			interval = [NSNumber numberWithFloat:0.0];
+		} else {
+			interval = [NSNumber numberWithFloat:(timestamp.floatValue - previousTimestamp.floatValue)];
+		}
+		
+		[intervals addObject:interval];
         [values addObject:[NSArray arrayWithObjects:x,y,z, nil]];
+		
+		
     }
 
     //create header
@@ -278,6 +293,7 @@ static const int BATTERY_NOT_LOW = 70;
     //add data point
     NSDictionary* value = [NSDictionary dictionaryWithObjectsAndKeys:
                            values, @"values",
+						   intervals, @"allIntervals",
                            header, @"header",
                            sampleInterval, @"interval",
                            nil];
@@ -312,6 +328,7 @@ typedef void (^dataCallback)(NSArray* data);
             NSLog(@"Error, no hr value");
         } else {
             [values addObject:hrValue];
+			//TODO also create intervals array
         }
     }
     
@@ -323,6 +340,7 @@ typedef void (^dataCallback)(NSArray* data);
     NSString* header = [NSString stringWithFormat:@"%@", heartValueKey];
     
     //add data point
+	//TODO store array of sampleIntervals instead of calculating the interval
     NSDictionary* value = [NSDictionary dictionaryWithObjectsAndKeys:
                            values, @"values",
                            header, @"header",
