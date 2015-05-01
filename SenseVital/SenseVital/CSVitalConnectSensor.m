@@ -39,6 +39,7 @@ static const int BATTERY_NOT_LOW = 70;
     BOOL HFDataIsEnabled;
     NSDate* keppAliveNotificationDate;
     BOOL shouldKeepAlive;
+	NSTimer *forceProcessingTimer;
     
     //array of measurements (for averaging)
     NSMutableArray* batteryMeasurements;
@@ -65,7 +66,8 @@ static const int BATTERY_NOT_LOW = 70;
         }
         
         self->isBatteryLow = [prefs boolForKey:BATTERY_LOW_KEY];
-        
+		
+		forceProcessingTimer = nil;
     }
     return self;
 }
@@ -271,11 +273,12 @@ static const int BATTERY_NOT_LOW = 70;
         NSNumber* z = CSroundedNumber([[sample valueForKey:kVCIObserverKeyRawZValue] doubleValue] / scalingDiv, 3);
 
 		NSNumber *interval;
-		if(previousTimestamp.floatValue == 0.0) {
-			interval = [NSNumber numberWithFloat:0.0];
+		if(previousTimestamp.doubleValue == 0.0) {
+			interval = [NSNumber numberWithDouble:0.0];
 		} else {
-			interval = [NSNumber numberWithFloat:(timestamp.floatValue - previousTimestamp.floatValue)];
+			interval = [NSNumber numberWithDouble:(timestamp.doubleValue - previousTimestamp.doubleValue)];
 		}
+		
 		previousTimestamp = timestamp;
 		
 		[intervals addObject:interval];
@@ -304,15 +307,22 @@ static const int BATTERY_NOT_LOW = 70;
 
 typedef void (^dataCallback)(NSArray* data);
 - (void) addSample:(NSDictionary*) sample toArray:(NSMutableArray*) array withCallbackOnFull:(dataCallback) callback{
+	
     if ([array count] > 0) {
         NSTimeInterval start = [[[array objectAtIndex:0] valueForKey:kVCIObserverKeyTime] doubleValue];
         NSTimeInterval timestamp = [[sample valueForKey:kVCIObserverKeyTime] doubleValue];
+		
         if (timestamp - start > burstInterval) {
             //process the data
             //TODO: use a separate gcd queue
             callback(array);
             //reset this array
             [array removeAllObjects];
+			
+			if(forceProcessingTimer != nil) {
+				[forceProcessingTimer invalidate];
+				forceProcessingTimer = nil;
+			}
         }
     }
 
@@ -324,17 +334,17 @@ typedef void (^dataCallback)(NSArray* data);
     NSMutableArray* values = [[NSMutableArray alloc] initWithCapacity:burstData.count];
 	NSMutableArray* intervals = [[NSMutableArray alloc] initWithCapacity:burstData.count];
 	
-	NSNumber* previousTimestamp = [[NSNumber alloc] initWithFloat:0.0];
+	NSNumber* previousTimestamp = [[NSNumber alloc] initWithDouble:0.0];
 	
     for (NSDictionary* sample in burstData) {
         NSNumber* timestamp = [sample valueForKey:kVCIObserverKeyTime];
         NSNumber* hrValue = [sample valueForKey:kVCIObserverKeyRawHeartValue];
 		
 		NSNumber *interval;
-		if(previousTimestamp.floatValue == 0.0) {
-			interval = [NSNumber numberWithFloat:0.0];
+		if(previousTimestamp.doubleValue == 0.0) {
+			interval = [NSNumber numberWithDouble:0.0];
 		} else {
-			interval = [NSNumber numberWithFloat:(timestamp.floatValue - previousTimestamp.floatValue)];
+			interval = [NSNumber numberWithDouble:(timestamp.doubleValue - previousTimestamp.doubleValue)];
 		}
 		previousTimestamp = timestamp;
 		
@@ -365,6 +375,28 @@ typedef void (^dataCallback)(NSArray* data);
     [CSSensePlatform addDataPointForSensor:@"ecg (burst-mode)" displayName:nil description:sensorDescription deviceType:sensorDeviceType deviceUUID:sensorUUID dataType:kCSDATA_TYPE_JSON jsonValue:value timestamp:[NSDate dateWithTimeIntervalSince1970:start]];
 }
 
+
+/**
+ Force the burst data from ECG and Accelerometer to be processed and stored. Sometimes it might happen that this doesn't work automatically is there is a long lag in receiving data.
+ This method processes the current buffers of ECG and accelerometer data and subsequently empties the buffers.
+ */
+- (void) forceProcessingBurstData: (NSTimer *) timer {
+	
+	if((self->ecgData != nil) && ([self->ecgData count] > 0)) {
+		[self processECGBurst:self->ecgData];
+		[self->ecgData removeAllObjects];
+	}
+	
+	if((self->accelerometerData != nil) && ([self->accelerometerData count] > 0)) {
+		[self processAccelerometerBurst:self->accelerometerData];
+		[self->accelerometerData removeAllObjects];
+	}
+	
+	[forceProcessingTimer invalidate];
+	forceProcessingTimer = nil;
+	
+}
+
 static BOOL processData(id contextObject, NSArray* samples, Boolean done, int error)
 {
     CSVitalConnectSensor* selfRef = (CSVitalConnectSensor*) contextObject;
@@ -372,6 +404,11 @@ static BOOL processData(id contextObject, NSArray* samples, Boolean done, int er
     {
         return NO;
     }
+	
+	if(selfRef->forceProcessingTimer != nil) {
+		selfRef->forceProcessingTimer = [NSTimer scheduledTimerWithTimeInterval:4 target:selfRef selector:@selector(forceProcessingBurstData:) userInfo:nil repeats:NO];
+	}
+	
     for (int i = 0; i < [samples count]; i++) {
         NSDictionary *dict = [samples objectAtIndex:i];
         //process low frequency data
