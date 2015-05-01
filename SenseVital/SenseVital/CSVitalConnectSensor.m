@@ -276,6 +276,7 @@ static const int BATTERY_NOT_LOW = 70;
 		} else {
 			interval = [NSNumber numberWithFloat:(timestamp.floatValue - previousTimestamp.floatValue)];
 		}
+		previousTimestamp = timestamp;
 		
 		[intervals addObject:interval];
         [values addObject:[NSArray arrayWithObjects:x,y,z, nil]];
