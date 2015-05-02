@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="kYg-Db-HCE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="kYg-Db-HCE">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
     </dependencies>
     <scenes>
         <!--Orientation Navigation Controller-->
@@ -299,7 +299,7 @@
                                 <string key="footerTitle">Disable tracking if you temporarily don't want to get data from your device. High frequency tracking enables ECG and accelerometer data. </string>
                                 <cells>
                                     <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="lXV-u0-RaG">
-                                        <rect key="frame" x="0.0" y="119" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lXV-u0-RaG" id="s4a-rV-TOc">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -322,7 +322,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="RwL-Zq-a8X">
-                                        <rect key="frame" x="0.0" y="163" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="158" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RwL-Zq-a8X" id="LR4-xs-VeW">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -347,10 +347,10 @@
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Uploading" id="505-ay-GZ4">
-                                <string key="footerTitle">Your measurements will be uploaded to CommonSense every hour. Daily bandwidth usage is approximately 5mb and 30mb for high frequency tracking.</string>
+                                <string key="footerTitle">Your measurements will be uploaded to CommonSense every hour, or every minute when high frequency uploading is enabled. Daily bandwidth usage is approximately 5mb; or 30mb for high frequency tracking.</string>
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="3XV-0d-Ncd">
-                                        <rect key="frame" x="0.0" y="332" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="296" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3XV-0d-Ncd" id="lvL-wn-WPa">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -374,12 +374,35 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pPb-Ib-QEb">
+                                        <rect key="frame" x="0.0" y="340" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pPb-Ib-QEb" id="GrT-h2-gyq">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High frequency uploading" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="w1h-Gn-TFV">
+                                                    <rect key="frame" x="20" y="11" width="204" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Usg-p0-xG7">
+                                                    <rect key="frame" x="251" y="6" width="51" height="31"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="toggleHighFrequencyUploading:" destination="an4-Rv-ZAb" eventType="valueChanged" id="nzv-BV-Epu"/>
+                                                    </connections>
+                                                </switch>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Device" id="0f5-du-wPA">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Ok9-Q0-oNZ" style="IBUITableViewCellStyleDefault" id="cZn-9t-zb7">
-                                        <rect key="frame" x="0.0" y="501" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="506" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cZn-9t-zb7" id="zas-Py-tFy">
                                             <rect key="frame" x="0.0" y="0.0" width="273" height="43"/>
@@ -439,6 +462,7 @@
                     <connections>
                         <outlet property="hfSwitch" destination="Ybb-RM-2RE" id="9dd-UD-sqE"/>
                         <outlet property="trackingEnabledSwitch" destination="H74-RI-SkD" id="XbN-OW-o4S"/>
+                        <outlet property="uploadFreqSwitch" destination="Usg-p0-xG7" id="j06-sA-s6r"/>
                         <outlet property="uploadingActivityIndicator" destination="z2I-hW-OD8" id="nMd-HF-gFe"/>
                         <segue destination="kYg-Db-HCE" kind="modal" identifier="LoggedOut" modalTransitionStyle="crossDissolve" id="6kg-Wi-bca"/>
                     </connections>

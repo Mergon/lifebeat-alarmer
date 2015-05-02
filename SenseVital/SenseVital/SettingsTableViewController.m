@@ -9,6 +9,7 @@
 #import "SettingsTableViewController.h"
 #import "Factory.h"
 #import <Cortex/CSSensePlatform.h>
+#import <Cortex/CSSettings.h>
 
 static NSString* loginSucceedKey = @"LoginSucceed";
 
@@ -125,6 +126,14 @@ static NSString* loginSucceedKey = @"LoginSucceed";
 }
 - (IBAction) toggleWifiUploading:(id)sender {
     
+}
+
+- (IBAction) toggleHighFrequencyUploading:(id)sender {
+	if(self.uploadFreqSwitch.on) {
+		[[CSSettings sharedSettings] setSettingType:kCSSettingTypeGeneral setting:kCSGeneralSettingUploadInterval value:@"60"];
+	} else {
+		[[CSSettings sharedSettings] setSettingType:kCSSettingTypeGeneral setting:kCSGeneralSettingUploadInterval value:@"3600"];
+	}
 }
 
 - (IBAction) signOut:(id)sender {

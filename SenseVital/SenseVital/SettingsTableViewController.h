@@ -12,12 +12,14 @@
 - (IBAction) toggleTracking:(id)sender;
 - (IBAction) toggleHFTracking:(id)sender;
 - (IBAction) toggleWifiUploading:(id)sender;
+- (IBAction) toggleHighFrequencyUploading:(id)sender;
 
 - (IBAction) signOut:(id)sender;
 - (IBAction) uploadNow:(id)sender;
 
 
 @property (nonatomic, retain) IBOutlet UISwitch* hfSwitch;
+@property (nonatomic, retain) IBOutlet UISwitch* uploadFreqSwitch;
 @property (nonatomic, retain) IBOutlet UISwitch* wifiUploadSwitch;
 @property (nonatomic, retain) IBOutlet UISwitch* trackingEnabledSwitch;
 @property (nonatomic, retain) IBOutlet UIActivityIndicatorView* uploadingActivityIndicator;
