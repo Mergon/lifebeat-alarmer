@@ -405,7 +405,7 @@ static BOOL processData(id contextObject, NSArray* samples, Boolean done, int er
         return NO;
     }
 	
-	if(selfRef->forceProcessingTimer != nil) {
+	if(selfRef->forceProcessingTimer == nil) {
 		selfRef->forceProcessingTimer = [NSTimer scheduledTimerWithTimeInterval:4 target:selfRef selector:@selector(forceProcessingBurstData:) userInfo:nil repeats:NO];
 	}
 	
