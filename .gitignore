@@ -1,2 +1,4 @@
-*.xcodeproj
 *.DS_Store
+SenseVital/CS Heart.xcodeproj/project.xcworkspace/xcuserdata/
+SenseVital/CS Heart.xcodeproj/xcuserdata/joris.xcuserdatad/
+SenseVital/lib/VitalConnectLib/*
