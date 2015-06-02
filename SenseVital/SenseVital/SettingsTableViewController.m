@@ -37,7 +37,10 @@ static NSString* loginSucceedKey = @"LoginSucceed";
     //set state of settings
     self.trackingEnabledSwitch.on = [Factory sharedFactory].csVitalConnectSensor.trackingEnabled;
     self.hfSwitch.on = [Factory sharedFactory].csVitalConnectSensor.HFData;
-    
+	self.uploadFreqSwitch.on = ([[CSSettings sharedSettings] getSettingType:kCSSettingTypeGeneral setting:kCSGeneralSettingUploadInterval].intValue <= 60);
+	
+	
+	
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
 }
