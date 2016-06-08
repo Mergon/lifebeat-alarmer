@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0939CBCC1D081CDD007C1C67 /* logoStandBy512 Edited.png in Resources */ = {isa = PBXBuildFile; fileRef = 0939CBCB1D081CDD007C1C67 /* logoStandBy512 Edited.png */; };
 		095E48421917CE510007D93E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 095E483E1917CE510007D93E /* Default-568h@2x.png */; };
 		3E04F5E418FFF098006485D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F5E318FFF098006485D9 /* Foundation.framework */; };
 		3E04F5E618FFF098006485D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F5E518FFF098006485D9 /* CoreGraphics.framework */; };
@@ -77,6 +78,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0939CBCB1D081CDD007C1C67 /* logoStandBy512 Edited.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logoStandBy512 Edited.png"; sourceTree = "<group>"; };
 		095E483B1917CE510007D93E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		095E483D1917CE510007D93E /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
 		095E483E1917CE510007D93E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -408,6 +410,7 @@
 				3EF47FF619096EC900104D69 /* Settings.png */,
 				3EF47FF719096EC900104D69 /* Settings@2x.png */,
 				3EF47FEB19095F3000104D69 /* Icon.png */,
+				0939CBCB1D081CDD007C1C67 /* logoStandBy512 Edited.png */,
 				3EF47FEC19095F3000104D69 /* Icon@2x.png */,
 				3EF47FED19095F3000104D69 /* LandingHeader.png */,
 				3EF47FEE19095F3000104D69 /* LandingHeader@2x.png */,
@@ -445,7 +448,7 @@
 				ORGANIZATIONNAME = "Sense Observation Systems BV";
 				TargetAttributes = {
 					3E04F5DF18FFF098006485D9 = {
-						DevelopmentTeam = MT2K5TW3U7;
+						DevelopmentTeam = 6U99C26K8T;
 					};
 				};
 			};
@@ -481,6 +484,7 @@
 				3EF47FDE19095F2500104D69 /* AppIcon60x60.png in Resources */,
 				3EF47FD819095F2500104D69 /* AppIcon40x40.png in Resources */,
 				3E813056191122080064DED2 /* Background320x480.png in Resources */,
+				0939CBCC1D081CDD007C1C67 /* logoStandBy512 Edited.png in Resources */,
 				3EF47FD919095F2500104D69 /* AppIcon40x40@2x.png in Resources */,
 				3EF47FF419095F3000104D69 /* LandingHeader.png in Resources */,
 				3EF47FF919096EC900104D69 /* Settings@2x.png in Resources */,
