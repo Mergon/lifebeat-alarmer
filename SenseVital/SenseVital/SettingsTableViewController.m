@@ -143,6 +143,24 @@ static NSString* loginSucceedKey = @"LoginSucceed";
     [signOutAlertView show];
     
 }
+
+- (IBAction)alarm:(id)sender { // STANDBY CODE HERE
+    NSURL *alarmURL = [NSURL URLWithString:@"http://test.ask-cs.com/~jordi/medical-demo/alarm_medics.php"];
+    
+    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:alarmURL] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+        // Show confirmation
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
+                                                                       message:@"This is an alert."
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+    }];
+}
+
 - (IBAction) uploadNow:(id)sender {
     [self.uploadingActivityIndicator startAnimating];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0), ^() {
