@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "SendAlarm.h" // MERRY HACK
+
 @interface SettingsTableViewController : UITableViewController
 - (IBAction) toggleTracking:(id)sender;
 - (IBAction) toggleHFTracking:(id)sender;
@@ -17,6 +19,7 @@
 - (IBAction) signOut:(id)sender;
 - (IBAction) uploadNow:(id)sender;
 
+@property (nonatomic, retain) IBOutlet UITableViewCell *thresholdCell;
 
 @property (nonatomic, retain) IBOutlet UISwitch* hfSwitch;
 @property (nonatomic, retain) IBOutlet UISwitch* uploadFreqSwitch;

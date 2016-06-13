@@ -40,6 +40,9 @@ static NSString* loginSucceedKey = @"LoginSucceed";
 	self.uploadFreqSwitch.on = ([[CSSettings sharedSettings] getSettingType:kCSSettingTypeGeneral setting:kCSGeneralSettingUploadInterval].intValue <= 60);
 	
 	
+    // MERRY HACK: Update threshold button
+    [self updateThresholdButton];
+    
 	
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -144,13 +147,15 @@ static NSString* loginSucceedKey = @"LoginSucceed";
     
 }
 
-- (IBAction)alarm:(id)sender { // STANDBY CODE HERE
-    NSURL *alarmURL = [NSURL URLWithString:@"http://test.ask-cs.com/~jordi/medical-demo/alarm_medics.php"];
-    
-    [NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:alarmURL] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse * _Nullable response, NSData * _Nullable data, NSError * _Nullable connectionError) {
+
+
+
+
+- (IBAction)alarm:(id)sender { // MERRY HACK: Alarm button here
+    [SendAlarm sendAlarmWithCompletionHandler:^{
         // Show confirmation
-        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"My Alert"
-                                                                       message:@"This is an alert."
+        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Alarm sent!"
+                                                                       message:@"An alarm has been sent."
                                                                 preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
@@ -160,6 +165,58 @@ static NSString* loginSucceedKey = @"LoginSucceed";
         [self presentViewController:alert animated:YES completion:nil];
     }];
 }
+
+- (IBAction)autoAlarmThreshold:(id)sender { // MERRY HACK: Auto-alarm threshold here
+    // Show alert
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Set Threshold"
+                                                                   message:@"Set your desired threshold. If the heart beat rate drops below this threshold, an alarm will immediately be sent."
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    __block NSString *thresholdText;
+    
+    [alert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {    }];
+    
+    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              UITextField *input = [[alert textFields] firstObject];
+                                                              thresholdText = input.text;
+                                                              [self setAutoAlarmThreshold:thresholdText];
+                                                          }];
+    
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+- (void)setAutoAlarmThreshold:(NSString*)thresholdText { // MERRY HACK: Set auto-alarm threshold here
+    int threshold = thresholdText.intValue;
+    if (threshold > 0) {
+        // Save preference
+        NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+        [prefs setBool:true forKey:@"MerryHackThresholdEnabled"];
+        [prefs setInteger:threshold forKey:@"MerryHackThreshold"];
+        [prefs synchronize];
+        
+        // Display new threshold
+        [self updateThresholdButton];
+    }
+}
+
+- (void)updateThresholdButton {
+    NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+    if ([prefs boolForKey:@"MerryHackThresholdEnabled"]) {
+        int threshold = [prefs integerForKey:@"MerryHackThreshold"];
+        NSMutableString *thresholdButtonText = [NSMutableString stringWithString:@"Auto-Alarm Threshold: "];
+        [thresholdButtonText appendFormat:@"%d", threshold];
+        [[_thresholdCell textLabel] setText:thresholdButtonText];
+    }
+    else {
+        [[_thresholdCell textLabel] setText:@"Auto-Alarm Threshold"];
+    }
+}
+
+
+
+
 
 - (IBAction) uploadNow:(id)sender {
     [self.uploadingActivityIndicator startAnimating];

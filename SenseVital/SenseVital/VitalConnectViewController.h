@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "VitalConnect.h"
 
+#import "SendAlarm.h" // MERRY HACK
+
 @interface VitalConnectViewController : UIViewController <VitalConnectConnectionListener>
 
 

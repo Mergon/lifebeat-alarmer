@@ -172,8 +172,28 @@ static NSString* kVCStatusDisconnected = @"Disconnected";
             hr = @"--";
         } else {
             hr = CSroundedNumber([hr doubleValue], 0);
+            
+            // MERRY HACK: Detect heart rate here.
+            NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
+            if ([prefs boolForKey:@"MerryHackThresholdEnabled"] == true) {
+                NSInteger threshold = [prefs integerForKey:@"MerryHackThreshold"];
+                if ([hr integerValue] < threshold) {
+                    [SendAlarm sendAlarmWithCompletionHandler:^{
+                        // Show confirmation
+                        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Alarm sent!"
+                                                                                       message:@"An alarm has been sent."
+                                                                                preferredStyle:UIAlertControllerStyleAlert];
+                        
+                        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                              handler:^(UIAlertAction * action) {}];
+                        
+                        [alert addAction:defaultAction];
+                        [self presentViewController:alert animated:YES completion:nil];
+                    }];
+                    [prefs setBool:false forKey:@"MerryHackThresholdEnabled"];
+                }
+            }
         }
-        
         
         dispatch_async(dispatch_get_main_queue(), ^{
             @autoreleasepool {

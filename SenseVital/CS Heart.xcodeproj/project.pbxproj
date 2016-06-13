@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0939CBCC1D081CDD007C1C67 /* logoStandBy512 Edited.png in Resources */ = {isa = PBXBuildFile; fileRef = 0939CBCB1D081CDD007C1C67 /* logoStandBy512 Edited.png */; };
 		095E48421917CE510007D93E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 095E483E1917CE510007D93E /* Default-568h@2x.png */; };
+		09CC58841D0EABCF00F3D79E /* SendAlarm.m in Sources */ = {isa = PBXBuildFile; fileRef = 09CC58831D0EABCF00F3D79E /* SendAlarm.m */; };
 		3E04F5E418FFF098006485D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F5E318FFF098006485D9 /* Foundation.framework */; };
 		3E04F5E618FFF098006485D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F5E518FFF098006485D9 /* CoreGraphics.framework */; };
 		3E04F5E818FFF098006485D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E04F5E718FFF098006485D9 /* UIKit.framework */; };
@@ -82,6 +83,8 @@
 		095E483B1917CE510007D93E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		095E483D1917CE510007D93E /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
 		095E483E1917CE510007D93E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		09CC58821D0EABCF00F3D79E /* SendAlarm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendAlarm.h; sourceTree = "<group>"; };
+		09CC58831D0EABCF00F3D79E /* SendAlarm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendAlarm.m; sourceTree = "<group>"; };
 		3E04F5E018FFF098006485D9 /* CS Heart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CS Heart.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E04F5E318FFF098006485D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3E04F5E518FFF098006485D9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -274,6 +277,8 @@
 				3E04F65119017D37006485D9 /* Factory.m */,
 				3E7AFDBF190EB01F003D2C98 /* OrientationNavigationController.h */,
 				3E7AFDC0190EB01F003D2C98 /* OrientationNavigationController.m */,
+				09CC58821D0EABCF00F3D79E /* SendAlarm.h */,
+				09CC58831D0EABCF00F3D79E /* SendAlarm.m */,
 			);
 			path = SenseVital;
 			sourceTree = "<group>";
@@ -528,6 +533,7 @@
 				3E04F5F018FFF099006485D9 /* main.m in Sources */,
 				3E5EF3EE1A126132007C2D3E /* DeviceTableViewController.m in Sources */,
 				3E7AFDC1190EB01F003D2C98 /* OrientationNavigationController.m in Sources */,
+				09CC58841D0EABCF00F3D79E /* SendAlarm.m in Sources */,
 				3E04F63219000129006485D9 /* VitalConnectViewController.m in Sources */,
 				3E04F66219066EAD006485D9 /* ConnectViewController.m in Sources */,
 				3E04F65219017D37006485D9 /* Factory.m in Sources */,
