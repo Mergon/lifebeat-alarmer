@@ -41,7 +41,7 @@ static NSString* loginSucceedKey = @"LoginSucceed";
 	
 	
     // MERRY HACK: Update threshold button
-    [self updateThresholdButton];
+    [self updateThresholdButtons];
     
 	
     // Uncomment the following line to preserve selection between presentations.
@@ -168,8 +168,21 @@ static NSString* loginSucceedKey = @"LoginSucceed";
 
 - (IBAction)autoAlarmThreshold:(id)sender { // MERRY HACK: Auto-alarm threshold here
     // Show alert
-    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Set Threshold"
-                                                                   message:@"Set your desired threshold. If the heart beat rate drops below this threshold, an alarm will immediately be sent."
+    NSString *alertTitle, *alertText;
+    BOOL upper;
+    if ([[sender currentTitle] isEqual: @"Auto-Alarm Upper Threshold"]) {
+        alertTitle = @"Set Upper Threshold";
+        alertText = @"Set your desired upper threshold. If the heart beat rate goes over this threshold, an alarm will immediately be sent.";
+        upper = TRUE;
+    }
+    else {
+        
+        alertTitle = @"Set Lower Threshold";
+        alertText = @"Set your desired lower threshold. If the heart beat rate drops below this threshold, an alarm will immediately be sent.";
+        upper = FALSE;
+    }
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:alertTitle
+                                                                   message:alertText
                                                             preferredStyle:UIAlertControllerStyleAlert];
     
     __block NSString *thresholdText;
@@ -180,37 +193,46 @@ static NSString* loginSucceedKey = @"LoginSucceed";
                                                           handler:^(UIAlertAction * action) {
                                                               UITextField *input = [[alert textFields] firstObject];
                                                               thresholdText = input.text;
-                                                              [self setAutoAlarmThreshold:thresholdText];
+                                                              [self setAutoAlarmThreshold:thresholdText upper:upper];
                                                           }];
     
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
 
-- (void)setAutoAlarmThreshold:(NSString*)thresholdText { // MERRY HACK: Set auto-alarm threshold here
+- (void)setAutoAlarmThreshold:(NSString*)thresholdText upper:(BOOL)upper { // MERRY HACK: Set auto-alarm threshold here
     int threshold = thresholdText.intValue;
     if (threshold > 0) {
         // Save preference
         NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
         [prefs setBool:true forKey:@"MerryHackThresholdEnabled"];
-        [prefs setInteger:threshold forKey:@"MerryHackThreshold"];
+        if (upper)
+            [prefs setInteger:threshold forKey:@"MerryHackUpperThreshold"];
+        else
+            [prefs setInteger:threshold forKey:@"MerryHackLowerThreshold"];
         [prefs synchronize];
         
         // Display new threshold
-        [self updateThresholdButton];
+        [self updateThresholdButtons];
     }
 }
 
-- (void)updateThresholdButton {
+- (void)updateThresholdButtons { // MERRY HACK
     NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
     if ([prefs boolForKey:@"MerryHackThresholdEnabled"]) {
-        int threshold = [prefs integerForKey:@"MerryHackThreshold"];
-        NSMutableString *thresholdButtonText = [NSMutableString stringWithString:@"Auto-Alarm Threshold: "];
-        [thresholdButtonText appendFormat:@"%d", threshold];
-        [[_thresholdCell textLabel] setText:thresholdButtonText];
+        int upperThreshold = (int)[prefs integerForKey:@"MerryHackUpperThreshold"];
+        NSMutableString *upperThresholdButtonText = [NSMutableString stringWithString:@"Auto-Alarm Upper Threshold: "];
+        [upperThresholdButtonText appendFormat:@"%d", upperThreshold];
+        [[_upperThresholdCell textLabel] setText:upperThresholdButtonText];
+        
+        int lowerThreshold = (int)[prefs integerForKey:@"MerryHackLowerThreshold"];
+        NSMutableString *lowerThresholdButtonText = [NSMutableString stringWithString:@"Auto-Alarm Lower Threshold: "];
+        [lowerThresholdButtonText appendFormat:@"%d", lowerThreshold];
+        [[_lowerThresholdCell textLabel] setText:lowerThresholdButtonText];
     }
     else {
-        [[_thresholdCell textLabel] setText:@"Auto-Alarm Threshold"];
+        [[_upperThresholdCell textLabel] setText:@"Auto-Alarm Upper Threshold"];
+        [[_lowerThresholdCell textLabel] setText:@"Auto-Alarm Lower Threshold"];
     }
 }
 

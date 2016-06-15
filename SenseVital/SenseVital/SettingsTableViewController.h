@@ -19,7 +19,8 @@
 - (IBAction) signOut:(id)sender;
 - (IBAction) uploadNow:(id)sender;
 
-@property (nonatomic, retain) IBOutlet UITableViewCell *thresholdCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell *upperThresholdCell;
+@property (nonatomic, retain) IBOutlet UITableViewCell *lowerThresholdCell;
 
 @property (nonatomic, retain) IBOutlet UISwitch* hfSwitch;
 @property (nonatomic, retain) IBOutlet UISwitch* uploadFreqSwitch;

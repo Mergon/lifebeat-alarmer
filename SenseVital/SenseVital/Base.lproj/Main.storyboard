@@ -488,11 +488,35 @@
                                                     <rect key="frame" x="20" y="0.0" width="280" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <state key="normal" title="Auto-Alarm Threshold">
+                                                    <state key="normal" title="Auto-Alarm Upper Threshold">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
                                                         <action selector="autoAlarmThreshold:" destination="an4-Rv-ZAb" eventType="touchUpInside" id="W2z-Vt-csI"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" button="YES"/>
+                                        </accessibility>
+                                    </tableViewCell>
+                                    <tableViewCell opaque="NO" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Fsc-VA-VKF">
+                                        <rect key="frame" x="0.0" y="822" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fsc-VA-VKF" id="i1d-Wm-s6F">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Dds-Kw-4UV">
+                                                    <rect key="frame" x="20" y="0.0" width="280" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <state key="normal" title="Auto-Alarm Lower Threshold">
+                                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="autoAlarmThreshold:" destination="an4-Rv-ZAb" eventType="touchUpInside" id="6VL-Wt-q9l"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -513,10 +537,11 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="hfSwitch" destination="Ybb-RM-2RE" id="9dd-UD-sqE"/>
-                        <outlet property="thresholdCell" destination="R87-Z9-hOC" id="Rdu-m6-ceX"/>
+                        <outlet property="lowerThresholdCell" destination="Fsc-VA-VKF" id="kjK-Yv-ct0"/>
                         <outlet property="trackingEnabledSwitch" destination="H74-RI-SkD" id="XbN-OW-o4S"/>
                         <outlet property="uploadFreqSwitch" destination="Usg-p0-xG7" id="j06-sA-s6r"/>
                         <outlet property="uploadingActivityIndicator" destination="z2I-hW-OD8" id="nMd-HF-gFe"/>
+                        <outlet property="upperThresholdCell" destination="R87-Z9-hOC" id="j0X-Cw-aw8"/>
                         <segue destination="kYg-Db-HCE" kind="modal" identifier="LoggedOut" modalTransitionStyle="crossDissolve" id="6kg-Wi-bca"/>
                     </connections>
                 </tableViewController>

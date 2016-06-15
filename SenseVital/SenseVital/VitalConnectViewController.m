@@ -176,20 +176,24 @@ static NSString* kVCStatusDisconnected = @"Disconnected";
             // MERRY HACK: Detect heart rate here.
             NSUserDefaults* prefs = [NSUserDefaults standardUserDefaults];
             if ([prefs boolForKey:@"MerryHackThresholdEnabled"] == true) {
-                NSInteger threshold = [prefs integerForKey:@"MerryHackThreshold"];
-                if ([hr integerValue] < threshold) {
-                    [SendAlarm sendAlarmWithCompletionHandler:^{
-                        // Show confirmation
-                        UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Alarm sent!"
-                                                                                       message:@"An alarm has been sent."
-                                                                                preferredStyle:UIAlertControllerStyleAlert];
-                        
-                        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                              handler:^(UIAlertAction * action) {}];
-                        
-                        [alert addAction:defaultAction];
-                        [self presentViewController:alert animated:YES completion:nil];
-                    }];
+                void (^alarmSent)() = ^(){
+                    // Show confirmation
+                    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Alarm sent!"
+                                                                                   message:@"An alarm has been sent."
+                                                                            preferredStyle:UIAlertControllerStyleAlert];
+                    
+                    UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                          handler:^(UIAlertAction * action) {}];
+                    
+                    [alert addAction:defaultAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                };
+                
+                NSInteger lowerThreshold = [prefs integerForKey:@"MerryHackLowerThreshold"];
+                NSInteger upperThreshold = [prefs integerForKey:@"MerryHackUpperThreshold"];
+                
+                if ([hr integerValue] < lowerThreshold || [hr integerValue] > upperThreshold) {
+                    [SendAlarm sendAlarmWithCompletionHandler:alarmSent];
                     [prefs setBool:false forKey:@"MerryHackThresholdEnabled"];
                 }
             }
